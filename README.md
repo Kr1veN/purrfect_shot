@@ -332,31 +332,31 @@ Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verá
 - __Cat Love-Nat Love__: presenta colores blancos con tonos sucios y su color de ojos será azul.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Cat_Love.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Cat_Love.png?raw=true" width = auto height = "100">
 </p>
 
 - __Kitty el Niño-Billy el Niño__: su pelaje será negro y gris con ojos verdes para más contraste.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Paw_Allison.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Paw_Allison.png?raw=true" width = auto height = "100">
 </p>
 
 - __Paw Allison-Clay Allison__: gato típicamente conocido como “tricolor”, con una base blanca y manchas en naranja y negro. Sus ojos serán de un color similar al naranja de su color de pelo.
 
 <p align="center">
-<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032003871721128016/unknown.png" width = auto height = "300">
+<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032003871721128016/unknown.png" width = auto height = "100">
 </p>
 
 - __Tiger Tim-Buffalo Bill__: veremos una base naranja con rayas de la misma tonalidad por todo su diseño. Su color de ojos será en tonos verdes. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Tiger_Tim.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Tiger_Tim.png?raw=true" width = auto height = "100">
 </p>
 
 Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”, los colores de la elección de prendas de nuestro personaje seguirán la tonalidad del juego, los Bandidosy los Residentes.
 
 <p align="center">
-<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032004158376648744/unknown.png" width = auto height = "300">
+<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032004158376648744/unknown.png" width = auto height = "100">
 </p>
 
 En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
