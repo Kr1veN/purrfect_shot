@@ -206,7 +206,7 @@ __Descripción de la pantalla__: Aparece sólo tras haber escogido como opción 
 __Estados del juego__: Permite al jugador crear una nueva sala pulsando “Crear Sala”,  o unirse a una ya existente mediante un código.
 El último botón “Atrás” permite al usuario retroceder a la pantalla de juego anterior por si quiere cambiar alguna opción que ya había establecido con anterioridad.
 
-### 3.5. Interfaz de elección de partida
+### 3.5. Interfaz de personalización de partida
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu3.png?raw=true" width = "320" height = "300">
@@ -228,7 +228,15 @@ __Nombre de la pantalla__: Personalización de personajes.
 __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a través del menú de selección de partida.   
 __Estados del juego__: En esta interfaz aparecerá el nombre del gato seleccionado con una pequeña descripción a su lado (para leer la descripción de cada personaje ir al apartado 2.3.1 Personajes principales):
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/eleccion_personaje.jpg?raw=true" width = "320" height = "300">
+</p>
+
 Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado, se verán en la misma interfaz de la siguiente manera:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/eleccion_ropa.jpg?raw=true" width = "300" height = "320">
+</p>
 
 ### 3.7. Interfaz del juego 
 
@@ -243,12 +251,20 @@ Abajo en las esquinas izquierda y derecha respectivamente se mostrarán las bala
 
 ### 3.8. Menú de opciones
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "170" height = "90">
+</p>
+
 __Nombre de la pantalla__: Menú de opciones.  
 __Descripción de la pantalla__: Es la pantalla a la que se accede desde el menú de inicio pulsando “Opciones” o desde el menú de juego en la esquina superior izquierda.  
 __Estados del juego__: En este menú podemos hacer variar la música de ambiente y los sonidos y efectos que van a tener tanto los jugadores como los objetos. Por otro lado, para mayor comodidad del jugador hay una opción para silenciar todos los sonidos y música a la vez.   
 Tenemos una parte del menú dedicado a los controles para que el jugador pueda recordar los movimientos que debe hacer para poder jugar y dos opciones, una que cierra este menú y otra que aplica todo los cambios que el usuario haya hecho. 
 
 ### 3.9. Interfaces de los jugadores
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "170" height = "90">
+</p>
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
 __Descripción de la pantalla__: Es la pantalla que aparece una vez los usuarios han elegido con qué personajes quieren jugar.  
