@@ -417,7 +417,7 @@ Miembros del equipo
 - Purificación Méndez Peñalver
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/logo_empresa.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/logo_empresa.png?raw=true" width = auto height = "100">
 </p>
 
 ## 6. Referencias
