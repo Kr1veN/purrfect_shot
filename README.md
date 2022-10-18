@@ -1,6 +1,6 @@
 # PURRFECT_SHOT 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "150" height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "170" height = "90">
 </p>
 
 ## 1. INTRODUCCIÓN
@@ -223,6 +223,7 @@ Se podrá volver a la pantalla anterior con el botón “Atrás” y empezar la 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = "320" height = "300">
 </p>
+
 __Nombre de la pantalla__: Personalización de personajes.  
 __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a través del menú de selección de partida.   
 __Estados del juego__: En esta interfaz aparecerá el nombre del gato seleccionado con una pequeña descripción a su lado (para leer la descripción de cada personaje ir al apartado 2.3.1 Personajes principales):
@@ -230,6 +231,10 @@ __Estados del juego__: En esta interfaz aparecerá el nombre del gato selecciona
 Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado, se verán en la misma interfaz de la siguiente manera:
 
 ### 3.7. Interfaz del juego 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = "320" height = "300">
+</p>
 
 __Nombre de la pantalla__: Interfaz de juego.  
 __Descripción de la pantalla__: Es la pantalla que aparece una vez el juego va a dar comienzo .  
@@ -273,6 +278,10 @@ El concept art 2D del juego se distribuye en tres partes importantes: las interf
 El arte final del juego se basará en un dibujo 2D con sombras duras tanto en las interfaces, como el entorno y los personajes.  
 Con el objetivo de crear una cohesión en todos los elementos del juegos, hemos creado una paleta base en la que nos guiaremos. Esta está basada en los siguientes colores:
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = "320" height = "300">
+</p>
+
 Los cuatro primeros colores irán más acorde a las estética del antiguo oeste, con el añadido de algunos detalles en azul y verde para no quedarnos únicamente con una gama de colores monocromática. En cuanto a los personajes, estos se saldrán un poco de esta paleta, pero siguiendo la misma tonalidad para que no haya un gran contraste.  
 Algún que otro boceto del escenario con el posicionamiento de los jugadores y personajes:
 
@@ -299,7 +308,7 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = "100" height = "120">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = "140" height = "120">
 </p>
 
 ### 4.4. Música
