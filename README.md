@@ -235,13 +235,13 @@ __Estados del juego__: En esta interfaz aparecerá el nombre del gato selecciona
 Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado, se verán en la misma interfaz de la siguiente manera:
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/eleccion_ropa.jpg?raw=true" width = "300" height = "320">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/eleccion_ropa.jpg?raw=true" width = "270" height = "320">
 </p>
 
 ### 3.7. Interfaz del juego 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = "310" height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = "320" height = "300">
 </p>
 
 __Nombre de la pantalla__: Interfaz de juego.  
