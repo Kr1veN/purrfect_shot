@@ -224,7 +224,7 @@ __Descripción de la pantalla__: Es la pantalla a la que se accede desde el men�
 __Estados del juego__: En este menú podemos hacer variar la música de ambiente y los sonidos y efectos que van a tener tanto los jugadores como los objetos. Por otro lado, para mayor comodidad del jugador hay una opción para silenciar todos los sonidos y música a la vez.   
 Tenemos una parte del menú dedicado a los controles para que el jugador pueda recordar los movimientos que debe hacer para poder jugar y dos opciones, una que cierra este menú y otra que aplica todo los cambios que el usuario haya hecho. 
 
-### 3.9. Interfacess de los jugadores
+### 3.9. Interfaces de los jugadores
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
 __Descripción de la pantalla__: Es la pantalla que aparece una vez los usuarios han elegido con qué personajes quieren jugar.  
@@ -258,10 +258,50 @@ Los cuatro primeros colores irán más acorde a las estética del antiguo oeste,
 Algún que otro boceto del escenario con el posicionamiento de los jugadores y personajes:
 
 
-Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores:
+Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores:  
+- __Cat Love-Nat Love__: presenta colores blancos con tonos sucios y su color de ojos será azul.
+- __Kitty el Niño-Billy el Niño__: su pelaje será negro y gris con ojos verdes para más contraste.
+- __Paw Allison-Clay Allison__: gato típicamente conocido como “tricolor”, con una base blanca y manchas en naranja y negro. Sus ojos serán de un color similar al naranja de su color de pelo.
+- __Tiger Tim-Buffalo Bill__: veremos una base naranja con rayas de la misma tonalidad por todo su diseño. Su color de ojos será en tonos verdes. 
 
+Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”, los colores de la elección de prendas de nuestro personaje seguirán la tonalidad del juego, los Bandidosy los Residentes.
+
+En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
+- Bandidos: los enemigos aparecerán con colores más duros en su vestimenta, como los mostrados a continuación:
+
+- Residentes: estos tendrán tonos tirando más al pastel:
+
+El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
+
+Añadir que tanto los personajes jugables en su selección, como los Bandidos y los Residentes in-game, tendrán un diseño que simula una pegatina, tal y como se muestra en la siguientes imágenes:
 
 ### 4.3. Logo
+
+El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
+
+![Logo](https://assets/JeRLogo.png)
+
 ### 4.4. Música
+
+En cuanto a la música, ya que la temática del juego se enfoca en el viejo oeste, se implementará una melodía ajustada a este ambiente antiguo. Dependiendo de donde se encuentre el jugador se podrá escuchar:
+- Menú de inicio y selección de personajes: música de rodeo.
+- Entorno de acción: se añadirá una música de persecución, donde se note un ambiente tenso en un primer instante.
+
 ### 4.5. Efectos de sonido
+
+Por otro lado, los efectos de sonido se enfocarán en:
+- Botones: cualquier botón de selección, una vez pulsado, vendrá acompañado por un maullido de gato. Se distinguen tres tipos de maullidos diferentes para tener una variedad.
+- Arma: al pulsar “W” se escuchará el disparo del arma y al recoger balas con “S”, se podrá distinguir un sonido de recarga del mismo. 
+- Logro: al conseguir un logro, se acompañará a la imagen en pantalla un sonido de victoria.  
+
+Selección de personaje:
+- Victoria/derrota: en el formato local sonará únicamente la victoria. En caso de ser formato en red, a cada jugador le aparecerá un sonido acorde a su logro.
+- Tiempo: durante el juego se establecerá un tiempo, este sonará de forma intensa cuando queden 10 segundos de partida con el objetivo de alertar a los jugadores.
+
 ## 5. Equipo 
+Miembros del equipo
+- Daniel Borrego Cruz
+- Alicia Enríquez Martínez
+- Andrea Gallardo Lasso
+- Gema López-Pozuelo Senderos
+- Purificación Méndez Peñalver
