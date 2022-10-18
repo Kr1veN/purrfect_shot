@@ -181,6 +181,10 @@ Dependiendo de nuestro desempeño en el juego y de nuestras hazañas se nos reco
 ### 3.1. Diagrama de Flujo 
 ### 3.2. Menú principal
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/menu_inicio.png?raw=true" width = "320" height = "300">
+</p>
+
 __Nombre de la pantalla__: Menú principal.  
 __Descripción de la pantalla__: Es la pantalla que aparece al inicio del juego.  
 __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual nos permite iniciar una nueva partida, que nos conduce a la interfaz de elección de jugadores y tipo de partida.Con el botón “Opciones” se accede al menú de opciones. Por último tenemos la opción de “Créditos” que nos mostrará los integrantes que han participado en la creación de Purrfect Shot.
@@ -241,7 +245,7 @@ Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado,
 ### 3.7. Interfaz del juego 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = "320" height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/ingame.png?raw=true" width = "320" height = "300">
 </p>
 
 __Nombre de la pantalla__: Interfaz de juego.  
@@ -252,7 +256,7 @@ Abajo en las esquinas izquierda y derecha respectivamente se mostrarán las bala
 ### 3.8. Menú de opciones
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "170" height = "90">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/opciones.png?raw=true" width = "170" height = "90">
 </p>
 
 __Nombre de la pantalla__: Menú de opciones.  
@@ -263,7 +267,7 @@ Tenemos una parte del menú dedicado a los controles para que el jugador pueda r
 ### 3.9. Interfaces de los jugadores
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "170" height = "90">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/vs.png?raw=true" width = "170" height = "90">
 </p>
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
