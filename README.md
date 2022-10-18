@@ -279,7 +279,7 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
-![Logo](https://raw.githubusercontent.com/KriiveN/purrfect_shot/blob/assets/JeRLogo.png)
+![Logo](https://raw.githubusercontent.com/KriiveN/purrfect_shot/3506fd7c8584aa687a926fd4b11ba2e00312d681/JeRLogo.png)
 
 ### 4.4. Música
 
