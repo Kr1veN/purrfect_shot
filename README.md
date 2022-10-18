@@ -1,6 +1,6 @@
 # PURRFECT_SHOT 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "120" height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "150" height = "100">
 </p>
 
 ## 1. INTRODUCCIÓN
@@ -188,7 +188,7 @@ __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual 
 ### 3.3. Interfaz de elección de jugadores y tipo de juego 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu1.png?raw=true" width = "120" height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu1.png?raw=true" width = "320" height = "300">
 </p>
 
 __Nombre de la pantalla__: Ajustes de jugadores y tipo de juego  
@@ -198,7 +198,7 @@ __Estados del juego__: Permite al usuario elegir el número de jugadores navegan
 ### 3.4. Interfaz de sala
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu2.png?raw=true" width = "120" height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu2.png?raw=true" width = "320" height = "300">
 </p>
 
 __Nombre de la pantalla__: Elección de sala.  
@@ -208,6 +208,10 @@ El último botón “Atrás” permite al usuario retroceder a la pantalla de ju
 
 ### 3.5. Interfaz de elección de partida
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu3.png?raw=true" width = "320" height = "300">
+</p>
+
 __Nombre de la pantalla__: Personalización de partida.  
 __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a través de un menú emergente que aparecerá al clicar sobre su cartel de jugador. De la misma forma se podrán modificar el número de rondas y el mapa  
 __Estados del juego__: Cada jugador podrá elegir su personaje antes de cada partida clicando en el cartel de su jugador. En local esto se tendrá que hacer por turnos, mientras que en línea podrá ser simultáneo. Se pondrá una restricción para que cada jugador solo pueda elegir su personaje (en línea) y se podrá utilizar para juegos de un solo jugador para evitar seleccionar un personaje para un jugador que no existe.  
@@ -216,6 +220,9 @@ Se podrá volver a la pantalla anterior con el botón “Atrás” y empezar la 
 
 ### 3.6. Interfaz de elección de personaje
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = "320" height = "300">
+</p>
 __Nombre de la pantalla__: Personalización de personajes.  
 __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a través del menú de selección de partida.   
 __Estados del juego__: En esta interfaz aparecerá el nombre del gato seleccionado con una pequeña descripción a su lado (para leer la descripción de cada personaje ir al apartado 2.3.1 Personajes principales):
