@@ -166,6 +166,10 @@ Los controles en línea son iguales que en local para el jugador 1. Los controle
 
 Será una cámara estática que muestra a los personajes de espalda y por la parte de delante se encuentran las “dianas”  (enemigos) a los cuales tendremos que disparar.
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/wii_referencia.png?raw=true" width = "220" height = "200">
+</p>
+
 #### 2.5. Logros
 
 Dependiendo de nuestro desempeño en el juego y de nuestras hazañas se nos recompensará con los siguientes logros:
@@ -179,6 +183,11 @@ Dependiendo de nuestro desempeño en el juego y de nuestras hazañas se nos reco
 
 ## 3. INTERFACES
 ### 3.1. Diagrama de Flujo 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/diagrama_flujo.png?raw=true" width = "320" height = "650">
+</p>
+
 ### 3.2. Menú principal
 
 <p align="center">
@@ -256,7 +265,7 @@ Abajo en las esquinas izquierda y derecha respectivamente se mostrarán las bala
 ### 3.8. Menú de opciones
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/opciones.png?raw=true" width = "200" height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/opciones.png?raw=true" width = "320" height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú de opciones.  
