@@ -278,9 +278,9 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 ### 4.3. Logo
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
-
-![Logo]<img src = "https://raw.githubusercontent.com/KriiveN/purrfect_shot/3506fd7c8584aa687a926fd4b11ba2e00312d681/JeRLogo.png" width = "100" height="120">
-
+<center>
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = "100" height = "120">
+</center>
 ### 4.4. Música
 
 En cuanto a la música, ya que la temática del juego se enfoca en el viejo oeste, se implementará una melodía ajustada a este ambiente antiguo. Dependiendo de donde se encuentre el jugador se podrá escuchar:
