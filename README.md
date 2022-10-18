@@ -1,6 +1,6 @@
 # PURRFECT_SHOT 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "170" height = "90">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "auto" height = "90">
 </p>
 
 ## 1. INTRODUCCIÓN
@@ -71,6 +71,11 @@ Ya que la base del juego radica en la victoria frente al jugador contrario, la p
 Durante la partida los jugadores pueden realizar 3 tipos de movimientos básicos:
 
 - Apuntar: Se trata del movimiento de la mirilla a izquierda o derecha, para que el jugador pueda elegir el objetivo en pantalla al que realizar la siguiente acción.
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/cursor_con_mirilla1.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/cursor_con_mirilla2.png?raw=true" width = auto height = "200">
+</p>
 
 - Disparar: Se trata de apretar el gatillo y disparar una bala del cargador al objetivo apuntado. En el caso de que el objetivo sea un bandido, se suman al jugador que dispara los puntos correspondientes a la recompensa del enemigo.
 Si por el contrario el objetivo que recibe el disparo es un residente, se restan los puntos correspondientes al contador del jugador que dispara, dependiendo de la importancia del civil que recibe el disparo.
@@ -161,6 +166,10 @@ Los controles en línea son iguales que en local para el jugador 1. Los controle
   - Desplazamiento: tendremos la tecla ← y →  (marcada en verde).
   - Disparo: tecla ↑ (marcada en rojo).
   - Recoger objeto: tecla  ↓ (marcada en azul).
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/teclado.png?raw=true" width = "520" height = "200">
+</p>
 
 #### 2.4.2. Cámara
 
@@ -314,30 +323,71 @@ Con el objetivo de crear una cohesión en todos los elementos del juegos, hemos 
 Los cuatro primeros colores irán más acorde a las estética del antiguo oeste, con el añadido de algunos detalles en azul y verde para no quedarnos únicamente con una gama de colores monocromática. En cuanto a los personajes, estos se saldrán un poco de esta paleta, pero siguiendo la misma tonalidad para que no haya un gran contraste.  
 Algún que otro boceto del escenario con el posicionamiento de los jugadores y personajes:
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario1.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario2.PNG?raw=true" width = auto height = "300">
+</p>
 
 Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores:  
 - __Cat Love-Nat Love__: presenta colores blancos con tonos sucios y su color de ojos será azul.
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Cat_Love.png?raw=true" width = auto height = "300">
+</p>
+
 - __Kitty el Niño-Billy el Niño__: su pelaje será negro y gris con ojos verdes para más contraste.
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Paw_Allison.png?raw=true" width = auto height = "300">
+</p>
+
 - __Paw Allison-Clay Allison__: gato típicamente conocido como “tricolor”, con una base blanca y manchas en naranja y negro. Sus ojos serán de un color similar al naranja de su color de pelo.
+
+<p align="center">
+<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032003871721128016/unknown.png" width = auto height = "300">
+</p>
+
 - __Tiger Tim-Buffalo Bill__: veremos una base naranja con rayas de la misma tonalidad por todo su diseño. Su color de ojos será en tonos verdes. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Tiger_Tim.png?raw=true" width = auto height = "300">
+</p>
 
 Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”, los colores de la elección de prendas de nuestro personaje seguirán la tonalidad del juego, los Bandidosy los Residentes.
 
+<p align="center">
+<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032004158376648744/unknown.png" width = auto height = "300">
+</p>
+
 En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
+
 - Bandidos: los enemigos aparecerán con colores más duros en su vestimenta, como los mostrados a continuación:
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = auto height = "300">
+</p>
+
 - Residentes: estos tendrán tonos tirando más al pastel:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Residentes.png?raw=true" width = auto height = "300">
+</p>
 
 El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
 
 Añadir que tanto los personajes jugables en su selección, como los Bandidos y los Residentes in-game, tendrán un diseño que simula una pegatina, tal y como se muestra en la siguientes imágenes:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/pegatinas.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/pegatinachincheta.jpg?raw=true" width = auto height = "300">
+</p>
 
 ### 4.3. Logo
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = "140" height = "120">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = auto height = "120">
 </p>
 
 ### 4.4. Música
@@ -364,3 +414,20 @@ Miembros del equipo
 - Andrea Gallardo Lasso
 - Gema López-Pozuelo Senderos
 - Purificación Méndez Peñalver
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/logo_empresa.png?raw=true" width = auto height = "120">
+</p>
+
+## 6. Referencias
+- Generador de paleta de colores: https://coolors.co 
+- Imagen Wii Party:
+https://images-na.ssl-images-amazon.com/images/I/51J8VAE7ZQL.jpg
+https://www.google.com/url?sa=i&url=http%3A%2F%2Fgettime.co.kr%2Fshop%2Fitem%2F13446090%2Fcate%2F8923%2Fpage%2F165%2F%2F%3Fdm%3D1%26l%3D20%26o%3D2%26d%3Ddesc%26q%3D%26ps%3D0%26pe%3D0&psig=AOvVaw2S_HAZz3SVFMGhdkvZSJqL&ust=1666202283227000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCKDg2-Kt6voCFQAAAAAdAAAAABAD 
+- Imagen Pegatina 1:
+https://www.freepik.es/vector-gratis/conjunto-divertido-pegatinas-estilo-comic_1319668.htm#query=pegatinas&position=40&from_view=keyword 
+- Imagen Pegatina 2:
+https://es.dreamstime.com/pegatina-de-dibujo-dibujos-animados-una-creativa-image150414274
+- Fuente de referencia para el logo del juego:
+https://www.dafont.com/es/texas-tango.font 
+
