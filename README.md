@@ -245,7 +245,7 @@ Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado,
 ### 3.7. Interfaz del juego 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/ingame.png?raw=true" width = "320" height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/ingame.png?raw=true" width = "330" height = "300">
 </p>
 
 __Nombre de la pantalla__: Interfaz de juego.  
@@ -256,7 +256,7 @@ Abajo en las esquinas izquierda y derecha respectivamente se mostrarán las bala
 ### 3.8. Menú de opciones
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/opciones.png?raw=true" width = "170" height = "90">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/opciones.png?raw=true" width = "200" height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú de opciones.  
@@ -267,7 +267,7 @@ Tenemos una parte del menú dedicado a los controles para que el jugador pueda r
 ### 3.9. Interfaces de los jugadores
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/vs.png?raw=true" width = "170" height = "90">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/vs.png?raw=true" width = "320" height = "300">
 </p>
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
