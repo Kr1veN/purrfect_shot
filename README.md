@@ -1,4 +1,8 @@
-# PURRFECT_SHOT
+# PURRFECT_SHOT 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "120" height = "100">
+</p>
+
 ## 1. INTRODUCCIÓN
 ### 1.1. Concepto general 
 
@@ -183,11 +187,19 @@ __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual 
 
 ### 3.3. Interfaz de elección de jugadores y tipo de juego 
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu1.png?raw=true" width = "120" height = "100">
+</p>
+
 __Nombre de la pantalla__: Ajustes de jugadores y tipo de juego  
 __Descripción de la pantalla__: Es la pantalla que aparece tras haber iniciado en el menú principal el juego.   
 __Estados del juego__: Permite al usuario elegir el número de jugadores navegando en la primera opción de este menú, así como elegir y el tipo de juego (pulsando local o en línea). Se puede acceder de nuevo al menú de opciones mediante el botón “Opciones”. Por último, se dispone de un botón “Continuar” para acceder a la siguiente pantalla del juego 
 
 ### 3.4. Interfaz de sala
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu2.png?raw=true" width = "120" height = "100">
+</p>
 
 __Nombre de la pantalla__: Elección de sala.  
 __Descripción de la pantalla__: Aparece sólo tras haber escogido como opción el jugar en línea.  
@@ -279,7 +291,7 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
-<<p align="center">
+<p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = "100" height = "120">
 </p>
 
