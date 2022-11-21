@@ -362,15 +362,43 @@ Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”
 En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
 
 - Bandidos: los enemigos aparecerán con colores más duros en su vestimenta, como los mostrados a continuación:
+Siguiendo la paleta de color que se muestra a continuación se han desarrollado varios enemigos
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = auto height = "200">
 </p>
 
+Estos personajes no han seguido una estética en el momento de desearrollarse, es decir, se han intentado hacer lo más dinámicos posibles para que el juego tenga agilidad y cambio. Utilizando la paleta mostrada con anterioridad se han creado variantes de cada uno.
+##### Enemigo 1 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%201.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%201%20variante.png?raw=true" width = auto height = "300">
+</p>
+
+##### Enemigo 2 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%202.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%202%20variante.png?raw=true" width = auto height = "300">
+</p>
+
 - Residentes: estos tendrán tonos tirando más al pastel:
+Con los personajes buenos se ha seguido la misma rúbrica que con los enemigos. Se ha empleado la paleta que aparece a continuación y se han creado varios modelos para otorgar dinamismo. 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Residentes.png?raw=true" width = auto height = "200">
+</p>
+
+Tomando estos colores se ha variado cada personaje para conseguir una amplia gama de distinción
+##### Residente 1 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%201.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%201%20variante.png?raw=true" width = auto height = "300">
+</p>
+
+##### Residente 2 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%202.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%202%20variante.png?raw=true" width = auto height = "300">
 </p>
 
 El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
