@@ -191,10 +191,12 @@ Dependiendo de nuestro desempeño en el juego y de nuestras hazañas se nos reco
 - Criminal de guerra: dispara a todos los Residentes que aparecen durante una ronda.
 
 ## 3. INTERFACES
+Todos los bocetos aparecerán a la izquierda y los escenarios acabados a la derecha
 ### 3.1. Diagrama de Flujo 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/diagrama_flujo.png?raw=true" width = auto height = "650">
+
 </p>
 
 ### 3.2. Menú principal
@@ -321,11 +323,29 @@ Con el objetivo de crear una cohesión en todos los elementos del juegos, hemos 
 </p>
 
 Los cuatro primeros colores irán más acorde a las estética del antiguo oeste, con el añadido de algunos detalles en azul y verde para no quedarnos únicamente con una gama de colores monocromática. En cuanto a los personajes, estos se saldrán un poco de esta paleta, pero siguiendo la misma tonalidad para que no haya un gran contraste.  
-Algún que otro boceto del escenario con el posicionamiento de los jugadores y personajes:
+A continuación se mostrarán los primeros bocetos de los escenarios que se han desarrollado:
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario1.png?raw=true" width = auto height = "300">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario2.PNG?raw=true" width = auto height = "300">
+</p>
+
+Una vez los escenarios se han terminado se ha hecho una alternativa en cada uno de ellos; todos estarán diseñados tanto de día como de noche y se mostrarán aquí respectivamente.
+##### Calle de día y de noche
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/calledia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/callenoche.png" width = auto height = "300">
+</p>
+
+##### Granero de día y de noche
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/granerodia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/graneronoche.png" width = auto height = "300">
+</p>
+
+##### Desierto de día
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/desiertodia.png" width = auto height = "300">
 </p>
 
 Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores: 
