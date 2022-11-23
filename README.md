@@ -368,7 +368,7 @@ La paleta de colores aparecerá en la parte izquierda, mientras que el personaje
 
 <p align="center">
 <img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032003871721128016/unknown.png" width = auto height = "150">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoTricolor" width = auto height = "190">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoTricolor.png" width = auto height = "190">
 </p>
 
 - __Tiger Tim-Buffalo Bill__: veremos una base naranja con rayas de la misma tonalidad por todo su diseño. Su color de ojos será en tonos verdes. 
