@@ -410,14 +410,14 @@ A la izquerda se mostrará el enemigo y la derecha su variante de color.
 
 ##### Enemigo 3 y sus variantes 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203%20variante" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203%20variante.png" width = auto height = "300">
 </p>
 
 ##### Enemigo 4 y sus variantes 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204%20variante" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204%20variante.png" width = auto height = "300">
 </p>
 
 - Residentes: estos tendrán tonos tirando más al pastel:
@@ -442,8 +442,8 @@ Tomando estos colores se ha variado cada personaje para conseguir una amplia gam
 
 ##### Residente 3 y sus variantes 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203%20variante" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203%20variante.png" width = auto height = "300">
 </p>
 
 El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
