@@ -213,6 +213,7 @@ __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu1.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Menus/menuInicio.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Ajustes de jugadores y tipo de juego  
