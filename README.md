@@ -191,10 +191,12 @@ Dependiendo de nuestro desempeño en el juego y de nuestras hazañas se nos reco
 - Criminal de guerra: dispara a todos los Residentes que aparecen durante una ronda.
 
 ## 3. INTERFACES
+Todos los bocetos aparecerán a la izquierda y los escenarios acabados a la derecha
 ### 3.1. Diagrama de Flujo 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/diagrama_flujo.png?raw=true" width = auto height = "650">
+
 </p>
 
 ### 3.2. Menú principal
@@ -211,6 +213,7 @@ __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu1.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Menus/menuInicio.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Ajustes de jugadores y tipo de juego  
@@ -321,36 +324,59 @@ Con el objetivo de crear una cohesión en todos los elementos del juegos, hemos 
 </p>
 
 Los cuatro primeros colores irán más acorde a las estética del antiguo oeste, con el añadido de algunos detalles en azul y verde para no quedarnos únicamente con una gama de colores monocromática. En cuanto a los personajes, estos se saldrán un poco de esta paleta, pero siguiendo la misma tonalidad para que no haya un gran contraste.  
-Algún que otro boceto del escenario con el posicionamiento de los jugadores y personajes:
+A continuación se mostrarán los primeros bocetos de los escenarios que se han desarrollado:
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario1.png?raw=true" width = auto height = "300">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario2.PNG?raw=true" width = auto height = "300">
 </p>
 
-Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores:  
+Una vez los escenarios se han terminado se ha hecho una alternativa en cada uno de ellos; todos estarán diseñados tanto de día como de noche y se mostrarán aquí respectivamente.
+##### Calle de día y de noche
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/calledia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/callenoche.png" width = auto height = "300">
+</p>
+
+##### Granero de día y de noche
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/granerodia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/graneronoche.png" width = auto height = "300">
+</p>
+
+##### Desierto de día
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/desiertodia.png" width = auto height = "300">
+</p>
+
+Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores: 
+La paleta de colores aparecerá en la parte izquierda, mientras que el personaje finalizado se mostrará en la derecha.
 - __Cat Love-Nat Love__: presenta colores blancos con tonos sucios y su color de ojos será azul.
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Cat_Love.png?raw=true" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoBlanco.png?raw=true" width = auto height = "190">
 </p>
 
 - __Kitty el Niño-Billy el Niño__: su pelaje será negro y gris con ojos verdes para más contraste.
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Paw_Allison.png?raw=true" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoNegro.png?raw=true" width = auto height = "190">
 </p>
 
 - __Paw Allison-Clay Allison__: gato típicamente conocido como “tricolor”, con una base blanca y manchas en naranja y negro. Sus ojos serán de un color similar al naranja de su color de pelo.
 
 <p align="center">
 <img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032003871721128016/unknown.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoTricolor.png" width = auto height = "190">
 </p>
 
 - __Tiger Tim-Buffalo Bill__: veremos una base naranja con rayas de la misma tonalidad por todo su diseño. Su color de ojos será en tonos verdes. 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Tiger_Tim.png?raw=true" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoNaranja.png" width = auto height = "190">
 </p>
 
 Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”, los colores de la elección de prendas de nuestro personaje seguirán la tonalidad del juego, los Bandidosy los Residentes.
@@ -362,15 +388,63 @@ Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”
 En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
 
 - Bandidos: los enemigos aparecerán con colores más duros en su vestimenta, como los mostrados a continuación:
+Siguiendo la paleta de color que se muestra a continuación se han desarrollado varios enemigos
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = auto height = "200">
 </p>
 
+Estos personajes no han seguido una estética en el momento de desearrollarse, es decir, se han intentado hacer lo más dinámicos posibles para que el juego tenga agilidad y cambio. Utilizando la paleta mostrada con anterioridad se han creado variantes de cada uno. 
+A la izquerda se mostrará el enemigo y la derecha su variante de color.
+
+##### Enemigo 1 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%201.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%201%20variante.png?raw=true" width = auto height = "300">
+</p>
+
+##### Enemigo 2 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%202.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%202%20variante.png?raw=true" width = auto height = "300">
+</p>
+
+##### Enemigo 3 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203%20variante.png" width = auto height = "300">
+</p>
+
+##### Enemigo 4 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204%20variante.png" width = auto height = "300">
+</p>
+
 - Residentes: estos tendrán tonos tirando más al pastel:
+Con los personajes buenos se ha seguido la misma rúbrica que con los enemigos. Se ha empleado la paleta que aparece a continuación y se han creado varios modelos para otorgar dinamismo. 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Residentes.png?raw=true" width = auto height = "200">
+</p>
+
+Tomando estos colores se ha variado cada personaje para conseguir una amplia gama de distinción
+##### Residente 1 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%201.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%201%20variante.png?raw=true" width = auto height = "300">
+</p>
+
+##### Residente 2 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%202.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%202%20variante.png?raw=true" width = auto height = "300">
+</p>
+
+##### Residente 3 y sus variantes 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203%20variante.png" width = auto height = "300">
 </p>
 
 El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
