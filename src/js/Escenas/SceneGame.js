@@ -3,18 +3,51 @@ class SceneGame extends Phaser.Scene {
         super({key:"SceneConf)"});
     }
     
+    /*init ()
+    {
+        //  Inject our CSS
+        var element = document.createElement('style');
+
+        document.head.appendChild(element);
+
+        var sheet = element.sheet;
+
+        var styles = '@font-face { font-family: "Bonzer"; src: url("assets/fonts/BonzerSanFrancisco.ttf") format("truetype"); }\n';
+        
+        sheet.insertRule(styles, 0);
+    }*/
+    
     preload() {
         this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
         this.load.image('Marco', 'assets/marco.png');
         this.load.spritesheet('Diana', 'assets/Diana.png', {frameWidth: 175, frameHeight: 300});
         this.load.image('Mirilla1', 'assets/MirillaJ1.png');
         this.load.image('Mirilla2', 'assets/MirillaJ2.png');
-        
+        //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
+        this.load.bitmapFont('Bonzer', 'assets/fonts/BonzerSanFrancisco.png', 'assets/fonts/BonzerSanFrancisco.xml');
+        this.load.bitmapFont('YW', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
     }
     
     create() {
+        
+            
+            
         this.fondo1 = this.add.image(540,375,'Fondo1');
         this.marco = this.add.image(540,375,'Marco');
+        
+        
+        /*var add = this.add;
+        WebFont.load({
+            custom: {
+                families: [ 'Bonzer' ]
+            },
+            active: function ()
+            {
+                add.text(150, 350, 'Prueba', { fontFamily: 'Bonzer', fontSize: 64, color: '#5656ee' });
+            }
+        });*/
+        
+        
         
         // Grupo de 6 dianas
         this.dianas =  this.physics.add.group({
@@ -77,12 +110,14 @@ class SceneGame extends Phaser.Scene {
         }, null, this);
         
         // Puntuaciones
-        this.scoreTextJ1 = this.add.text(100, 60, 'Pts: 100', {fontSize: '20px', fill: '#fff'});
-        this.scoreTextJ2 = this.add.text(880, 60, 'Pts: 100', {fontSize: '20px', fill: '#fff'});
+        this.scoreJ1 = 0;
+        this.scoreJ2 = 0;
+        this.scoreTextJ1 = this.add.bitmapText(100, 60, 'YW', 'Pts: 0', 30);
+        this.scoreTextJ2 = this.add.bitmapText(880, 60, 'YW', 'Pts: 0', 30);
         
         // Balas
-        this.bulletTextJ1 = this.add.text(60, 695, '10', {fontSize: '30px', fill: '#000'});
-        this.bulletTextJ2 = this.add.text(990, 695, '50', {fontSize: '30px', fill: '#000'});
+        this.bulletTextJ1 = this.add.bitmapText(62, 690, 'YW', '10', 40).setTint(0x000000);
+        this.bulletTextJ2 = this.add.bitmapText(992, 690, 'YW', '50', 40).setTint(0x000000);
         
         // JUGADOR 1
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -130,6 +165,8 @@ class SceneGame extends Phaser.Scene {
         if(this.key_F.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded)){
             if(this.diana1.data.get('status') == 1) { //si la diana está de pie
                 this.diana1.anims.play('abajo', true);
+                this.scoreJ1 += 5;
+                this.scoreTextJ1.setText("Pts:" + this.scoreJ1);
                 this.diana1.data.set('status', 0);
             }
         }
@@ -167,6 +204,8 @@ class SceneGame extends Phaser.Scene {
         if(this.key_HOME.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded)){
             if(this.diana2.data.get('status') == 1) { //si la diana está de pie
                 this.diana2.anims.play('abajo', true);
+                this.scoreJ2 += 5;
+                this.scoreTextJ2.setText("Pts:" + this.scoreJ2);
                 this.diana2.data.set('status', 0);
             }
         }
