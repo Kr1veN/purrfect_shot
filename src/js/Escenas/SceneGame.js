@@ -14,12 +14,12 @@ class SceneGame extends Phaser.Scene {
     create() {
         this.fondo1 = this.add.image(540,375,'Fondo1');
         this.diana = this.physics.add.sprite(300,375,'Diana');
-        this.diana.body.setSize(150,175,false);
+        this.diana.body.setSize(95,125,false).setOffset(40,25);
         this.mirilla1 = this.physics.add.image(500,375,'Mirilla1');
-        //this.
+        this.mirilla1.body.setSize(20,20,true);
         this.mirilla2 = this.add.image(580,375,'Mirilla2');
         
-         this.anims.create({
+        this.anims.create({
             key: 'abajo',
             frames: this.anims.generateFrameNumbers('Diana', { start: 0, end: 23 }),
             frameRate: 24,
@@ -33,7 +33,7 @@ class SceneGame extends Phaser.Scene {
             repeat: 0
         });
         
-        console.log(this.physics.add.overlap(this.diana, this.mirilla1));
+        this.physics.add.overlap(this.mirilla1, this.diana);
         
         // JUGADOR 1
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -51,7 +51,7 @@ class SceneGame extends Phaser.Scene {
     }
     
     update(delta) {
-        this.diana.body.debugBodyColor = this.diana.body.touching.none ? 0x00ffff : 0xffff00;
+        this.mirilla1.body.debugBodyColor = this.mirilla1.body.touching.none ? 0x00ffff : 0xffff00;
         // JUGADOR 1
         if(this.key_W.isDown)
             this.mirilla1.y -= 10;
