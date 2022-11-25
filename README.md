@@ -1,6 +1,6 @@
 # PURRFECT_SHOT 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Logo.png" width = "auto" height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "150">
 </p>
 
 ## 1. INTRODUCCIÓN
@@ -203,6 +203,7 @@ Todos los bocetos aparecerán a la izquierda y los escenarios acabados a la dere
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/menu_inicio.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu0.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú principal.  
@@ -213,7 +214,7 @@ __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu1.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/imagenesGDD/menusGDD/menu3.PNG" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu1.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Ajustes de jugadores y tipo de juego  
@@ -224,7 +225,7 @@ __Estados del juego__: Permite al usuario elegir el número de jugadores navegan
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu2.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/imagenesGDD/menusGDD/menu2.PNG" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu2.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Elección de sala.  
@@ -236,7 +237,7 @@ El último botón “Atrás” permite al usuario retroceder a la pantalla de ju
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu3.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/imagenesGDD/menusGDD/menup.PNG" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu3.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personalización de partida.  
@@ -249,6 +250,7 @@ Se podrá volver a la pantalla anterior con el botón “Atrás” y empezar la 
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu4.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menup.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personalización de personajes.  
@@ -455,17 +457,20 @@ El objetivo de estos colores es conseguir que el jugador distinga con velocidad 
 Añadir que tanto los personajes jugables en su selección, como los Bandidos y los Residentes in-game, tendrán un diseño que simula una pegatina, tal y como se muestra en la siguientes imágenes:
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/pegatinas.png?raw=true" width = auto height = "200">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/pegatinachincheta.jpg?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/pegatinas.png" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/pegatinachincheta.jpg" width = auto height = "200">
 </p>
+
+Esta idea se ha implementado en los personajes que ya se habán desarollado y que se muestran en los apartados anteriores. EL resulatdo qeu se ha obtenido se muestra a continuación: 
+
 
 ### 4.3. Logo
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = auto height = "200">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "auto" height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo.png" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "200">
 </p>
 
 ### 4.4. Música
@@ -494,7 +499,7 @@ Miembros del equipo
 - Purificación Méndez Peñalver
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/logo_empresa.png?raw=true" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/logo_empresa.png" width = auto height = "100">
 </p>
 
 ## 6. Referencias
