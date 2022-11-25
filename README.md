@@ -282,6 +282,7 @@ Abajo en las esquinas izquierda y derecha respectivamente se mostrarán las bala
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/opciones.png" width = auto height = "300">
+  <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/MenusJuego/opciones.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú de opciones.  
@@ -293,7 +294,7 @@ Tenemos una parte del menú dedicado a los controles para que el jugador pueda r
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/vs.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/imagenesGDD/menusGDD/menu1.PNG" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/MenusJuego/inGame/vs.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
@@ -396,7 +397,7 @@ En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mo
 Siguiendo la paleta de color que se muestra a continuación se han desarrollado varios enemigos
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Bandidos.png" width = auto height = "200">
 </p>
 
 Estos personajes no han seguido una estética en el momento de desearrollarse, es decir, se han intentado hacer lo más dinámicos posibles para que el juego tenga agilidad y cambio. Utilizando la paleta mostrada con anterioridad se han creado variantes de cada uno. 
@@ -430,7 +431,7 @@ A la izquerda se mostrará el enemigo y la derecha su variante de color.
 Con los personajes buenos se ha seguido la misma rúbrica que con los enemigos. Se ha empleado la paleta que aparece a continuación y se han creado varios modelos para otorgar dinamismo. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Residentes.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Residentes.png" width = auto height = "200">
 </p>
 
 Tomando estos colores se ha variado cada personaje para conseguir una amplia gama de distinción
@@ -462,15 +463,20 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 </p>
 
 Esta idea se ha implementado en los personajes que ya se habán desarollado y que se muestran en los apartados anteriores. EL resulatdo qeu se ha obtenido se muestra a continuación: 
-
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%201.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%202.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%204.png" width = auto height = "100">
+</p>
 
 ### 4.3. Logo
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo.png" width = auto height = "200">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "100">
 </p>
 
 ### 4.4. Música
