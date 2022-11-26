@@ -19,7 +19,7 @@ var config = {
         }
     },
     
-    scene: [ SceneGame ]
+    scene: [ SceneSecPartida ]
 };
 
 var game = new Phaser.Game(config);
