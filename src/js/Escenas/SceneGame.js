@@ -17,6 +17,9 @@ class SceneGame extends Phaser.Scene {
         sheet.insertRule(styles, 0);
     }*/
     
+/************************************************************** P R E L O A D *****************************************************************/
+    /*---------------------------------------------------------------------------------------------------------------------------------*/
+   
     preload() {
         this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
         this.load.image('Marco', 'assets/marco.png');
@@ -40,14 +43,16 @@ class SceneGame extends Phaser.Scene {
         
         this.load.image('Mirilla1', 'assets/MirillaJ1.png');
         this.load.image('Mirilla2', 'assets/MirillaJ2.png');
+        this.load.image('Bala', 'assets/bala.png');
         //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
         this.load.bitmapFont('Bonzer', 'assets/fonts/BonzerSanFrancisco.png', 'assets/fonts/BonzerSanFrancisco.xml');
         this.load.bitmapFont('YW', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
     }
     
-    create() {
-        
-            
+/*************************************************************** C R E A T E ******************************************************************/
+    /*---------------------------------------------------------------------------------------------------------------------------------*/
+   
+    create() {            
             
         this.fondo1 = this.add.image(540,375,'Fondo1');
         this.marco = this.add.image(540,375,'Marco');
@@ -99,13 +104,25 @@ class SceneGame extends Phaser.Scene {
             child.anims.play('abajo', 'true'); // bajamos las dianas
             child.setDataEnabled();
             child.data.set('status', 0); //0 abajo, 1 arriba
+            child.data.set('interactive', false);
             i++;
+        });
+        
+        // Loop para comprobar qué dianas están tumbadas y hacerlas que suban
+        this.loopDianas = this.time.addEvent({
+            delay: 1000, // cada segundo
+            callback: this.checkDianas,
+            callbackScope: this,
+            loop: true
         });
         
     /*--------------------------------------------------------------------------------------------------------------------*/
         
         // Creamos el grupo en donde se guardan los personajes que hay en pantalla
-        this.cats = this.physics.add.group();
+        this.cats = this.add.group();
+        
+        // Creamos el grupo en donde se guardan los regalos de los personajes buenos
+        this.gifts = this.add.group();
         
     /*-----------------------------------------------------------------------------------------------------------------------*/
         
@@ -121,7 +138,7 @@ class SceneGame extends Phaser.Scene {
         this.mirilla2.setCollideWorldBounds(true);
         this.mirilla2.body.setSize(10,10,true);
         this.mirilla2.body.setCircle(5);
-        this.mirilla1.setDepth(50);
+        this.mirilla2.setDepth(50);
         
         
         // Colisiones de las mirillas y las dianas
@@ -142,8 +159,10 @@ class SceneGame extends Phaser.Scene {
         this.scoreTextJ2 = this.add.bitmapText(880, 60, 'YW', 'Pts: 0', 30);
         
         // Balas
-        this.bulletTextJ1 = this.add.bitmapText(62, 690, 'YW', '10', 40).setTint(0x000000);
-        this.bulletTextJ2 = this.add.bitmapText(992, 690, 'YW', '50', 40).setTint(0x000000);
+        this.bulletJ1 = 10;
+        this.bulletJ2 = 10;
+        this.bulletTextJ1 = this.add.bitmapText(62, 690, 'YW', this.bulletJ1, 40, 1).setTint(0x000000);
+        this.bulletTextJ2 = this.add.bitmapText(992, 690, 'YW', this.bulletJ2, 40, 1).setTint(0x000000);
         
     /*---------------------------------------------------------------------------------------------------------------------*/
         
@@ -154,6 +173,13 @@ class SceneGame extends Phaser.Scene {
         this.key_D =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.key_F =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         this.key_C =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C);
+        
+        this.input.keyboard.on('keydown_F', function(event){ // cada vez que se pulse F
+            if (this.bulletJ1 > 0){ // si hay balas en el cargador
+                this.bulletJ1 -=1 // dispares donde dispares se gasta una bala
+                this.bulletTextJ1.setText(this.bulletJ1);
+            }
+        }, this);
                 
         // JUGADOR 2
         this.key_UP =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
@@ -163,22 +189,20 @@ class SceneGame extends Phaser.Scene {
         this.key_HOME = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.HOME);
         this.key_END = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.END);
         
+        this.input.keyboard.on('keydown_HOME', function(event){ // cada vez que se pulse INICIO
+            if (this.bulletJ2 > 0){ // si hay balas en el cargador
+                this.bulletJ2 -=1 // dispares donde dispares se gasta una bala
+                this.bulletTextJ2.setText(this.bulletJ2);
+            }
+        }, this);
     }
     
-/******************************************************** U P D A T E *******************************************************************/
-    /*-----------------------------------------------------------------------------------------------------------------------------*/
+/*************************************************************** U P D A T E ******************************************************************/
+    /*---------------------------------------------------------------------------------------------------------------------------------*/
     
     update(delta) {
         this.mirilla1.body.debugBodyColor = this.mirilla1.body.touching.none ? 0x00ffff : 0xffff00;
-        //this.dianasUp();
-        /*this.dianas.children.iterate(function(child){
-            if(child.data.get('status') == 0){
-                child.data.set('status', 1);
-                this.time.delayedCall(Phaser.Math.Between(2000, 7000), this.dianasUp, [child], this);
-            }
-        }, this);*/
-        
-        
+                
         // JUGADOR 1
         if(this.key_W.isDown){
             this.mirilla1.setVelocityY(-350);
@@ -204,23 +228,31 @@ class SceneGame extends Phaser.Scene {
         // Si se pulsa la tecla de disparar y la mirilla está pasando por la diana o está dentro "parada"
         if(this.key_F.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded)){
             
-            if(this.diana1.data.get('status') == 1) { //si la diana está de pie
-                
-                this.diana1.anims.play('abajo', true); // la diana cae
-                this.diana1.data.set('status', 0);
-                
-                this.removeDiana(this.mirilla1, this.diana1); // este jugador ha tirado esta diana
-                this.scoreTextJ1.setText("Pts:" + this.scoreJ1); // se actualiza la puntuación
+            if (this.bulletJ1 > 0){ // si hay balas en el cargador
+
+                if(this.diana1.data.get('status') == 1 && this.diana1.data.get('interactive') == true) { //si la diana está de pie y acepta disparos
+
+                    this.diana1.anims.play('abajo', true); // la diana cae
+                    this.diana1.data.set('status', 0);
+
+                    this.removeDiana(this.mirilla1, this.diana1); // este jugador ha tirado esta diana
+                    this.scoreTextJ1.setText("Pts:" + this.scoreJ1); // se actualiza la puntuación
+                }
             }
         }
         
         if(this.key_C.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded)){
-            if(this.diana1.data.get('status') == 0) { //si la diana está tumbada
+            /*if(this.diana1.data.get('status') == 0) { //si la diana está tumbada
                 this.diana1.anims.play('arriba', true);
                 this.diana1.data.set('status', 1);
                 this.time.delayedCall(1000, this.createDiana, [this.diana1], this);
                 //this.createDiana(this.diana1);
-            }
+            }*/
+            
+            if(this.diana1.data.get('status') == 1 && this.diana1.data.get('interactive') == true) { //si la diana está de pie y acepta interacción
+
+                    this.acceptGift(this.mirilla1, this.diana1); // comprobar si hay regalo que recoger
+                }
         }
         
         
@@ -248,21 +280,30 @@ class SceneGame extends Phaser.Scene {
         
         if(this.key_HOME.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded)){
             
-            if(this.diana2.data.get('status') == 1) { //si la diana está de pie
+            if (this.bulletJ2 > 0){ // si hay balas en el cargador
                 
-                this.diana2.anims.play('abajo', true);
-                this.scoreJ2 += 5;
-                
-                this.scoreTextJ2.setText("Pts:" + this.scoreJ2);
-                this.diana2.data.set('status', 0);
+                if(this.diana2.data.get('status') == 1 && this.diana2.data.get('interactive') == true) { //si la diana está de pie y acepta disparos
+
+                    this.diana2.anims.play('abajo', true); // la diana cae
+                    this.diana2.data.set('status', 0);
+
+                    this.removeDiana(this.mirilla2, this.diana2); // este jugador ha tirado esta diana
+                    this.scoreTextJ2.setText("Pts:" + this.scoreJ2); // se actualiza la puntuación
+
+                }
             }
         }
         
         if(this.key_END.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded)){
-            if(this.diana2.data.get('status') == 0) { //si la diana está tumbada
+            /*if(this.diana2.data.get('status') == 0) { //si la diana está tumbada
                 this.diana2.anims.play('arriba', true);
                 this.diana2.data.set('status', 1);
-            }
+            }*/
+            
+            if(this.diana2.data.get('status') == 1 && this.diana2.data.get('interactive') == true) { //si la diana está de pie y acepta interacción
+
+                    this.acceptGift(this.mirilla2, this.diana2); // comprobar si hay regalo que recoger
+                }
         }
         
     }
@@ -281,175 +322,173 @@ class SceneGame extends Phaser.Scene {
         
         if(tipo<=4) { //30% de posibilidades de bueno
             var bueno = Phaser.Math.Between(1, 6); // cual de todos los buenos?
+            var regalo = Phaser.Math.Between(0,2); // el gato trae regalo? 0 no, 1 balas, 2 power-up
             
             if(bueno <= 1){ // bebé 1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno1');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Bueno1');
                 gato.setDataEnabled();
                 gato.data.set('type', 'baby');
                 gato.data.set('points', -5);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 10000;
+                tiempo = 7000;
             }
             else if(bueno > 1 && bueno <= 2){ // bebé 2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno1b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Bueno1b');
                 gato.setDataEnabled();
                 gato.data.set('type', 'baby');
                 gato.data.set('points', -5);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 10000;
+                tiempo = 7000;
             }
             else if(bueno > 2 && bueno <= 3){ // civil 1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno2');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Bueno2');
                 gato.setDataEnabled();
                 gato.data.set('type', 'civil');
                 gato.data.set('points', -10);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 8000;
+                tiempo = 6000;
             }
             else if(bueno > 3 && bueno <= 4){ // civil 2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno2b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Bueno2b');
                 gato.setDataEnabled();
                 gato.data.set('type', 'civil');
                 gato.data.set('points', -10);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 8000;
+                tiempo = 6000;
             }
             else if(bueno > 4 && bueno <= 5){ // médico 1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno3');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Bueno3');
                 gato.setDataEnabled();
                 gato.data.set('type', 'doctor');
                 gato.data.set('points', -50);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 5000;
+                tiempo = 4000;
             }
             else if(bueno > 5 && bueno <= 6){ // médico 2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno3b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Bueno3b');
                 gato.setDataEnabled();
                 gato.data.set('type', 'doctor');
                 gato.data.set('points', -50);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 5000;
+                tiempo = 4000;
+            }
+            
+            if(regalo == 1){ // el gato trae balas
+                var numBalas = Phaser.Math.Between(1,5); // cuantas balas da el gato bueno?
+                var balas = this.add.image(objetivo.x, objetivo.y + 5, 'Bala');
+                balas.setDataEnabled();
+                balas.data.set('bullets', numBalas);
+                gato.data.set('gifts', balas);
             }
         }
         else { // 70% posibilidades de malo
             var malo = Phaser.Math.Between(1, 8); // qué malo de todos?
             
             if(malo <= 1){ //  1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo1');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo1');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 5);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 10000;
+                tiempo = 7000;
             }
             else if(malo <= 2){ //  2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo1b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo1b');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 5);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 10000;
+                tiempo = 7000;
             }
             else if(malo <= 3){ //  1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo2');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo2');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 10);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 8000;
+                tiempo = 6000;
             }
             else if(malo <= 4){ //  2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo2b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo2b');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 10);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 8000;
+                tiempo = 6000;
             }
             else if(malo <= 5){ //  1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo3');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo3');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 20);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 7000;
+                tiempo = 5000;
             }
             else if(malo <= 6){ //  2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo3b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo3b');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 20);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 7000;
+                tiempo = 5000;
             }
             else if(malo <= 7){ //  1
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo4');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo4');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 50);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 5000;
+                tiempo = 4000;
             }
             else if(malo <= 8){ //  2
-                gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo4b');
-                gato.body.setSize(95,125,true);
+                gato = this.add.image(objetivo.x, (objetivo.y -65), 'Malo4b');
                 gato.setDataEnabled();
                 gato.data.set('type', '');
                 gato.data.set('points', 50);
                 
                 //this.cats.add(gato);
                 
-                tiempo = 5000;
+                tiempo = 4000;
             }
         }
         
         var timer = this.time.delayedCall(tiempo, this.removeDiana, [null, objetivo], this);
-        gato.data.set('timer', timer); // asociamos el timer al gato creado
-        console.log(timer);
+        gato.data.set('timer', timer); // asociamos el timer al gato creado para saber cuanto esperar si no se le dispara
         this.cats.add(gato);
+        objetivo.data.set('interactive', true);
         
     }
     
-    removeDiana(jugador, objetivo){
+/******************************************************** R E M O V E   D I A N A *************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
+    removeDiana(jugador, objetivo){ // eliminar al gato y bajar la diana
         
         if(objetivo.data.get('status') == 1){ // si se ha llamado a la función desde el temporizador la diana está subida, si se ha disparado ya está bajada
             objetivo.anims.play('abajo', true);
@@ -463,37 +502,104 @@ class SceneGame extends Phaser.Scene {
         });
         
         var timer = gato.data.get('timer'); // sacamos el temporizador creado para ese gato
-        console.log(timer);
         timer.remove(false); // borramos el temporizador para que no se llame a la función otra vez
         
         if(jugador == this.mirilla1){ // si es el J1 el que dispara
             this.scoreJ1 += gato.data.get('points'); // se le suman sus puntos
-            if(gato.data.get('points') > 0)
+            
+            if(gato.data.get('points') > 0) // color de la puntuación
                 this.points1 = this.add.bitmapText(130, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
             else
                 this.points1 = this.add.bitmapText(130, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+            
             this.time.delayedCall(600, this.removePoints, [this.points1], this);
         }
-        else if(jugador == this.mirilla2){
+        
+        else if(jugador == this.mirilla2){ // si es el J2 el que dispara
             this.scoreJ2 += gato.data.get('points');
+            
             if(gato.data.get('points') > 0)
-                this.points2 = this.add.bitmapText(130, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
+                this.points2 = this.add.bitmapText(900, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
             else
-                this.points2 = this.add.bitmapText(130, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+                this.points2 = this.add.bitmapText(900, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+            
             this.time.delayedCall(600, this.removePoints, [this.points2], this);
         }
+            
+        if(gato.data.get('gifts') != undefined){ // si el gato viene con regalo
+            gato.data.get('gifts').destroy(); // se elimina a la vez que el gato
+        }
+        
         this.cats.remove(gato, true, true);
+        objetivo.data.set('interactive', false);
         
         //this.time.delayedCall(Phaser.Math.Between(2000, 7000), this.createDiana, [objetivo], this);
     }
     
-    dianasUp(diana) {  
-        diana.anims.play('arriba', 'true');
-        this.time.delayedCall(1000, this.createDiana, [diana], this);
+/********************************************************* A C C E P T   G I F T **************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
+    acceptGift(jugador, objetivo){ // se comprueba si el gato lleva un regalo y se le da al jugador
         
+        var gato;
+        this.cats.children.iterate(function(child){ // de todos los gatos de la escena
+            if (child.x == objetivo.x && child.y == objetivo.y - 65) // sacamos el que se encuentra en la posición de la diana que se está bajando
+                gato = child;
+        });
+        
+        if(gato.data.get('gifts') != undefined){ // si el gato viene con regalo
+            
+            objetivo.anims.play('abajo', true); // tiramos la diana
+            objetivo.data.set('status', 0);
+            objetivo.data.set('interactive', false);
+            
+            var timer = gato.data.get('timer'); // sacamos el temporizador creado para ese gato
+            timer.remove(false); // borramos el temporizador para que no se llame a la función remove
+            
+            var regalo = gato.data.get('gifts'); // recuperamos el regalo que trae el gato
+            
+            if(regalo.data.get('bullets') != undefined){ // si son balas
+                if(jugador == this.mirilla1){ // si lo recoge el jugador 1
+                    this.bulletJ1 += regalo.data.get('bullets'); // se le suman las balas al cargador
+                    this.bulletTextJ1.setText(this.bulletJ1);
+                }
+                else {
+                    this.bulletJ2 += regalo.data.get('bullets'); // se le suman las balas al cargador
+                    this.bulletTextJ2.setText(this.bulletJ2);
+                }
+            }
+            
+            gato.data.get('gifts').destroy(); // se elimina el regalo
+            this.cats.remove(gato, true, true);
+        }
     }
     
-    removePoints(puntos){
+/********************************************************* C H E C K   D I A N A S ************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+  
+    checkDianas(){ // comprueba las dianas que están bajadas y llama a una función que las levanta
+        
+        this.dianas.children.iterate(function(child){ // comprobar todas las dianas
+            if(child.data.get('status') == 0){ // si están abajo
+                child.data.set('status', 1); // las ponemos como que van a subir para que no entren de nuevo en este bucle
+                this.time.delayedCall(Phaser.Math.Between(20, 50) * 100, this.dianasUp, [child], this); // se crea un gato para la diana entre 2 y 7 segundos después
+            }
+        }, this);
+    }
+    
+/*********************************************************** D I A N A S   U P ****************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
+    dianasUp(diana) {  
+        
+        diana.anims.play('arriba', 'true');
+        this.time.delayedCall(850, this.createDiana, [diana], this);
+    }
+    
+/******************************************************* R E M O V E   P O I N T S ************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
+    removePoints(puntos){ // borrar el texto de sumar o restar puntos al marcador
         puntos.destroy();
     }
 }
