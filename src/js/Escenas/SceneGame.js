@@ -90,13 +90,13 @@ class SceneGame extends Phaser.Scene {
         
         // Hacer que las impares se muevan hacia arriba y cambiar las hitboxs
         var i=0;
-        this.dianas.children.iterate(function(child){
+        this.dianas.children.iterate(function(child){ // para todas las dianas
             if(i%2 == 1){
-                child.y -= 100;
+                child.y -= 100; // si es impar la subimos 100 px hacia arriba
             }
-            child.body.setSize(95,125,false).setOffset(40,25);
+            child.body.setSize(95,125,false).setOffset(40,25); // cambiamos la hitbox
             
-            child.anims.play('abajo', 'true');
+            child.anims.play('abajo', 'true'); // bajamos las dianas
             child.setDataEnabled();
             child.data.set('status', 0); //0 abajo, 1 arriba
             i++;
@@ -104,80 +104,17 @@ class SceneGame extends Phaser.Scene {
         
     /*--------------------------------------------------------------------------------------------------------------------*/
         
-            
-        // Metemos todos los NPCs, es decir, a los que no hay que disparar
+        // Creamos el grupo en donde se guardan los personajes que hay en pantalla
         this.cats = this.physics.add.group();
-        /*this.npcs.create(150,485,'Bueno1');
-        this.npcs.create(200,300,'Bueno1b');
-        this.npcs.create(300,485,'Bueno2');
-        this.npcs.create(400,300,'Bueno2b');
-        this.npcs.create(500,485,'Bueno3');
-        this.npcs.create(600,300,'Bueno3b');
-        
-        i = 0;
-        this.npcs.children.iterate(function(child){
-            child.body.setSize(95,125,true);
-            child.setDataEnabled();
-            if(i==0 || i==1){ // bebés
-                child.data.set('type', 'baby');
-                child.data.set('points', -5);
-            } 
-            else if (i==2 || i==3){ // civiles
-                child.data.set('type', 'civil');
-                child.data.set('points', -10);
-            } 
-            else { // doctores
-                child.data.set('type', 'doctor');
-                child.data.set('points', -50)
-            }
-            i++;
-        });*/
-        
-        // Metemos todos los malos, es decir, a los que sí hay que disparar
-        //this.cats = this.physics.add.group();
-        /*this.malos.create(100,500,'Malo1',0,false,true);
-        this.malos.create(200,500,'Malo1b',0,false,true);
-        this.malos.create(300,500,'Malo2',0,false,true);
-        this.malos.create(400,500,'Malo2b',0,false,true);
-        this.malos.create(500,500,'Malo3',0,false,true);
-        this.malos.create(600,500,'Malo3b',0,false,true);
-        this.malos.create(700,500,'Malo4',0,false,true);
-        this.malos.create(800,500,'Malo4b',0,false,true);
-        
-        i = 0;
-        this.malos.children.iterate(function(child){
-            child.body.setSize(95,125,true);
-            child.setDataEnabled();
-            if(i==0 || i==1){
-                child.data.set('type', 'baby');
-                child.data.set('points', 5);
-            } 
-            else if (i==2 || i==3){ //
-                child.data.set('type', 'civil');
-                child.data.set('points', 10);
-            } 
-            else if (i==4 || i== 5){ //
-                child.data.set('type', 'doctor');
-                child.data.set('points', 20)
-            } 
-            else { //
-                child.data.set('type', '');
-                child.data.set('points', 50)
-            }
-            i++;
-        });*/
         
     /*-----------------------------------------------------------------------------------------------------------------------*/
         
-        //this.diana = this.physics.add.sprite(150,500,'Diana');
-        //this.diana.body.setSize(95,125,false).setOffset(40,25);
-        
         // Mirilla Jugador 1 junto con sus arreglos de hitbox
         this.mirilla1 = this.physics.add.image(150,200,'Mirilla1');
-        this.mirilla1.setCollideWorldBounds(true);
-        this.mirilla1.body.setSize(10,10,true);
-        this.mirilla1.body.setCircle(5);
-        this.mirilla1.setDepth(50);
+        this.mirilla1.setCollideWorldBounds(true); // que no se salga de la pantalla
+        this.mirilla1.body.setSize(10,10,true); // hitbox cuadrada centrada
+        this.mirilla1.body.setCircle(5); // hitbox circular
+        this.mirilla1.setDepth(50); // subimos la profundidad para que salga siempre por encima de los gatos de las dianas
         
         // Mirilla Jugador 2 junto con sus arreglos de hitbox
         this.mirilla2 = this.physics.add.image(930,200,'Mirilla2');
@@ -188,8 +125,8 @@ class SceneGame extends Phaser.Scene {
         
         
         // Colisiones de las mirillas y las dianas
-        this.physics.add.overlap(this.mirilla1, this.dianas, function(obj1, obj2){
-            this.diana1 = obj2;
+        this.physics.add.overlap(this.mirilla1, this.dianas, function(obj1, obj2){ // cuando hay overlap
+            this.diana1 = obj2; // guardamos la última diana sobre la que ha estado el jugador
         }, null, this);
         
         this.physics.add.overlap(this.mirilla2, this.dianas, function(obj1, obj2){
@@ -210,8 +147,6 @@ class SceneGame extends Phaser.Scene {
         
     /*---------------------------------------------------------------------------------------------------------------------*/
         
-        
-        
         // JUGADOR 1
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.key_A =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -229,6 +164,9 @@ class SceneGame extends Phaser.Scene {
         this.key_END = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.END);
         
     }
+    
+/******************************************************** U P D A T E *******************************************************************/
+    /*-----------------------------------------------------------------------------------------------------------------------------*/
     
     update(delta) {
         this.mirilla1.body.debugBodyColor = this.mirilla1.body.touching.none ? 0x00ffff : 0xffff00;
@@ -263,13 +201,16 @@ class SceneGame extends Phaser.Scene {
         }
         
         
+        // Si se pulsa la tecla de disparar y la mirilla está pasando por la diana o está dentro "parada"
         if(this.key_F.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded)){
+            
             if(this.diana1.data.get('status') == 1) { //si la diana está de pie
-                this.diana1.anims.play('abajo', true);
+                
+                this.diana1.anims.play('abajo', true); // la diana cae
                 this.diana1.data.set('status', 0);
-                this.removeDiana(this.mirilla1, this.diana1);
-                //this.scoreJ1 += 5;
-                this.scoreTextJ1.setText("Pts:" + this.scoreJ1);
+                
+                this.removeDiana(this.mirilla1, this.diana1); // este jugador ha tirado esta diana
+                this.scoreTextJ1.setText("Pts:" + this.scoreJ1); // se actualiza la puntuación
             }
         }
         
@@ -306,9 +247,12 @@ class SceneGame extends Phaser.Scene {
         
         
         if(this.key_HOME.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded)){
+            
             if(this.diana2.data.get('status') == 1) { //si la diana está de pie
+                
                 this.diana2.anims.play('abajo', true);
                 this.scoreJ2 += 5;
+                
                 this.scoreTextJ2.setText("Pts:" + this.scoreJ2);
                 this.diana2.data.set('status', 0);
             }
@@ -323,17 +267,20 @@ class SceneGame extends Phaser.Scene {
         
     }
     
-    createDiana(objetivo){ // crea el objeto que va a aparecer en la diana objetivo
+/******************************************************** C R E A T E   D I A N A *************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
+    createDiana(objetivo){ // crea el gato que va a aparecer en la diana objetivo
         //65 por encima
         //this.time.addEvent({delay: 10000});
         
         var gato; // gato que se va a crear
-        var tiempo;
+        var tiempo; // el tiempo que va a estar esta diana subida
         
         var tipo = Phaser.Math.Between(1, 10); // bueno o malo?
         
         if(tipo<=4) { //30% de posibilidades de bueno
-            var bueno = Phaser.Math.Between(1, 6);
+            var bueno = Phaser.Math.Between(1, 6); // cual de todos los buenos?
             
             if(bueno <= 1){ // bebé 1
                 gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno1');
@@ -342,7 +289,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', 'baby');
                 gato.data.set('points', -5);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 10000;
             }
@@ -353,7 +300,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', 'baby');
                 gato.data.set('points', -5);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 10000;
             }
@@ -364,7 +311,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', 'civil');
                 gato.data.set('points', -10);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 8000;
             }
@@ -375,35 +322,35 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', 'civil');
                 gato.data.set('points', -10);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 8000;
             }
-            else if(bueno > 4 && bueno <= 5){
+            else if(bueno > 4 && bueno <= 5){ // médico 1
                 gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno3');
                 gato.body.setSize(95,125,true);
                 gato.setDataEnabled();
                 gato.data.set('type', 'doctor');
                 gato.data.set('points', -50);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 5000;
             }
-            else if(bueno > 5 && bueno <= 6){
+            else if(bueno > 5 && bueno <= 6){ // médico 2
                 gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Bueno3b');
                 gato.body.setSize(95,125,true);
                 gato.setDataEnabled();
                 gato.data.set('type', 'doctor');
                 gato.data.set('points', -50);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 5000;
             }
         }
         else { // 70% posibilidades de malo
-            var malo = Phaser.Math.Between(1, 8);
+            var malo = Phaser.Math.Between(1, 8); // qué malo de todos?
             
             if(malo <= 1){ //  1
                 gato = this.physics.add.image(objetivo.x, (objetivo.y -65), 'Malo1');
@@ -412,7 +359,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 5);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 10000;
             }
@@ -423,7 +370,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 5);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 10000;
             }
@@ -434,7 +381,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 10);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 8000;
             }
@@ -445,7 +392,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 10);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 8000;
             }
@@ -456,7 +403,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 20);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 7000;
             }
@@ -467,7 +414,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 20);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 7000;
             }
@@ -478,7 +425,7 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 50);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 5000;
             }
@@ -489,33 +436,52 @@ class SceneGame extends Phaser.Scene {
                 gato.data.set('type', '');
                 gato.data.set('points', 50);
                 
-                this.cats.add(gato);
+                //this.cats.add(gato);
                 
                 tiempo = 5000;
             }
         }
-        this.time.delayedCall(tiempo, this.removeDiana, [null, objetivo], this);
+        
+        var timer = this.time.delayedCall(tiempo, this.removeDiana, [null, objetivo], this);
+        gato.data.set('timer', timer); // asociamos el timer al gato creado
+        console.log(timer);
+        this.cats.add(gato);
+        
     }
     
     removeDiana(jugador, objetivo){
-        if(objetivo.data.get('status') == 1){
+        
+        if(objetivo.data.get('status') == 1){ // si se ha llamado a la función desde el temporizador la diana está subida, si se ha disparado ya está bajada
             objetivo.anims.play('abajo', true);
             objetivo.data.set('status', 0);
         }
         
         var gato;
-        this.cats.children.iterate(function(child){
-            if (child.x == objetivo.x && child.y == objetivo.y - 65)
+        this.cats.children.iterate(function(child){ // de todos los gatos de la escena
+            if (child.x == objetivo.x && child.y == objetivo.y - 65) // sacamos el que se encuentra en la posición de la diana que se está bajando
                 gato = child;
         });
         
-        if(jugador == this.mirilla1){
-            this.scoreJ1 += gato.data.get('points');
+        var timer = gato.data.get('timer'); // sacamos el temporizador creado para ese gato
+        console.log(timer);
+        timer.remove(false); // borramos el temporizador para que no se llame a la función otra vez
+        
+        if(jugador == this.mirilla1){ // si es el J1 el que dispara
+            this.scoreJ1 += gato.data.get('points'); // se le suman sus puntos
+            if(gato.data.get('points') > 0)
+                this.points1 = this.add.bitmapText(130, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
+            else
+                this.points1 = this.add.bitmapText(130, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+            this.time.delayedCall(600, this.removePoints, [this.points1], this);
         }
         else if(jugador == this.mirilla2){
             this.scoreJ2 += gato.data.get('points');
+            if(gato.data.get('points') > 0)
+                this.points2 = this.add.bitmapText(130, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
+            else
+                this.points2 = this.add.bitmapText(130, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+            this.time.delayedCall(600, this.removePoints, [this.points2], this);
         }
-        
         this.cats.remove(gato, true, true);
         
         //this.time.delayedCall(Phaser.Math.Between(2000, 7000), this.createDiana, [objetivo], this);
@@ -527,4 +493,7 @@ class SceneGame extends Phaser.Scene {
         
     }
     
+    removePoints(puntos){
+        puntos.destroy();
+    }
 }
