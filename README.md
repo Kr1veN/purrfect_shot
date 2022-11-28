@@ -203,7 +203,7 @@ Todos los bocetos aparecerán a la izquierda y los escenarios acabados a la dere
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/menu_inicio.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu0.PNG" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/pantallainiciomax.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú principal.  
@@ -390,6 +390,18 @@ Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”
 <p align="center">
 <img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032004158376648744/unknown.png" width = auto height = "100">
 </p>
+Siguiendo este esquema de diseño se han desarollado los siguientes accesorios para poder personalizar tu personaje dentro del juego:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Beige.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Gris.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Marron.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Verde.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Azul.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Rojo.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Verde.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Violeta.png" width = auto height = "60">
+</p>
 
 En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
 
@@ -401,31 +413,6 @@ Siguiendo la paleta de color que se muestra a continuación se han desarrollado 
 </p>
 
 Estos personajes no han seguido una estética en el momento de desearrollarse, es decir, se han intentado hacer lo más dinámicos posibles para que el juego tenga agilidad y cambio. Utilizando la paleta mostrada con anterioridad se han creado variantes de cada uno. 
-A la izquerda se mostrará el enemigo y la derecha su variante de color.
-
-##### Enemigo 1 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%201.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%201%20variante.png" width = auto height = "300">
-</p>
-
-##### Enemigo 2 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%202.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%202%20variante.png" width = auto height = "300">
-</p>
-
-##### Enemigo 3 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%203.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%203%20variante.png" width = auto height = "300">
-</p>
-
-##### Enemigo 4 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%204.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Malo%204%20variante.png" width = auto height = "300">
-</p>
 
 - Residentes: estos tendrán tonos tirando más al pastel:
 Con los personajes buenos se ha seguido la misma rúbrica que con los enemigos. Se ha empleado la paleta que aparece a continuación y se han creado varios modelos para otorgar dinamismo. 
@@ -435,23 +422,6 @@ Con los personajes buenos se ha seguido la misma rúbrica que con los enemigos. 
 </p>
 
 Tomando estos colores se ha variado cada personaje para conseguir una amplia gama de distinción
-##### Residente 1 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Bueno%201.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Bueno%201%20variante.png" width = auto height = "300">
-</p>
-
-##### Residente 2 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Bueno%202.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Bueno%202%20variante.png" width = auto height = "300">
-</p>
-
-##### Residente 3 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Bueno%203.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/Bueno%203%20variante.png" width = auto height = "300">
-</p>
 
 El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
 
@@ -465,11 +435,24 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 Esta idea se ha implementado en los personajes que ya se habán desarollado y que se muestran en los apartados anteriores. EL resulatdo qeu se ha obtenido se muestra a continuación: 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%201.png" width = auto height = "100">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203.png" width = auto height = "100">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%202.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%203.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%201.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%202.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203.png" width = auto height = "100">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%204.png" width = auto height = "100">
 </p>
+Las variantes que se han creado de estos personajes son los siguientes:
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%201%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%202%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%203%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%201%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%202%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%204%20variante.png" width = auto height = "100">
+</p>
 ### 4.3. Logo
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
