@@ -453,6 +453,7 @@ Las variantes que se han creado de estos personajes son los siguientes:
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203%20variante.png" width = auto height = "100">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%204%20variante.png" width = auto height = "100">
 </p>
+
 ### 4.3. Logo
 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
