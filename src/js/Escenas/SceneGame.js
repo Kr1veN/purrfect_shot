@@ -22,24 +22,30 @@ class SceneGame extends Phaser.Scene {
    
     preload() {
         this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
-        this.load.image('Marco', 'assets/marco.png');
+        this.load.image('Marco', 'assets/marco2.png');
+        this.load.image('Manecilla', 'assets/manecilla.png');
         this.load.spritesheet('Diana', 'assets/Diana.png', {frameWidth: 175, frameHeight: 300});
         
-        this.load.image('Bueno1', 'assets/Personajes reescalados/Bueno1.png')
-        this.load.image('Bueno1b', 'assets/Personajes reescalados/Bueno1b.png')
-        this.load.image('Bueno2', 'assets/Personajes reescalados/Bueno2.png')
-        this.load.image('Bueno2b', 'assets/Personajes reescalados/Bueno2b.png')
-        this.load.image('Bueno3', 'assets/Personajes reescalados/Bueno3.png')
-        this.load.image('Bueno3b', 'assets/Personajes reescalados/Bueno3b.png')
+        this.load.image('Bueno1', 'assets/Personajes reescalados/Bueno1.png');
+        this.load.image('Bueno1b', 'assets/Personajes reescalados/Bueno1b.png');
+        this.load.image('Bueno2', 'assets/Personajes reescalados/Bueno2.png');
+        this.load.image('Bueno2b', 'assets/Personajes reescalados/Bueno2b.png');
+        this.load.image('Bueno3', 'assets/Personajes reescalados/Bueno3.png');
+        this.load.image('Bueno3b', 'assets/Personajes reescalados/Bueno3b.png');
         
-        this.load.image('Malo1', 'assets/Personajes reescalados/Malo1.png')
-        this.load.image('Malo1b', 'assets/Personajes reescalados/Malo1b.png')
-        this.load.image('Malo2', 'assets/Personajes reescalados/Malo2.png')
-        this.load.image('Malo2b', 'assets/Personajes reescalados/Malo2b.png')
-        this.load.image('Malo3', 'assets/Personajes reescalados/Malo3.png')
-        this.load.image('Malo3b', 'assets/Personajes reescalados/Malo3b.png')
-        this.load.image('Malo4', 'assets/Personajes reescalados/Malo4.png')
-        this.load.image('Malo4b', 'assets/Personajes reescalados/Malo4b.png')
+        this.load.image('Malo1', 'assets/Personajes reescalados/Malo1.png');
+        this.load.image('Malo1b', 'assets/Personajes reescalados/Malo1b.png');
+        this.load.image('Malo2', 'assets/Personajes reescalados/Malo2.png');
+        this.load.image('Malo2b', 'assets/Personajes reescalados/Malo2b.png');
+        this.load.image('Malo3', 'assets/Personajes reescalados/Malo3.png');
+        this.load.image('Malo3b', 'assets/Personajes reescalados/Malo3b.png');
+        this.load.image('Malo4', 'assets/Personajes reescalados/Malo4.png');
+        this.load.image('Malo4b', 'assets/Personajes reescalados/Malo4b.png');
+        
+        this.load.image('Personaje1', 'assets/Personajes reescalados/BackGatoBlanco.png');
+        this.load.image('Personaje2', 'assets/Personajes reescalados/BackGatoNaranja.png');
+        this.load.image('Personaje3', 'assets/Personajes reescalados/BackGatoNegro.png');
+        this.load.image('Personaje4', 'assets/Personajes reescalados/BackGatoTricolor.png');
         
         this.load.image('Mirilla1', 'assets/MirillaJ1.png');
         this.load.image('Mirilla2', 'assets/MirillaJ2.png');
@@ -56,7 +62,9 @@ class SceneGame extends Phaser.Scene {
             
         this.fondo1 = this.add.image(540,375,'Fondo1');
         this.marco = this.add.image(540,375,'Marco');
+        this.manecilla = this.add.image(540,69,'Manecilla');
         
+        this.globalClock = this.time.addEvent({ delay: 90000, callback: this.endGame, callbackScope: this, paused: true }); // min y medio
         
         /*var add = this.add;
         WebFont.load({
@@ -113,8 +121,19 @@ class SceneGame extends Phaser.Scene {
             delay: 1000, // cada segundo
             callback: this.checkDianas,
             callbackScope: this,
-            loop: true
+            loop: true,
+            paused: true
         });
+        
+    /*----------------------------------------------------------------------------------------------------------------------*/
+        
+        this.shooter1 = this.add.group();
+        var skin1 = 'Personaje1';
+        this.shooter1.add(this.add.image(260, 730, skin1).setFlipX(true));
+        
+        this.shooter2 = this.add.group();
+        var skin2 = 'Personaje4';
+        this.shooter2.add(this.add.image(820, 730, skin2));
         
     /*--------------------------------------------------------------------------------------------------------------------*/
         
@@ -161,8 +180,8 @@ class SceneGame extends Phaser.Scene {
         // Balas
         this.bulletJ1 = 10;
         this.bulletJ2 = 10;
-        this.bulletTextJ1 = this.add.bitmapText(62, 690, 'YW', this.bulletJ1, 40, 1).setTint(0x000000);
-        this.bulletTextJ2 = this.add.bitmapText(992, 690, 'YW', this.bulletJ2, 40, 1).setTint(0x000000);
+        this.bulletTextJ1 = this.add.bitmapText(63, 690, 'YW', this.bulletJ1, 40, 1).setTint(0x000000);
+        this.bulletTextJ2 = this.add.bitmapText(995, 690, 'YW', this.bulletJ2, 40, 1).setTint(0x000000);
         
     /*---------------------------------------------------------------------------------------------------------------------*/
         
@@ -175,9 +194,11 @@ class SceneGame extends Phaser.Scene {
         this.key_C =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C);
         
         this.input.keyboard.on('keydown_F', function(event){ // cada vez que se pulse F
-            if (this.bulletJ1 > 0){ // si hay balas en el cargador
-                this.bulletJ1 -=1 // dispares donde dispares se gasta una bala
-                this.bulletTextJ1.setText(this.bulletJ1);
+            if(this.globalClock.paused == false && this.globalClock.hasDispatched == false){ //cuando esté corriendo el tiempo
+                if (this.bulletJ1 > 0){ // si hay balas en el cargador
+                    this.bulletJ1 -=1 // dispares donde dispares se gasta una bala
+                    this.bulletTextJ1.setText(this.bulletJ1);
+                }
             }
         }, this);
                 
@@ -190,18 +211,35 @@ class SceneGame extends Phaser.Scene {
         this.key_END = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.END);
         
         this.input.keyboard.on('keydown_HOME', function(event){ // cada vez que se pulse INICIO
-            if (this.bulletJ2 > 0){ // si hay balas en el cargador
-                this.bulletJ2 -=1 // dispares donde dispares se gasta una bala
-                this.bulletTextJ2.setText(this.bulletJ2);
+            if(this.globalClock.paused == false && this.globalClock.hasDispatched == false){ //cuando esté corriendo el tiempo
+                if (this.bulletJ2 > 0){ // si hay balas en el cargador
+                    this.bulletJ2 -=1 // dispares donde dispares se gasta una bala
+                    this.bulletTextJ2.setText(this.bulletJ2);
+                }
             }
         }, this);
+        
+        this.countDown = this.time.addEvent({ delay: 8000, callback: this.startGame, callbackScope: this });
+        this.info = this.add.bitmapText(540, 200, 'YW', '', 70, 1).setOrigin(0.5);
     }
     
 /*************************************************************** U P D A T E ******************************************************************/
     /*---------------------------------------------------------------------------------------------------------------------------------*/
     
     update(delta) {
+        
+        if(this.countDown.getOverallProgress() < 0.3) {
+            this.info.setText('Preparados');
+        }
+        else if(this.countDown.getOverallProgress() < 0.6) {
+            this.info.setText('Listos');
+        }
+        else if(this.countDown.getOverallProgress() < 1) {
+            this.info.setText('¡¡YA!!');
+        }
+        
         this.mirilla1.body.debugBodyColor = this.mirilla1.body.touching.none ? 0x00ffff : 0xffff00;
+        this.displayClock();
                 
         // JUGADOR 1
         if(this.key_W.isDown){
@@ -226,7 +264,7 @@ class SceneGame extends Phaser.Scene {
         
         
         // Si se pulsa la tecla de disparar y la mirilla está pasando por la diana o está dentro "parada"
-        if(this.key_F.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded)){
+        if(this.key_F.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded) && this.globalClock.hasDispatched == false){
             
             if (this.bulletJ1 > 0){ // si hay balas en el cargador
 
@@ -278,7 +316,7 @@ class SceneGame extends Phaser.Scene {
         }
         
         
-        if(this.key_HOME.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded)){
+        if(this.key_HOME.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded) && this.globalClock.hasDispatched == false){
             
             if (this.bulletJ2 > 0){ // si hay balas en el cargador
                 
@@ -601,5 +639,34 @@ class SceneGame extends Phaser.Scene {
     
     removePoints(puntos){ // borrar el texto de sumar o restar puntos al marcador
         puntos.destroy();
+    }
+
+    displayClock(){
+        var angulo = 360 * this.globalClock.getOverallProgress();
+        
+        this.manecilla.setAngle(angulo);
+    }
+    
+    startGame(){
+        this.globalClock.paused = false;
+        this.loopDianas.paused = false;
+        this.info.setText('');
+        this.countDown.remove(false);
+    }
+    
+    endGame(){
+        
+        this.info.setText('Fin de partida');
+        
+        //this.time.removeAllEvents();
+        //console.log(this.time);
+        this.loopDianas.remove(false);
+        
+        /*this.dianas.children.iterate(function(child){
+            if(child.data.get('interactive') == true){
+                this.time.delayedCall(3000, this.removeDiana, [null, child], this);
+            }
+        }, this);*/
+        
     }
 }
