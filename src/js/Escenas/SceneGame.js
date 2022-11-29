@@ -50,6 +50,11 @@ class SceneGame extends Phaser.Scene {
         this.load.image('Mirilla1', 'assets/MirillaJ1.png');
         this.load.image('Mirilla2', 'assets/MirillaJ2.png');
         this.load.image('Bala', 'assets/bala.png');
+        this.load.image('Power', 'assets/power.png');
+        this.load.image('PU1', 'assets/PU1.png');
+        this.load.image('PU2', 'assets/PU2.png');
+        this.load.image('PU3', 'assets/PU3.png');
+        
         //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
         this.load.bitmapFont('Bonzer', 'assets/fonts/BonzerSanFrancisco.png', 'assets/fonts/BonzerSanFrancisco.xml');
         this.load.bitmapFont('YW', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
@@ -152,6 +157,12 @@ class SceneGame extends Phaser.Scene {
         this.mirilla1.body.setCircle(5); // hitbox circular
         this.mirilla1.setDepth(50); // subimos la profundidad para que salga siempre por encima de los gatos de las dianas
         
+        this.mirilla1.setDataEnabled();
+        this.mirilla1.data.set('PU1', this.add.image(350, 75, 'PU1').setTint(0x333333));
+        this.mirilla1.data.set('PU2', this.add.image(400, 75, 'PU2').setTint(0x333333));
+        this.mirilla1.data.set('PU3', this.add.image(450, 75, 'PU3').setTint(0x333333));
+        
+        
         // Mirilla Jugador 2 junto con sus arreglos de hitbox
         this.mirilla2 = this.physics.add.image(930,200,'Mirilla2');
         this.mirilla2.setCollideWorldBounds(true);
@@ -159,6 +170,10 @@ class SceneGame extends Phaser.Scene {
         this.mirilla2.body.setCircle(5);
         this.mirilla2.setDepth(50);
         
+        this.mirilla2.setDataEnabled();
+        this.mirilla2.data.set('PU1', this.add.image(730, 75, 'PU1').setTint(0x333333));
+        this.mirilla2.data.set('PU2', this.add.image(680, 75, 'PU2').setTint(0x333333));
+        this.mirilla2.data.set('PU3', this.add.image(630, 75, 'PU3').setTint(0x333333));
         
         // Colisiones de las mirillas y las dianas
         this.physics.add.overlap(this.mirilla1, this.dianas, function(obj1, obj2){ // cuando hay overlap
@@ -185,7 +200,7 @@ class SceneGame extends Phaser.Scene {
         
     /*---------------------------------------------------------------------------------------------------------------------*/
         
-        // JUGADOR 1
+        // JUGADOR 1        
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.key_A =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.key_S =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -195,7 +210,7 @@ class SceneGame extends Phaser.Scene {
         
         this.input.keyboard.on('keydown_F', function(event){ // cada vez que se pulse F
             if(this.globalClock.paused == false && this.globalClock.hasDispatched == false){ //cuando esté corriendo el tiempo
-                if (this.bulletJ1 > 0){ // si hay balas en el cargador
+                if (this.mirilla1.data.get('infinite bullets') != true && this.bulletJ1 > 0){ // si el power up está desactivado y si hay balas en el cargador
                     this.bulletJ1 -=1 // dispares donde dispares se gasta una bala
                     this.bulletTextJ1.setText(this.bulletJ1);
                 }
@@ -212,7 +227,7 @@ class SceneGame extends Phaser.Scene {
         
         this.input.keyboard.on('keydown_HOME', function(event){ // cada vez que se pulse INICIO
             if(this.globalClock.paused == false && this.globalClock.hasDispatched == false){ //cuando esté corriendo el tiempo
-                if (this.bulletJ2 > 0){ // si hay balas en el cargador
+                if (this.mirilla2.data.get('infinite bullets') != true && this.bulletJ2 > 0){ // si el power up está desactivado y si hay balas en el cargador
                     this.bulletJ2 -=1 // dispares donde dispares se gasta una bala
                     this.bulletTextJ2.setText(this.bulletJ2);
                 }
@@ -279,7 +294,7 @@ class SceneGame extends Phaser.Scene {
             }
         }
         
-        if(this.key_C.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded)){
+        if(this.key_C.isDown && (!this.mirilla1.body.touching.none || this.mirilla1.body.embedded) && this.globalClock.hasDispatched == false){
             /*if(this.diana1.data.get('status') == 0) { //si la diana está tumbada
                 this.diana1.anims.play('arriba', true);
                 this.diana1.data.set('status', 1);
@@ -332,7 +347,7 @@ class SceneGame extends Phaser.Scene {
             }
         }
         
-        if(this.key_END.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded)){
+        if(this.key_END.isDown && (!this.mirilla2.body.touching.none || this.mirilla2.body.embedded) && this.globalClock.hasDispatched == false){
             /*if(this.diana2.data.get('status') == 0) { //si la diana está tumbada
                 this.diana2.anims.play('arriba', true);
                 this.diana2.data.set('status', 1);
@@ -423,6 +438,8 @@ class SceneGame extends Phaser.Scene {
                 tiempo = 4000;
             }
             
+            // REGALOS
+            
             if(regalo == 1){ // el gato trae balas
                 var numBalas = Phaser.Math.Between(1,5); // cuantas balas da el gato bueno?
                 var balas = this.add.image(objetivo.x, objetivo.y + 5, 'Bala');
@@ -430,7 +447,15 @@ class SceneGame extends Phaser.Scene {
                 balas.data.set('bullets', numBalas);
                 gato.data.set('gifts', balas);
             }
+            else if(regalo == 2){ // el gato trae un power-up
+                var numPower = Phaser.Math.Between(1,3); // qué power-up da? 1. Balas inf, 2. Diplomacia, 3. Justicia
+                var poder = this.add.image(objetivo.x, objetivo.y + 5, 'Power');
+                poder.setDataEnabled();
+                poder.data.set('power up', numPower);
+                gato.data.set('gifts', poder);
+            }
         }
+        
         else { // 70% posibilidades de malo
             var malo = Phaser.Math.Between(1, 8); // qué malo de todos?
             
@@ -542,24 +567,38 @@ class SceneGame extends Phaser.Scene {
         var timer = gato.data.get('timer'); // sacamos el temporizador creado para ese gato
         timer.remove(false); // borramos el temporizador para que no se llame a la función otra vez
         
+        var puntos = gato.data.get('points');
+        
+        if(jugador != null){ // si es un jugador quien tira la diana leemos si tiene algun power up
+            console.log(jugador.data.get('diplomacy'))
+            if(jugador.data.get('diplomacy') == true){ // si la diplomacia está activada
+                if(puntos < 0) // todos los puntos negativos
+                    puntos = 0;   // no se suman
+            }
+            if(jugador.data.get('justice') == true){ // si la justicia está activada
+                if(puntos > 0) // todos los puntos positivos
+                    puntos = Phaser.Math.CeilTo(puntos * 1.1); // se le suma el 10%
+            }
+        }
+        
         if(jugador == this.mirilla1){ // si es el J1 el que dispara
-            this.scoreJ1 += gato.data.get('points'); // se le suman sus puntos
+            this.scoreJ1 += puntos; // se le suman sus puntos
             
-            if(gato.data.get('points') > 0) // color de la puntuación
-                this.points1 = this.add.bitmapText(130, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
+            if(puntos > 0) // color de la puntuación
+                this.points1 = this.add.bitmapText(130, 90, 'YW', '+' + puntos, 30, 1).setTint(0x95ff00);
             else
-                this.points1 = this.add.bitmapText(130, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+                this.points1 = this.add.bitmapText(130, 90, 'YW', puntos, 30, 1).setTint(0xff0000);
             
             this.time.delayedCall(600, this.removePoints, [this.points1], this);
         }
         
         else if(jugador == this.mirilla2){ // si es el J2 el que dispara
-            this.scoreJ2 += gato.data.get('points');
+            this.scoreJ2 += puntos;
             
-            if(gato.data.get('points') > 0)
-                this.points2 = this.add.bitmapText(900, 90, 'YW', '+' + gato.data.get('points'), 30, 1).setTint(0x95ff00);
+            if(puntos > 0)
+                this.points2 = this.add.bitmapText(900, 90, 'YW', '+' + puntos, 30, 1).setTint(0x95ff00);
             else
-                this.points2 = this.add.bitmapText(900, 90, 'YW', gato.data.get('points'), 30, 1).setTint(0xff0000);
+                this.points2 = this.add.bitmapText(900, 90, 'YW', puntos, 30, 1).setTint(0xff0000);
             
             this.time.delayedCall(600, this.removePoints, [this.points2], this);
         }
@@ -606,6 +645,30 @@ class SceneGame extends Phaser.Scene {
                     this.bulletTextJ2.setText(this.bulletJ2);
                 }
             }
+            else if(regalo.data.get('power up') != undefined){ // si es un power-up
+                var tipo = regalo.data.get('power up');
+                if(tipo == 1){ // si son balas infinitas
+                    if(jugador.data.get('infinite bullets') != true){ // si ya tienes el power up activado no se reactiva
+                        jugador.data.set('infinite bullets', true);
+                        jugador.data.set('PU1', jugador.data.get('PU1').clearTint());
+                        this.time.delayedCall(8000, this.powerDown, [jugador, 'infinite bullets', 'PU1'], this);
+                    }
+                }
+                else if(tipo == 2){ // si es diplomacia con los residentes
+                    if(jugador.data.get('dimoplacy') != true){
+                        jugador.data.set('diplomacy', true);
+                        jugador.data.set('PU2', jugador.data.get('PU2').clearTint());
+                        this.time.delayedCall(8000, this.powerDown, [jugador, 'diplomacy', 'PU2'], this);
+                    }
+                }
+                else if(tipo == 3){ // si es aumento de puntuación
+                    if(jugador.data.get('justice') != true){
+                        jugador.data.set('justice', true);
+                        jugador.data.set('PU2', jugador.data.get('PU3').clearTint());
+                        this.time.delayedCall(10000, this.powerDown, [jugador, 'justice', 'PU3'], this);
+                    }
+                }
+            }
             
             gato.data.get('gifts').destroy(); // se elimina el regalo
             this.cats.remove(gato, true, true);
@@ -640,19 +703,36 @@ class SceneGame extends Phaser.Scene {
     removePoints(puntos){ // borrar el texto de sumar o restar puntos al marcador
         puntos.destroy();
     }
+    
+/*********************************************************** P O W E R   D O W N **************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
+    powerDown(jugador, poder, icono){ // se desactiva el poder
+        jugador.data.set(poder, false);
+        jugador.data.set(icono, jugador.data.get(icono).setTint(0x333333));
+    }
 
+/******************************************************* D I S P L A Y   C L O C K ************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+    
     displayClock(){
         var angulo = 360 * this.globalClock.getOverallProgress();
         
         this.manecilla.setAngle(angulo);
     }
     
+/*********************************************************** S T A R T   G A M E **************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
+        
     startGame(){
         this.globalClock.paused = false;
         this.loopDianas.paused = false;
         this.info.setText('');
         this.countDown.remove(false);
     }
+    
+/************************************************************* E N D   G A M E ****************************************************************/
+    /*--------------------------------------------------------------------------------------------------------------------------------*/
     
     endGame(){
         
