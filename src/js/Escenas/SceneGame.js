@@ -1,4 +1,4 @@
-class SceneGame extends Phaser.Scene {
+class SceneMenu extends Phaser.Scene {
     constructor() {
         super({key:"SceneConf)"});
     }
@@ -21,6 +21,7 @@ class SceneGame extends Phaser.Scene {
     /*---------------------------------------------------------------------------------------------------------------------------------*/
    
     preload() {
+
         this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
         this.load.image('Marco', 'assets/Menus/MenusJuego/inGame/marco2.png');
         this.load.image('Manecilla', 'assets/Menus/MenusJuego/inGame/manecilla.png');
@@ -62,6 +63,7 @@ class SceneGame extends Phaser.Scene {
         this.load.audio('Bang', ['assets/sounds/bang.ogg', 'assets/sounds/bang.mp3']);
         this.load.audio('Empty', ['assets/sounds/empty.ogg', 'assets/sounds/empty.mp3']);
         this.load.audio('Reload', ['assets/sounds/reload.ogg', 'assets/sounds/reload.mp3']);
+
     }
     
 /*************************************************************** C R E A T E ******************************************************************/
