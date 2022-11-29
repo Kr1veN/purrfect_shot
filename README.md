@@ -1,6 +1,6 @@
 # PURRFECT_SHOT 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "auto" height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "150">
 </p>
 
 ## 1. INTRODUCCIÓN
@@ -73,8 +73,8 @@ Durante la partida los jugadores pueden realizar 3 tipos de movimientos básicos
 - Apuntar: Se trata del movimiento de la mirilla a izquierda o derecha, para que el jugador pueda elegir el objetivo en pantalla al que realizar la siguiente acción.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/cursor_con_mirilla1.png?raw=true" width = auto height = "200">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/cursor_con_mirilla2.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/cursor_con_mirilla1.png" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/cursor_con_mirilla2.png" width = auto height = "200">
 </p>
 
 - Disparar: Se trata de apretar el gatillo y disparar una bala del cargador al objetivo apuntado. En el caso de que el objetivo sea un bandido, se suman al jugador que dispara los puntos correspondientes a la recompensa del enemigo.
@@ -168,7 +168,7 @@ Los controles en línea son iguales que en local para el jugador 1. Los controle
   - Recoger objeto: tecla  ↓ (marcada en azul).
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/teclado.png?raw=true" width = "520" height = auto>
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/teclado.png" width = "520" height = auto>
 </p>
 
 #### 2.4.2. Cámara
@@ -176,7 +176,7 @@ Los controles en línea son iguales que en local para el jugador 1. Los controle
 Será una cámara estática que muestra a los personajes de espalda y por la parte de delante se encuentran las “dianas”  (enemigos) a los cuales tendremos que disparar.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/wii_referencia.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/wii_referencia.png" width = auto height = "200">
 </p>
 
 #### 2.5. Logros
@@ -195,14 +195,15 @@ Todos los bocetos aparecerán a la izquierda y los escenarios acabados a la dere
 ### 3.1. Diagrama de Flujo 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/diagrama_flujo.png?raw=true" width = auto height = "650">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/diagrama_flujo.png" width = auto height = "650">
 
 </p>
 
 ### 3.2. Menú principal
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/menu_inicio.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/menu_inicio.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/pantallainiciomax.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú principal.  
@@ -212,7 +213,8 @@ __Estados del juego__: Con esta pantalla podemos acceder a “Jugar”, el cual 
 ### 3.3. Interfaz de elección de jugadores y tipo de juego 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu1.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu1.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu1.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Ajustes de jugadores y tipo de juego  
@@ -222,7 +224,8 @@ __Estados del juego__: Permite al usuario elegir el número de jugadores navegan
 ### 3.4. Interfaz de sala
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu2.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu2.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu2.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Elección de sala.  
@@ -233,7 +236,8 @@ El último botón “Atrás” permite al usuario retroceder a la pantalla de ju
 ### 3.5. Interfaz de personalización de partida
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu3.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu3.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu3.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personalización de partida.  
@@ -245,7 +249,8 @@ Se podrá volver a la pantalla anterior con el botón “Atrás” y empezar la 
 ### 3.6. Interfaz de elección de personaje
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRMenu4.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRMenu4.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menup.PNG" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personalización de personajes.  
@@ -253,19 +258,19 @@ __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a 
 __Estados del juego__: En esta interfaz aparecerá el nombre del gato seleccionado con una pequeña descripción a su lado (para leer la descripción de cada personaje ir al apartado 2.3.1 Personajes principales):
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/eleccion_personaje.jpg?raw=true" width = auto height = "250">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/eleccion_personaje.jpg" width = auto height = "250">
 </p>
 
 Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado, se verán en la misma interfaz de la siguiente manera:
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/eleccion_ropa.jpg?raw=true" width = auto height = "250">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/eleccion_ropa.jpg" width = auto height = "250">
 </p>
 
 ### 3.7. Interfaz del juego 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/ingame.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/ingame.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Interfaz de juego.  
@@ -276,7 +281,8 @@ Abajo en las esquinas izquierda y derecha respectivamente se mostrarán las bala
 ### 3.8. Menú de opciones
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/opciones.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/opciones.png" width = auto height = "300">
+  <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/MenusJuego/opciones.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Menú de opciones.  
@@ -287,7 +293,8 @@ Tenemos una parte del menú dedicado a los controles para que el jugador pueda r
 ### 3.9. Interfaces de los jugadores
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/vs.png?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/vs.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/MenusJuego/inGame/vs.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
@@ -319,33 +326,33 @@ El arte final del juego se basará en un dibujo 2D con sombras duras tanto en la
 Con el objetivo de crear una cohesión en todos los elementos del juegos, hemos creado una paleta base en la que nos guiaremos. Esta está basada en los siguientes colores:
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Bandidos.png" width = auto height = "200">
 </p>
 
 Los cuatro primeros colores irán más acorde a las estética del antiguo oeste, con el añadido de algunos detalles en azul y verde para no quedarnos únicamente con una gama de colores monocromática. En cuanto a los personajes, estos se saldrán un poco de esta paleta, pero siguiendo la misma tonalidad para que no haya un gran contraste.  
 A continuación se mostrarán los primeros bocetos de los escenarios que se han desarrollado:
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario1.png?raw=true" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/escenario2.PNG?raw=true" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/escenario1.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/escenario2.PNG" width = auto height = "300">
 </p>
 
 Una vez los escenarios se han terminado se ha hecho una alternativa en cada uno de ellos; todos estarán diseñados tanto de día como de noche y se mostrarán aquí respectivamente.
 ##### Calle de día y de noche
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/calledia.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/callenoche.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Fondos/calledia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Fondos/callenoche.png" width = auto height = "300">
 </p>
 
 ##### Granero de día y de noche
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/granerodia.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/graneronoche.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Fondos/granerodia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Fondos/graneronoche.png" width = auto height = "300">
 </p>
 
 ##### Desierto de día
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Fondos/desiertodia.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Fondos/desiertodia.png" width = auto height = "300">
 </p>
 
 Por otro lado, los jugadores tendrán cuatro gatos, a elegir uno. Todos se verán con una misma pose pero se distinguirán en su gama de colores: 
@@ -353,35 +360,47 @@ La paleta de colores aparecerá en la parte izquierda, mientras que el personaje
 - __Cat Love-Nat Love__: presenta colores blancos con tonos sucios y su color de ojos será azul.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Cat_Love.png?raw=true" width = auto height = "150">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoBlanco.png?raw=true" width = auto height = "190">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Cat_Love.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/PersonajeGatoBlanco.png" width = auto height = "190">
 </p>
 
 - __Kitty el Niño-Billy el Niño__: su pelaje será negro y gris con ojos verdes para más contraste.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Paw_Allison.png?raw=true" width = auto height = "150">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoNegro.png?raw=true" width = auto height = "190">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Kitty_El_Ni%C3%B1o.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/PersonajeGatoNegro.png" width = auto height = "190">
 </p>
 
 - __Paw Allison-Clay Allison__: gato típicamente conocido como “tricolor”, con una base blanca y manchas en naranja y negro. Sus ojos serán de un color similar al naranja de su color de pelo.
 
 <p align="center">
-<img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032003871721128016/unknown.png" width = auto height = "150">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoTricolor.png" width = auto height = "190">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Paw_Allison.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/PersonajeGatoTricolor.png" width = auto height = "190">
 </p>
 
 - __Tiger Tim-Buffalo Bill__: veremos una base naranja con rayas de la misma tonalidad por todo su diseño. Su color de ojos será en tonos verdes. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Tiger_Tim.png?raw=true" width = auto height = "150">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/PersonajeGatoNaranja.png" width = auto height = "190">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Tiger_Tim.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/PersonajeGatoNaranja.png" width = auto height = "190">
 </p>
 
 Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”, los colores de la elección de prendas de nuestro personaje seguirán la tonalidad del juego, los Bandidosy los Residentes.
 
 <p align="center">
 <img src = "https://cdn.discordapp.com/attachments/1029696274838081580/1032004158376648744/unknown.png" width = auto height = "100">
+</p>
+Siguiendo este esquema de diseño se han desarollado los siguientes accesorios para poder personalizar tu personaje dentro del juego:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Beige.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Gris.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Marron.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Gorro%20Verde.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Azul.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Rojo.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Verde.png" width = auto height = "60">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Accesorios%20reescalados/Panuelo%20Violeta.png" width = auto height = "60">
 </p>
 
 En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mostrados con detalles como el puntaje y diferentes poses. Además, cada uno de ellos tendrá una variación de dos colores, para añadir más dinámica y dificultad al juego.  
@@ -390,69 +409,49 @@ En cuanto a los Bandidos y los Residentes veremos un diseño similar a los ya mo
 Siguiendo la paleta de color que se muestra a continuación se han desarrollado varios enemigos
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Bandidos.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Bandidos.png" width = auto height = "200">
 </p>
 
 Estos personajes no han seguido una estética en el momento de desearrollarse, es decir, se han intentado hacer lo más dinámicos posibles para que el juego tenga agilidad y cambio. Utilizando la paleta mostrada con anterioridad se han creado variantes de cada uno. 
-A la izquerda se mostrará el enemigo y la derecha su variante de color.
-
-##### Enemigo 1 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%201.png?raw=true" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%201%20variante.png?raw=true" width = auto height = "300">
-</p>
-
-##### Enemigo 2 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%202.png?raw=true" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%202%20variante.png?raw=true" width = auto height = "300">
-</p>
-
-##### Enemigo 3 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%203%20variante.png" width = auto height = "300">
-</p>
-
-##### Enemigo 4 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Malo%204%20variante.png" width = auto height = "300">
-</p>
 
 - Residentes: estos tendrán tonos tirando más al pastel:
 Con los personajes buenos se ha seguido la misma rúbrica que con los enemigos. Se ha empleado la paleta que aparece a continuación y se han creado varios modelos para otorgar dinamismo. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/Paleta_Residentes.png?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Paleta_Residentes.png" width = auto height = "200">
 </p>
 
 Tomando estos colores se ha variado cada personaje para conseguir una amplia gama de distinción
-##### Residente 1 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%201.png?raw=true" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%201%20variante.png?raw=true" width = auto height = "300">
-</p>
-
-##### Residente 2 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%202.png?raw=true" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%202%20variante.png?raw=true" width = auto height = "300">
-</p>
-
-##### Residente 3 y sus variantes 
-<p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203.png" width = auto height = "300">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/Personajes/Bueno%203%20variante.png" width = auto height = "300">
-</p>
 
 El objetivo de estos colores es conseguir que el jugador distinga con velocidad quiénes son los personajes que tiene que disparar y cuales son los que tiene que recoger ítem. Los colores mostrados serán ligeramente modificados para que se adapten mejor a la tonalidad del entorno y las interfaces.
 
 Añadir que tanto los personajes jugables en su selección, como los Bandidos y los Residentes in-game, tendrán un diseño que simula una pegatina, tal y como se muestra en la siguientes imágenes:
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/pegatinas.png?raw=true" width = auto height = "200">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/pegatinachincheta.jpg?raw=true" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/pegatinas.png" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/pegatinachincheta.jpg" width = auto height = "200">
+</p>
+
+Esta idea se ha implementado en los personajes que ya se habán desarollado y que se muestran en los apartados anteriores. EL resulatdo qeu se ha obtenido se muestra a continuación: 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%201.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%202.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%203.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%201.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%202.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%204.png" width = auto height = "100">
+</p>
+Las variantes que se han creado de estos personajes son los siguientes:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%201%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%202%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Bueno%203%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%201%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%202%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%203%20variante.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes%20%20reescalados/Malo%204%20variante.png" width = auto height = "100">
 </p>
 
 ### 4.3. Logo
@@ -460,8 +459,8 @@ Añadir que tanto los personajes jugables en su selección, como los Bandidos y 
 El logo del juego estará compuesto tanto por su nombre como por un dibujo que represente el significado del juego. 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo.png?raw=true" width = auto height = "200">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/JeRLogo2.png?raw=true" width = "auto" height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo.png" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "100">
 </p>
 
 ### 4.4. Música
@@ -490,7 +489,7 @@ Miembros del equipo
 - Purificación Méndez Peñalver
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/imagenesGDD/logo_empresa.png?raw=true" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/logo_empresa.png" width = auto height = "100">
 </p>
 
 ## 6. Referencias
