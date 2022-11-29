@@ -1,0 +1,15 @@
+Programa para pasar de ttf a bitmap: Bitmap Font Generator
+https://www.angelcode.com/products/bmfont/
+
+Fuentes usadas:
+https://www.dafont.com/es/yatsurano-western.font?l[]=10&l[]=1
+https://www.dafont.com/es/bonzer-san-francisco.font?l[]=10&l[]=1
+
+
+Convertir audios:
+https://online-audio-converter.com/es/
+
+Sonidos:
+bang: https://freesound.org/people/Bane_Sound/sounds/542549/
+empty: https://freesound.org/people/KlawyKogut/sounds/154934/
+reload: https://freesound.org/people/EminYILDIRIM/sounds/543927/
