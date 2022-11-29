@@ -1,0 +1,107 @@
+class tutorial extends Phaser.Scene{
+    constructor(){
+        super({key:'tutorial'})
+    }
+
+    preload(){
+        this.load.image('FondoDesierto', 'assets/Fondos/desiertodia.png'),
+            
+        this.load.image('FondoControles', 'assets/Menus/MenusJuego/personalizacion.png'),
+            
+        this.load.image('botOpciones', 'assets/Menus/MenusJuego/inGame/botEstadisticas.png'),
+            
+        this.load.image('mover1','assets/Controles/Jugador1Mover.png'),
+            
+        this.load.image('recoger1','assets/Controles/Jugador1Recoger.png'),
+            
+        this.load.image('disparar1','assets/Controles/Jugador1Disparar.png'),
+		
+		this.load.image('mover2','assets/Controles/Jugador2Mover.png'),
+            
+        this.load.image('recoger2','assets/Controles/Jugador2Recoger.png'),
+            
+        this.load.image('disparar2','assets/Controles/Jugador2Disparar.png'),
+			
+		this.load.image('PU1','assets/Menus/MenusJuego/inGame/PU1.png'),
+            
+        this.load.image('PU2','assets/Menus/MenusJuego/inGame/PU2.png'),
+            
+        this.load.image('PU3','assets/Menus/MenusJuego/inGame/PU3.png');
+            
+    
+}
+    create(){
+        
+        this.add.image(540, 375, 'FondoDesierto'),
+        
+        this.add.image(540, 375, 'FondoControles')
+        .setScale(1.1),
+            
+        this.add.image(390, 345, 'disparar1')
+        .setScale(0.15),
+            
+        this.add.image(380, 255, 'mover1')
+        .setScale(0.15),
+            
+        this.add.image(390, 425, 'recoger1')
+        .setScale(0.15),
+			
+		this.add.image(800, 345, 'disparar2')
+        .setScale(0.15),
+            
+        this.add.image(800, 255, 'mover2')
+        .setScale(0.15),
+            
+        this.add.image(800, 425, 'recoger2')
+        .setScale(0.15),
+			
+		this.add.image(800, 345, 'PU1')
+        .setScale(0.15),
+            
+        this.add.image(800, 255, 'PU2')
+        .setScale(0.15),
+            
+        this.add.image(800, 425, 'PU3')
+        .setScale(0.15),
+			
+        this.Creditos = this.add.text(400, 80, "CONTROLES ", { font: "50px Comic Sans", fill: "#FFFFFF", align: "center" }),
+            
+        this.Creditos = this.add.text(200, 130, "Jugador 1", { font: "50px Comic Sans", fill: "#FFFFFF", align: "center" }),
+            
+        this.Creditos = this.add.text(700, 130, "Jugador 2", { font: "50px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(200, 200, "Moverse", { font: "30px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(600, 200, "Moverse", { font: "30px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(200, 320, "Disparar", { font: "30px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(600, 320, "Disparar", { font: "30px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(200, 400, "Recoger", { font: "30px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(600, 400, "Recoger", { font: "30px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+		this.Creditos = this.add.text(400, 460, "POWER-UP ", { font: "50px Comic Sans", fill: "#FFFFFF", align: "center" }),
+			
+         this.boton1 = this.add.image(550,690, 'botOpciones')
+        .setInteractive()
+        .on('pointerover',()=>this.enterButtonHoverState())
+        .on('pointerout', () => this.enterButtonRestState());
+		
+        this.Atras = this.add.text(430, 655, "Continuar", { font: "60px Comic Sans", fill: "#000000", align: "center" });
+    
+}
+    
+enterButtonHoverState(){
+this.boton1.setScale(1.1);
+}
+    
+enterButtonRestState(){
+this.boton1.setScale(1);
+}
+ 
+    update(){
+    
+}
+}

@@ -31,9 +31,13 @@ preload(){
     this.boton2= this.add.image(755,670, 'botOpciones')
      .setInteractive()
         .on('pointerover',()=>this.enterButtonHoverState2())
-        .on('pointerout', () => this.enterButtonRestState2());
+        .on('pointerout', () => this.enterButtonRestState2()),
      
-    
+     this.Aceptar = this.add.text(320, 650, "Jugar", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+     
+     this.Atras = this.add.text(710, 650, "Atrás", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+     
+      this.Resultados = this.add.text(380, 26, "RESULTADOS", { font: "60px Comic Sans", fill: "#000000", align: "center" });
     
    
 }

@@ -8,14 +8,10 @@ class PantallaVicDerr extends Phaser.Scene{
             
         this.load.image('FondoNombres', 'assets/Menus/MenusJuego/personalizacion.png'),
             
-        this.load.image('botOpciones', 'assets/Menus/MenusJuego/inGame/botEstadisticas.png');
-            
-       
-        
+        this.load.image('botOpciones', 'assets/Menus/MenusJuego/inGame/botEstadisticas.png');  
     
 }
     create(){
-        this.input.setDefaultCursor('src/assets/Puntero.cur, pointer');
         
         this.add.image(540, 375, 'FondoDesierto'),
         

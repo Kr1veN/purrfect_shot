@@ -24,18 +24,19 @@ class PantallaVicDerr extends Phaser.Scene{
         
         this.add.image(540, 375, 'FondoEnemigos')
         .setScale(1.1),
-            
         
         this.Creditos = this.add.text(200, 80, "PROTEGE A LOS RESIDENTES ", { font: "50px Comic Sans", fill: "#FFFFFF", align: "center" }),
             
         this.Creditos = this.add.text(260, 130, "Y CONSIGUE REGALOS", { font: "50px Comic Sans", fill: "#FFFFFF", align: "center" }),
             
-        this.add.image(300, 310, 'Bueno1')
-        .setScale(0.75),
-        this.add.image(800, 320, 'Bueno2')
-        .setScale(0.75),
-        this.add.image(550, 540, 'Bueno3')
-        .setScale(0.25),
+        this.Creditos = this.add.text(190, 190, "¡Cuidado no les dispares si no llevan regalo!", { font: "40px Comic Sans", fill: "#FFFFFF", align: "center" }),
+            
+        this.add.image(300, 350, 'Bueno1')
+        .setScale(0.65),
+        this.add.image(750, 360, 'Bueno2')
+        .setScale(0.65),
+        this.add.image(550, 560, 'Bueno3')
+        .setScale(0.20),
         
          this.boton1 = this.add.image(550,690, 'botOpciones')
         .setInteractive()
@@ -43,6 +44,9 @@ class PantallaVicDerr extends Phaser.Scene{
         .on('pointerout', () => this.enterButtonRestState()),
         
         this.Atras = this.add.text(430, 655, "Continuar", { font: "60px Comic Sans", fill: "#000000", align: "center" });
+         this.Atras = this.add.text(430, 355, "-5", { font: "60px Comic Sans", fill: "#FFFFFF", align: "center" });
+         this.Atras = this.add.text(850, 400, "-10", { font: "60px Comic Sans", fill: "#FFFFFF", align: "center" });
+         this.Atras = this.add.text(680, 555, "-20", { font: "60px Comic Sans", fill: "#FFFFFF", align: "center" });
     
 }
     

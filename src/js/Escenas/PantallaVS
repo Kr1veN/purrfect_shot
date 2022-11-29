@@ -24,8 +24,7 @@ class PantallaVicDerr extends Phaser.Scene{
         
         
         this.Atras = this.add.text(490, 635, "Atrás", { font: "60px Comic Sans", fill: "#000000", align: "center" });
-
-      
+    
     
 }
     
