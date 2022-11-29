@@ -1,10 +1,10 @@
-class SceneGame extends Phaser.Scene {
+class SceneMenu extends Phaser.Scene {
     constructor() {
         super({key:"SceneConf)"});
     }
     
     preload() {
-        this.load.image('Fondo1', 'assets/Fondo1.png');
+        this.load.image('Fondo1', 'assets/Fondos/calledia.png');
     }
     
     create() {

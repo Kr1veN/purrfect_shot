@@ -1,7 +1,6 @@
-class SceneSecPartida extends Phaser.Scene {
+class SceneMenu extends Phaser.Scene {
     constructor() {
-        super({ key: "SceneSecPartida" });
-        
+        super({key:"SceneConf)"});
     }
     
     preload() {
@@ -20,27 +19,21 @@ class SceneSecPartida extends Phaser.Scene {
         this.load.image('BotMapas', 'assets/Menus/Pantalla3/pant3bot4.png');
         this.load.image('BotAtras', 'assets/Menus/Pantalla3/pant3bot5.png');
         this.load.image('BotJugar', 'assets/Menus/Pantalla3/pant3bot6.png');
-        this.load.image('Logo', 'assets/Menus/Logo.png');
-        this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
-        }
+    }
        
     
     create() {
-        this.fondo1 = this.add.image(540, 375, 'Fondo1');
-        this.botSupI = this.add.image(425, 380, 'BotSupI');  
-        this.botSupD = this.add.image(650, 380, 'BotSupD');
-        this.botRondas = this.add.image(540, 515, 'BotRondas');
-        this.botMapas = this.add.image(540, 595, 'BotMapas');
-        this.logo = this.add.image(540, 130, 'Logo').setScale(0.17);
-        this.logo.rotation += -0.15;
-        
+       this.fondo1 = this.add.image(540, 375, 'Fondo1');
+       this.botSupI = this.add.image(425, 380, 'BotSupI');  
+       this.botSupD = this.add.image(650, 380, 'BotSupD');
+       this.botRondas = this.add.image(540, 515, 'BotRondas');
+       this.botMapas = this.add.image(540, 595, 'BotMapas');
       
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.key_A =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.key_S =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.key_D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
-        //Botones
         this.boton1 = this.add.image(425, 380, 'BotSupI')
             .setInteractive()
             .on('pointerdown', () => this.updateCharacter1())
@@ -89,7 +82,6 @@ class SceneSecPartida extends Phaser.Scene {
             .on('pointerover', () => this.enterButtonHoverState8())
             .on('pointerout', () => this.enterButtonRestState8());
 
-        //Carga de imágenes
         this.gato1 = this.add.image(425, 380, 'Gato1').setScale(0.25);
         this.gato12 = this.add.image(425, 380, 'Gato2').setScale(0.10);
         this.gato13 = this.add.image(425, 380, 'Gato3').setScale(0.25);
@@ -98,28 +90,48 @@ class SceneSecPartida extends Phaser.Scene {
         this.gato21 = this.add.image(650, 380, 'Gato1').setScale(0.25);
         this.gato23 = this.add.image(650, 380, 'Gato3').setScale(0.25);
         this.gato24 = this.add.image(650, 380, 'Gato4').setScale(0.25);
-        this.gato14.visible = false;
-        this.gato13.visible = false;
-        this.gato12.visible = false;
-        this.gato24.visible = false;
-        this.gato23.visible = false;
-        this.gato21.visible = false;
-        this.Granero = this.add.bitmapText(425, 573,'Letra', "Mapa: Granero",40,1);
-        this.Pueblo = this.add.bitmapText(425, 573,'Letra', "Mapa: Pueblo",40,1);
-        this.Desierto = this.add.bitmapText(425, 573,'Letra', "Mapa: Desierto",40,1);
-        this.Ronda1 = this.add.bitmapText(460, 493,'Letra', "Rondas: 1",40,1);
-        this.Ronda2 = this.add.bitmapText(460, 493,'Letra', "Rondas: 2",40,1);
-        this.Ronda3 = this.add.bitmapText(460, 493,'Letra', "Rondas: 3",40,1);
-        this.Atras = this.add.bitmapText(400, 650,'Letra', "Atras",40,1);
-        this.Jugar = this.add.bitmapText(570, 655,'Letra', "Jugar",40,1);
+        this.Granero = this.add.text(425, 570, "Mapa: Granero", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Pueblo = this.add.text(425, 570, "Mapa: Pueblo", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Desierto = this.add.text(425, 570, "Mapa: Desierto", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Ronda1 = this.add.text(450, 490, "Rondas: 1", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Ronda2 = this.add.text(450, 490, "Rondas: 2", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Ronda3 = this.add.text(450, 490, "Rondas: 3", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Atras = this.add.text(400, 650, "Atras", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        this.Jugar = this.add.text(580, 650, "Jugar", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+        //this.nRondas=[1,2,3];
+        //this.Rondas.setText("Rondas: 1");
         this.Ronda2.visible = false;
         this.Ronda3.visible = false;
         this.Pueblo.visible = false;
         this.Desierto.visible = false;
+        //this.gato13.visible = false;
+        //this.gato12.visible = false;
+        //var Granero = new Boolean();
+        //var Desierto = new Boolean();
+        //var Pueblo = new Boolean();
+        //this.gato2 = this.add.image(425, 380, 'Gato2').setScale(0.10);
     }
     //GATOS//
     updateCharacter1() {
-        this.scene.start('ScenePersonalizacion');
+        if (this.gato1.visible) {
+            this.gato1.visible = false;
+            this.gato12.visible = true;
+            //this.gato13.visible = false;
+        }
+        else if (this.gato12.visible) {
+            //this.gato1.visible = false;
+            this.gato12.visible = false;
+            this.gato13.visible = true;
+        }
+        else if (this.gato13.visible) {
+            this.gato14.visible = true;
+            //this.gato12.visible = false;
+            this.gato13.visible = false;
+        } else if (this.gato14.visible) {
+            this.gato14.visible = false
+            this.gato1.visible = true;
+        }
+        
     }
 
     enterButtonHoverState1() {
@@ -140,7 +152,25 @@ class SceneSecPartida extends Phaser.Scene {
     }
 
     updateCharacter2() {
-        this.scene.start('ScenePersonalizacion');
+        if (this.gato2.visible) {
+            this.gato2.visible = false;
+            this.gato21.visible = true;
+            //this.gato13.visible = false;
+        }
+        else if (this.gato21.visible) {
+            //this.gato1.visible = false;
+            this.gato21.visible = false;
+            this.gato23.visible = true;
+        }
+        else if (this.gato23.visible) {
+            this.gato24.visible = true;
+            //this.gato12.visible = false;
+            this.gato23.visible = false;
+        } else if (this.gato24.visible) {
+            this.gato24.visible = false
+            this.gato2.visible = true;
+        }
+
     }
 
     enterButtonHoverState2() {
@@ -164,12 +194,15 @@ class SceneSecPartida extends Phaser.Scene {
         if (this.Desierto.visible) {
             this.Desierto.visible = false;
             this.Pueblo.visible = true;
+            //this.Granero.visible = false;
         }
         else if (this.Pueblo.visible) {
             this.Pueblo.visible = false;
             this.Granero.visible = true;
+            //this.Desierto.visible = false;
         }
         else if (this.Granero.visible) {
+            //this.Pueblo.visible = false;
             this.Granero.visible = false;
             this.Desierto.visible = true;
         }       
@@ -182,6 +215,7 @@ class SceneSecPartida extends Phaser.Scene {
         this.Granero.setScale(1.05);
         this.Desierto.setScale(1.05);
         this.Pueblo.setScale(1.05);
+        //this.Granero.setText({ font: "50px Comic Sans", fill: "#000000", align: "center" });
     }
 
     enterButtonRestState3() {
@@ -196,15 +230,18 @@ class SceneSecPartida extends Phaser.Scene {
     updateText2() {
         if (this.Desierto.visible) {
             this.Desierto.visible = false;
+            //this.Pueblo.visible = true;
             this.Granero.visible = true;
         }
         else if (this.Pueblo.visible) {
             this.Pueblo.visible = false;
+            //this.Granero.visible = true;
             this.Desierto.visible = true;
         }
         else if (this.Granero.visible) {
             this.Pueblo.visible = true;
             this.Granero.visible = false;
+            //this.Desierto.visible = true;
         }
 
     }
@@ -291,7 +328,6 @@ class SceneSecPartida extends Phaser.Scene {
     //ATRAS//
     atras() {
         //Cambio de escena
-        //this.scene.start('SceneInicio');
     }
     enterButtonHoverState7() {
         this.botonAtras.setScale(1.1);
@@ -306,7 +342,6 @@ class SceneSecPartida extends Phaser.Scene {
     //OPCIONES//
     jugar() {
         //Cambio de escena
-        //this.scene.start('SceneGame');
     }
     enterButtonHoverState8() {
         this.botonJugar.setScale(1.1);
@@ -319,5 +354,18 @@ class SceneSecPartida extends Phaser.Scene {
     }
 
     update(delta) {
+        if(this.key_W.isDown)
+            this.balaD1.y -= 5;
+        
+        if(this.key_A.isDown)
+            this.balaD1.x -= 5;
+        
+        if(this.key_S.isDown)
+            this.balaD1.y += 5;
+        
+        if(this.key_D.isDown)
+            this.balaD1.x += 5;
+
+        //zoneB1.body.debugBodyColor = zoneB1.body.touching.none ? 0x0099ff : 0xff9900;
     }
 }
