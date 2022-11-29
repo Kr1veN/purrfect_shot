@@ -1,0 +1,71 @@
+class PantallaVicDerr extends Phaser.Scene{
+    constructor(){
+        super({key:'SceneConf'})
+    }
+
+    preload(){
+        this.load.image('PantallaInicio', 'assets/Menus/MenusJuego/PantallaTitulo/pantallainicio.png'),
+        
+        this.load.image('Boton1', 'assets/Menus/MenusJuego/PantallaTitulo/iniciobot1.png'),
+        
+        this.load.image('Boton2', 'assets/Menus/MenusJuego/PantallaTitulo/iniciobot2.png'),
+    
+        this.load.image('Boton3', 'assets/Menus/MenusJuego/PantallaTitulo/iniciobot3.png');
+    
+}
+    create(){
+        this.add.image(540, 375, 'PantallaInicio'),
+            
+        this.boton1 = this.add.image(540, 440, 'Boton1')
+        .setInteractive()
+            .on('pointerover',()=>this.enterButtonHoverState())
+            .on('pointerout', () => this.enterButtonRestState()),
+        
+            
+        this.boton2 = this.add.image(540, 520, 'Boton2')
+        .setInteractive()
+            .on('pointerover',()=>this.enterButtonHoverState2())
+            .on('pointerout', () => this.enterButtonRestState2())
+        .setScale(1.05),
+        
+        
+        this.boton3 = this.add.image(540, 600, 'Boton2')
+        .setInteractive()
+            .on('pointerover',()=>this.enterButtonHoverState3())
+            .on('pointerout', () => this.enterButtonRestState3())
+        .setScale(1.05),
+        
+        
+        this.Aceptar = this.add.text(500, 420, "Jugar", { font: "40px Comic Sans", fill: "#000000", align: "center" }),
+     
+        this.Atras = this.add.text(462, 500, "Opciones", { font: "40px Comic Sans", fill: "#000000", align: "center" }),
+     
+        this.Resultados = this.add.text(472, 580, "Créditos", { font: "40px Comic Sans", fill: "#000000", align: "center" });
+    
+}
+    
+enterButtonHoverState(){
+this.boton1.setScale(1.1);
+}
+    
+enterButtonRestState(){
+this.boton1.setScale(1);
+}
+    enterButtonHoverState2(){
+this.boton2.setScale(1.1);
+}
+    
+enterButtonRestState2(){
+this.boton2.setScale(1);
+}
+    enterButtonHoverState3(){
+this.boton3.setScale(1.1);
+}
+    
+enterButtonRestState3(){
+this.boton3.setScale(1);
+}
+    update(){
+    
+}
+}
