@@ -3,7 +3,12 @@ class SceneSecPartida extends Phaser.Scene {
         super({ key: "SceneSecPartida" });
         
     }
-    
+
+    init(data) {
+        this.Personalizacion = data;
+        console.log(this.Personalizacion);
+    }
+
     preload() {
         this.load.image('Fondo1', 'assets/Menus/menuInicio.png');
         this.load.image('BalaD1', 'assets/Menus/balader.png');
@@ -26,6 +31,9 @@ class SceneSecPartida extends Phaser.Scene {
        
     
     create() {
+        this.config = this.add.image(0,0,'Logo');
+        this.config.setDataEnabled();
+
         this.fondo1 = this.add.image(540, 375, 'Fondo1');
         this.botSupI = this.add.image(425, 380, 'BotSupI');  
         this.botSupD = this.add.image(650, 380, 'BotSupD');
@@ -116,6 +124,10 @@ class SceneSecPartida extends Phaser.Scene {
         this.Ronda3.visible = false;
         this.Pueblo.visible = false;
         this.Desierto.visible = false;
+        this.config.data.set('Escenario', 1);
+        this.config.data.set('Rondas', 1);
+        //this.EscenarioActivo = 0;
+
     }
     //GATOS//
     updateCharacter1() {
@@ -164,14 +176,17 @@ class SceneSecPartida extends Phaser.Scene {
         if (this.Desierto.visible) {
             this.Desierto.visible = false;
             this.Pueblo.visible = true;
+            this.config.data.set('Escenario', 3);
         }
         else if (this.Pueblo.visible) {
             this.Pueblo.visible = false;
             this.Granero.visible = true;
+            this.config.data.set('Escenario', 1);
         }
         else if (this.Granero.visible) {
             this.Granero.visible = false;
             this.Desierto.visible = true;
+            this.config.data.set('Escenario', 2);
         }       
         
     }
@@ -197,14 +212,17 @@ class SceneSecPartida extends Phaser.Scene {
         if (this.Desierto.visible) {
             this.Desierto.visible = false;
             this.Granero.visible = true;
+            this.config.data.set('Escenario', 1);
         }
         else if (this.Pueblo.visible) {
             this.Pueblo.visible = false;
             this.Desierto.visible = true;
+            this.config.data.set('Escenario', 2);
         }
         else if (this.Granero.visible) {
             this.Pueblo.visible = true;
             this.Granero.visible = false;
+            this.config.data.set('Escenario', 3);
         }
 
     }
@@ -232,12 +250,15 @@ class SceneSecPartida extends Phaser.Scene {
         if (this.Ronda1.visible) {
             this.Ronda1.visible = false;
             this.Ronda2.visible = true;
+            this.config.data.set('Rondas', 2);
         } else if (this.Ronda2.visible) {
             this.Ronda2.visible = false;
             this.Ronda3.visible = true;
+            this.config.data.set('Rondas', 3);
         } else if (this.Ronda3.visible) {
             this.Ronda3.visible = false;
             this.Ronda1.visible = true;
+            this.config.data.set('Rondas', 1);
         }
     }
     enterButtonHoverState5() {
@@ -262,12 +283,15 @@ class SceneSecPartida extends Phaser.Scene {
         if (this.Ronda1.visible) {
             this.Ronda1.visible = false;
             this.Ronda3.visible = true;
+            this.config.data.set('Rondas', 3);
         } else if (this.Ronda2.visible) {
             this.Ronda2.visible = false;
             this.Ronda1.visible = true;
+            this.config.data.set('Rondas', 1);
         } else if (this.Ronda3.visible) {
             this.Ronda3.visible = false;
             this.Ronda2.visible = true;
+            this.config.data.set('Rondas', 2);
         }
     }
     enterButtonHoverState6() {
@@ -306,7 +330,13 @@ class SceneSecPartida extends Phaser.Scene {
     //OPCIONES//
     jugar() {
         //Cambio de escena
-        //this.scene.start('SceneGame');
+
+        //this.scene.start('SceneGame', {Configuracion:this.config});
+        this.scene.start('SceneGame', {
+            Escenario: this.config.data.get('Escenario'),
+            Rondas: this.config.data.get('Rondas'),
+            Jugadores: this.Personalizacion
+        });
     }
     enterButtonHoverState8() {
         this.botonJugar.setScale(1.1);

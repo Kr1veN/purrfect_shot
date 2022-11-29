@@ -1,6 +1,6 @@
-class SceneMenu extends Phaser.Scene {
+class SceneGame extends Phaser.Scene {
     constructor() {
-        super({key:"SceneConf)"});
+        super({key:"SceneGame"});
     }
     
     /*init ()
@@ -16,13 +16,20 @@ class SceneMenu extends Phaser.Scene {
         
         sheet.insertRule(styles, 0);
     }*/
-    
+    init(data) {
+        this.config = data;
+        //this.config.setDataEnabled();
+        console.log(this.config);
+        //this.config.data.set('Escenario', data.Escenario);
+        //this.config.data.set('Rondas', data.Rondas);
+        //console.log(this.config.data.get('Escenario'));
+    }
 /************************************************************** P R E L O A D *****************************************************************/
     /*---------------------------------------------------------------------------------------------------------------------------------*/
    
     preload() {
 
-        this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
+        this.load.image('FondoGraneroDia', 'assets/Fondos/granerodia.png');
         this.load.image('Marco', 'assets/Menus/MenusJuego/inGame/marco2.png');
         this.load.image('Manecilla', 'assets/Menus/MenusJuego/inGame/manecilla.png');
         this.load.spritesheet('Diana', 'assets/Menus/MenusJuego/inGame/Diana.png', {frameWidth: 175, frameHeight: 300});
@@ -71,11 +78,11 @@ class SceneMenu extends Phaser.Scene {
    
     create() {            
             
-        this.fondo1 = this.add.image(540,375,'Fondo1');
+        this.fondoGraneroDia = this.add.image(540,375,'FondoGraneroDia');
         this.marco = this.add.image(540,375,'Marco');
         this.manecilla = this.add.image(540,69,'Manecilla');
         
-        this.globalClock = this.time.addEvent({ delay: 90000, callback: this.endGame, callbackScope: this, paused: true }); // min y medio
+        this.globalClock = this.time.addEvent({ delay: 60000, callback: this.endGame, callbackScope: this, paused: true }); // min
         
         /*var add = this.add;
         WebFont.load({
@@ -199,8 +206,8 @@ class SceneMenu extends Phaser.Scene {
         this.scoreTextJ2 = this.add.bitmapText(880, 60, 'YW', 'Pts: 0', 30);
         
         // Balas
-        this.bulletJ1 = 10;
-        this.bulletJ2 = 10;
+        this.bulletJ1 = 20;
+        this.bulletJ2 = 20;
         this.bulletTextJ1 = this.add.bitmapText(63, 690, 'YW', this.bulletJ1, 40, 1).setTint(0x000000);
         this.bulletTextJ2 = this.add.bitmapText(995, 690, 'YW', this.bulletJ2, 40, 1).setTint(0x000000);
         
@@ -262,7 +269,7 @@ class SceneMenu extends Phaser.Scene {
             }
         }, this);
         
-        this.countDown = this.time.addEvent({ delay: 8000, callback: this.startGame, callbackScope: this });
+        this.countDown = this.time.addEvent({ delay: 5000, callback: this.removeText, callbackScope: this });
         this.info = this.add.bitmapText(540, 200, 'YW', '', 70, 1).setOrigin(0.5);
     }
     
@@ -271,11 +278,12 @@ class SceneMenu extends Phaser.Scene {
     
     update(delta) {
         
-        if(this.countDown.getOverallProgress() < 0.3) {
+        if(this.countDown.getOverallProgress() < 0.5) {
             this.info.setText('Preparados');
         }
-        else if(this.countDown.getOverallProgress() < 0.6) {
+        else if(this.countDown.getOverallProgress() < 0.8) {
             this.info.setText('Listos');
+            this.startGame();
         }
         else if(this.countDown.getOverallProgress() < 1) {
             this.info.setText('¡¡YA!!');
@@ -757,10 +765,13 @@ class SceneMenu extends Phaser.Scene {
     startGame(){
         this.globalClock.paused = false;
         this.loopDianas.paused = false;
-        this.info.setText('');
-        this.countDown.remove(false);
+        //this.info.setText('');
+        //this.countDown.remove(false);
     }
-    
+
+    removeText() {
+        this.info.setText('');
+    }
 /************************************************************* E N D   G A M E ****************************************************************/
     /*--------------------------------------------------------------------------------------------------------------------------------*/
     

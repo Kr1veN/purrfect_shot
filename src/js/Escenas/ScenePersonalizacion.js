@@ -35,6 +35,8 @@ class ScenePersonalizacion extends Phaser.Scene {
        
     
     create() {
+        this.config = this.add.image(0, 0, 'BotInfo');
+        this.config.setDataEnabled();
         this.fondo1 = this.add.image(540, 375, 'Fondo1');
         this.fondo2 = this.add.image(540, 375, 'Fondo2');
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -66,9 +68,11 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.sombrero22 = this.add.image(697, 379.5, 'Sombrero2').setScale(0.23);
         this.sombrero23 = this.add.image(697, 379.5, 'Sombrero3').setScale(0.23);
         this.sombrero24 = this.add.image(697, 379.5, 'Sombrero4').setScale(0.23);
+        this.sombrero1.visible = false;
         this.sombrero2.visible = false;
         this.sombrero3.visible = false;
         this.sombrero4.visible = false;
+        this.sombrero21.visible = false;
         this.sombrero22.visible = false;
         this.sombrero23.visible = false;
         this.sombrero24.visible = false;
@@ -80,9 +84,11 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.panuelo22 = this.add.image(697, 380, 'Panuelo2').setScale(0.23);
         this.panuelo32 = this.add.image(697, 380, 'Panuelo3').setScale(0.23);
         this.panuelo42 = this.add.image(697, 380, 'Panuelo4').setScale(0.23);
+        this.panuelo1.visible = false;
         this.panuelo2.visible = false;
         this.panuelo3.visible = false;
         this.panuelo4.visible = false;
+        this.panuelo12.visible = false;
         this.panuelo22.visible = false;
         this.panuelo32.visible = false;
         this.panuelo42.visible = false;
@@ -194,13 +200,20 @@ class ScenePersonalizacion extends Phaser.Scene {
 
         //BOOLEANOS//
         var SinSombrero = new Boolean;
-        this.SinSombrero = false;
+        this.SinSombrero = true;
         var SinSombrero2 = new Boolean;
-        this.SinSombrero2 = false;
+        this.SinSombrero2 = true;
         var SinPanuelo = new Boolean;
-        this.SinPanuelo = false;
+        this.SinPanuelo = true;
         var SinPanuelo2 = new Boolean;
-        this.SinPanuelo2 = false;
+        this.SinPanuelo2 = true;
+
+        this.config.data.set('Cat1', 1);
+        this.config.data.set('Cat2', 2);
+        this.config.data.set('Hat1', 0);
+        this.config.data.set('Hat2', 0);
+        this.config.data.set('Pan1', 0);
+        this.config.data.set('Pan2', 0);
     }
     //GATOS//
     //SOMBRERO//
@@ -208,20 +221,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.sombrero1.visible) {
             this.sombrero1.visible = false;
             this.sombrero2.visible = true;
+            this.config.data.set('Hat1', 2);
         }
         else if (this.sombrero2.visible) {
             this.sombrero2.visible = false;
             this.sombrero3.visible = true;
+            this.config.data.set('Hat1', 3);
         }
         else if (this.sombrero3.visible) {
             this.sombrero4.visible = true;
             this.sombrero3.visible = false;
+            this.config.data.set('Hat1', 4);
         } else if (this.sombrero4.visible) {
             this.sombrero4.visible = false
-            this.SinSombrero = true;
+            this.SinSombrero = true; 
+            this.config.data.set('Hat1', 0);
         } else if (this.SinSombrero) {
             this.sombrero1.visible = true;
             this.SinSombrero = false;
+            this.config.data.set('Hat1', 1);
         }
 
     }
@@ -238,20 +256,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.sombrero1.visible) {
             this.sombrero1.visible = false;
             this.SinSombrero = true;
+            this.config.data.set('Hat1', 0);
         }
         else if (this.sombrero2.visible) {
             this.sombrero2.visible = false;
             this.sombrero1.visible = true;
+            this.config.data.set('Hat1', 1);
         }
         else if (this.sombrero3.visible) {
             this.sombrero2.visible = true;
             this.sombrero3.visible = false;
+            this.config.data.set('Hat1', 2);
         } else if (this.sombrero4.visible) {
             this.sombrero4.visible = false
             this.sombrero3.visible = true;
+            this.config.data.set('Hat1', 3);
         } else if (this.SinSombrero) {
             this.sombrero4.visible = true;
             this.SinSombrero = false;
+            this.config.data.set('Hat1', 4);
         }
         
     }
@@ -268,20 +291,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.sombrero21.visible) {
             this.sombrero21.visible = false;
             this.sombrero22.visible = true;
+            this.config.data.set('Hat2', 2);
         }
         else if (this.sombrero22.visible) {
             this.sombrero22.visible = false;
             this.sombrero23.visible = true;
+            this.config.data.set('Hat2', 3);
         }
         else if (this.sombrero23.visible) {
             this.sombrero24.visible = true;
             this.sombrero23.visible = false;
+            this.config.data.set('Hat2', 4);
         } else if (this.sombrero24.visible) {
             this.sombrero24.visible = false
             this.SinSombrero2 = true;
+            this.config.data.set('Hat2', 0);
         } else if (this.SinSombrero2) {
             this.sombrero21.visible = true;
             this.SinSombrero2 = false;
+            this.config.data.set('Hat2', 1);
         }
 
     }
@@ -298,20 +326,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.sombrero21.visible) {
             this.sombrero21.visible = false;
             this.SinSombrero2 = true;
+            this.config.data.set('Hat2', 0);
         }
         else if (this.sombrero22.visible) {
             this.sombrero22.visible = false;
             this.sombrero21.visible = true;
+            this.config.data.set('Hat2', 1);
         }
         else if (this.sombrero23.visible) {
             this.sombrero22.visible = true;
             this.sombrero23.visible = false;
+            this.config.data.set('Hat2', 2);
         } else if (this.sombrero24.visible) {
             this.sombrero24.visible = false
             this.sombrero23.visible = true;
+            this.config.data.set('Hat2', 3);
         } else if (this.SinSombrero2) {
             this.sombrero24.visible = true;
             this.SinSombrero2 = false;
+            this.config.data.set('Hat2', 4);
         }
 
     }
@@ -330,20 +363,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.panuelo1.visible) {
             this.panuelo1.visible = false;
             this.panuelo2.visible = true;
+            this.config.data.set('Pan1', 2);
         }
         else if (this.panuelo2.visible) {
             this.panuelo2.visible = false;
             this.panuelo3.visible = true;
+            this.config.data.set('Pan1', 3);
         }
         else if (this.panuelo3.visible) {
             this.panuelo4.visible = true;
             this.panuelo3.visible = false;
+            this.config.data.set('Pan1', 4);
         } else if (this.panuelo4.visible) {
             this.panuelo4.visible = false
             this.SinPanuelo = true;
+            this.config.data.set('Pan1', 0);
         } else if (this.SinPanuelo) {
             this.panuelo1.visible = true;
             this.SinPanuelo = false;
+            this.config.data.set('Pan1', 1);
         }
 
     }
@@ -360,20 +398,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.panuelo1.visible) {
             this.panuelo1.visible = false;
             this.SinPanuelo = true;
+            this.config.data.set('Pan1', 0);
         }
         else if (this.panuelo2.visible) {
             this.panuelo2.visible = false;
             this.panuelo1.visible = true;
+            this.config.data.set('Pan1', 1);
         }
         else if (this.panuelo3.visible) {
             this.panuelo2.visible = true;
             this.panuelo3.visible = false;
+            this.config.data.set('Pan1', 2);
         } else if (this.panuelo4.visible) {
             this.panuelo4.visible = false
             this.panuelo3.visible = true;
+            this.config.data.set('Pan1', 3);
         } else if (this.SinPanuelo) {
             this.panuelo4.visible = true;
             this.SinPanuelo = false;
+            this.config.data.set('Pan1', 4);
         }
 
     }
@@ -390,20 +433,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.panuelo12.visible) {
             this.panuelo12.visible = false;
             this.panuelo22.visible = true;
+            this.config.data.set('Pan2', 2);
         }
         else if (this.panuelo22.visible) {
             this.panuelo22.visible = false;
             this.panuelo32.visible = true;
+            this.config.data.set('Pan2', 3);
         }
         else if (this.panuelo32.visible) {
             this.panuelo42.visible = true;
             this.panuelo32.visible = false;
+            this.config.data.set('Pan2', 4);
         } else if (this.panuelo42.visible) {
             this.panuelo42.visible = false
             this.SinPanuelo2 = true;
+            this.config.data.set('Pan2', 0);
         } else if (this.SinPanuelo2) {
             this.panuelo12.visible = true;
             this.SinPanuelo2 = false;
+            this.config.data.set('Pan2', 1);
         }
 
     }
@@ -420,20 +468,25 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.panuelo12.visible) {
             this.panuelo12.visible = false;
             this.SinPanuelo2 = true;
+            this.config.data.set('Pan2', 0);
         }
         else if (this.panuelo22.visible) {
             this.panuelo22.visible = false;
             this.panuelo12.visible = true;
+            this.config.data.set('Pan2', 1);
         }
         else if (this.panuelo32.visible) {
             this.panuelo22.visible = true;
             this.panuelo32.visible = false;
+            this.config.data.set('Pan2', 2);
         } else if (this.panuelo42.visible) {
             this.panuelo42.visible = false
             this.panuelo32.visible = true;
+            this.config.data.set('Pan2', 3);
         } else if (this.SinPanuelo2) {
             this.panuelo42.visible = true;
             this.SinPanuelo2 = false;
+            this.config.data.set('Pan2', 4);
         }
 
     }
@@ -451,17 +504,21 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.gato1.visible) {
             this.gato1.visible = false;
             this.gato12.visible = true;
+            this.config.data.set('Cat1', 2);
         }
         else if (this.gato12.visible) {
             this.gato12.visible = false;
             this.gato13.visible = true;
+            this.config.data.set('Cat1', 3);
         }
         else if (this.gato13.visible) {
             this.gato14.visible = true;
             this.gato13.visible = false;
+            this.config.data.set('Cat1', 4);
         } else if (this.gato14.visible) {
             this.gato14.visible = false
             this.gato1.visible = true;
+            this.config.data.set('Cat1', 1);
         }
     
     }
@@ -478,17 +535,21 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.gato2.visible) {
             this.gato2.visible = false;
             this.gato21.visible = true;
+            this.config.data.set('Cat2', 2);
         }
         else if (this.gato21.visible) {
             this.gato21.visible = false;
             this.gato23.visible = true;
+            this.config.data.set('Cat2', 3);
         }
         else if (this.gato23.visible) {
             this.gato24.visible = true;
             this.gato23.visible = false;
+            this.config.data.set('Cat2', 4);
         } else if (this.gato24.visible) {
             this.gato24.visible = false
             this.gato2.visible = true;
+            this.config.data.set('Cat2', 1);
         }
 
     }
@@ -541,7 +602,15 @@ class ScenePersonalizacion extends Phaser.Scene {
     
     jugar() {
         //Cambio de escena
-        this.scene.start('SceneSecPartida');
+        this.scene.start('SceneSecPartida', {
+            Gato1: this.config.data.get('Cat1'),
+            Gato2: this.config.data.get('Cat2'),
+            Sombrero1: this.config.data.get('Hat1'),
+            Sombrero2: this.config.data.get('Hat2'),
+            Panuelo1: this.config.data.get('Pan1'),
+            Panuelo2: this.config.data.get('Pan2')
+        });
+        //this.scene.start('SceneSecPartida');
     }
     enterButtonHoverState13() {
         this.botonAceptar.setScale(1.1);

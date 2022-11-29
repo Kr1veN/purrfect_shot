@@ -11,7 +11,7 @@ var config = {
     width: 1080,
     height: 750,        // Las propiedades width (ancho) y height (alto) establecen el tamaño de la pantalla que usará Phaser. 
     // En este caso son 800 x 600 píxeles. El juego puede ser del tamaño que se desee, pero esta será la resolución en la que se mostrará el juego.
-    scene: [SceneSecPartida,ScenePersonalizacion],
+    scene: [SceneSecPartida, ScenePersonalizacion, SceneGame],
 
     physics: {
         default: 'arcade',
