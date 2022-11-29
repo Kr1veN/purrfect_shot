@@ -240,6 +240,10 @@ El último botón “Atrás” permite al usuario retroceder a la pantalla de ju
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menu3.PNG" width = auto height = "300">
 </p>
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/personalizacionpartida.png" width = auto height = "300">
+</p>
+ 
 __Nombre de la pantalla__: Personalización de partida.  
 __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a través de un menú emergente que aparecerá al clicar sobre su cartel de jugador. De la misma forma se podrán modificar el número de rondas y el mapa  
 __Estados del juego__: Cada jugador podrá elegir su personaje antes de cada partida clicando en el cartel de su jugador. En local esto se tendrá que hacer por turnos, mientras que en línea podrá ser simultáneo. Se pondrá una restricción para que cada jugador solo pueda elegir su personaje (en línea) y se podrá utilizar para juegos de un solo jugador para evitar seleccionar un personaje para un jugador que no existe.  
@@ -253,12 +257,17 @@ Se podrá volver a la pantalla anterior con el botón “Atrás” y empezar la 
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/menup.PNG" width = auto height = "300">
 </p>
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/personalizacionpersonaje.png" width = auto height = "300">
+</p>
+ 
 __Nombre de la pantalla__: Personalización de personajes.  
 __Descripción de la pantalla__: Los jugadores podrán escoger a su personaje a través del menú de selección de partida.   
 __Estados del juego__: En esta interfaz aparecerá el nombre del gato seleccionado con una pequeña descripción a su lado (para leer la descripción de cada personaje ir al apartado 2.3.1 Personajes principales):
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/eleccion_personaje.jpg" width = auto height = "250">
+  <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/descripciones.png" width = auto height = "250">
 </p>
 
 Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado, se verán en la misma interfaz de la siguiente manera:
@@ -271,6 +280,7 @@ Los artículos que acompañan a nuestro personaje jugable, una vez seleccionado,
 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/ingame.png" width = auto height = "300">
+ <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/capturajuego.png" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Interfaz de juego.  
