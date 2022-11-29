@@ -22,9 +22,9 @@ class SceneGame extends Phaser.Scene {
    
     preload() {
         this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
-        this.load.image('Marco', 'assets/marco2.png');
-        this.load.image('Manecilla', 'assets/manecilla.png');
-        this.load.spritesheet('Diana', 'assets/Diana.png', {frameWidth: 175, frameHeight: 300});
+        this.load.image('Marco', 'assets/Menus/MenusJuego/inGame/marco2.png');
+        this.load.image('Manecilla', 'assets/Menus/MenusJuego/inGame/manecilla.png');
+        this.load.spritesheet('Diana', 'assets/Menus/MenusJuego/inGame/Diana.png', {frameWidth: 175, frameHeight: 300});
         
         this.load.image('Bueno1', 'assets/Personajes reescalados/Bueno1.png');
         this.load.image('Bueno1b', 'assets/Personajes reescalados/Bueno1b.png');
@@ -47,13 +47,13 @@ class SceneGame extends Phaser.Scene {
         this.load.image('Personaje3', 'assets/Personajes reescalados/BackGatoNegro.png');
         this.load.image('Personaje4', 'assets/Personajes reescalados/BackGatoTricolor.png');
         
-        this.load.image('Mirilla1', 'assets/MirillaJ1.png');
-        this.load.image('Mirilla2', 'assets/MirillaJ2.png');
-        this.load.image('Bala', 'assets/bala.png');
-        this.load.image('Power', 'assets/power.png');
-        this.load.image('PU1', 'assets/PU1.png');
-        this.load.image('PU2', 'assets/PU2.png');
-        this.load.image('PU3', 'assets/PU3.png');
+        this.load.image('Mirilla1', 'assets/Menus/MenusJuego/inGame/MirillaJ1.png');
+        this.load.image('Mirilla2', 'assets/Menus/MenusJuego/inGame/MirillaJ2.png');
+        this.load.image('Bala', 'assets/Menus/MenusJuego/balaDer.png');
+        this.load.image('Power', 'assets/Menus/MenusJuego/inGame/power.png');
+        this.load.image('PU1', 'assets/Menus/MenusJuego/inGame/PU1.png');
+        this.load.image('PU2', 'assets/Menus/MenusJuego/inGame/PU2.png');
+        this.load.image('PU3', 'assets/Menus/MenusJuego/inGame/PU3.png');
         
         //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
         this.load.bitmapFont('Bonzer', 'assets/fonts/BonzerSanFrancisco.png', 'assets/fonts/BonzerSanFrancisco.xml');

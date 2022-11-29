@@ -7,8 +7,8 @@
         <style type="text/css" media="screen">
 
             body {
-                background-color: #F5C78B;
-                background-image: url('file:///C:/Users/Gema/Desktop/assets.png');
+                background-color: #99d0e8;
+                background-image: url(assets/ImagenesGDD/fondo.png);
                 background-repeat: repeat;
                 background-attachment: fixed;
                 background-size: 250px;
@@ -16,13 +16,13 @@
 
             .fondocaja {
                 width: 700px;
-                padding: 65px;
-                background-image: url('file:///C:/Users/Gema/Desktop/JeRLogo2.png');
-                background-size: 245px;
-                background-position-x: center;
+                padding: 50px;
+                background-image: url('assets/ImagenesGDD/JeRLogo2.png');
+                background-size: 150px;
+                background-position: center;
                 background-repeat: no-repeat;
                 background-color: rgba(21, 21, 21, 0.55);
-                top: 5px;
+                top: 3px;
                 margin: 0 auto;
                 border: rgba(21, 21, 21, 0.8) 20px double;
             }
@@ -30,9 +30,11 @@
             .fondocanvas
             {
                 background-color: rgba(21,21,21,0.3);
-                padding: 400px;
+                padding: 10px;
                 top: 10px;
                 margin: 0 auto;
+                display: flex;
+                justify-content: center;
             }
 
             </style>
@@ -41,9 +43,8 @@
     <body>
         <p> </p>
         <div class="fondocaja"> </div>
-        <div class="fondocanvas">
+        <div id='mygame' class="fondocanvas"> </div>
             <script src="js/Escenas/SceneGame.js"></script>
             <script src="js/PurrfectShot.js"></script>
-        </div>
     </body>
 </html>
