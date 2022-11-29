@@ -58,6 +58,10 @@ class SceneGame extends Phaser.Scene {
         //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
         this.load.bitmapFont('Bonzer', 'assets/fonts/BonzerSanFrancisco.png', 'assets/fonts/BonzerSanFrancisco.xml');
         this.load.bitmapFont('YW', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
+        
+        this.load.audio('Bang', ['assets/sounds/bang.ogg', 'assets/sounds/bang.mp3']);
+        this.load.audio('Empty', ['assets/sounds/empty.ogg', 'assets/sounds/empty.mp3']);
+        this.load.audio('Reload', ['assets/sounds/reload.ogg', 'assets/sounds/reload.mp3']);
     }
     
 /*************************************************************** C R E A T E ******************************************************************/
@@ -208,12 +212,24 @@ class SceneGame extends Phaser.Scene {
         this.key_F =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         this.key_C =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C);
         
+        var bang = this.sound.add('Bang');
+        var empty = this.sound.add('Empty');
         this.input.keyboard.on('keydown_F', function(event){ // cada vez que se pulse F
             if(this.globalClock.paused == false && this.globalClock.hasDispatched == false){ //cuando esté corriendo el tiempo
                 if (this.mirilla1.data.get('infinite bullets') != true && this.bulletJ1 > 0){ // si el power up está desactivado y si hay balas en el cargador
                     this.bulletJ1 -=1 // dispares donde dispares se gasta una bala
                     this.bulletTextJ1.setText(this.bulletJ1);
+                    bang.play();
                 }
+                else if(this.mirilla1.data.get('infinite bullets') == true){
+                    bang.play();
+                }
+                else{
+                    empty.play();
+                }
+            }
+            else{
+                empty.play();
             }
         }, this);
                 
@@ -230,7 +246,17 @@ class SceneGame extends Phaser.Scene {
                 if (this.mirilla2.data.get('infinite bullets') != true && this.bulletJ2 > 0){ // si el power up está desactivado y si hay balas en el cargador
                     this.bulletJ2 -=1 // dispares donde dispares se gasta una bala
                     this.bulletTextJ2.setText(this.bulletJ2);
+                    bang.play();
                 }
+                else if(this.mirilla2.data.get('infinite bullets') == true){
+                    bang.play();
+                }
+                else{
+                    empty.play();
+                }
+            }
+            else{
+                empty.play();
             }
         }, this);
         
@@ -618,6 +644,7 @@ class SceneGame extends Phaser.Scene {
     
     acceptGift(jugador, objetivo){ // se comprueba si el gato lleva un regalo y se le da al jugador
         
+        var reload = this.sound.add('Reload');
         var gato;
         this.cats.children.iterate(function(child){ // de todos los gatos de la escena
             if (child.x == objetivo.x && child.y == objetivo.y - 65) // sacamos el que se encuentra en la posición de la diana que se está bajando
@@ -644,6 +671,7 @@ class SceneGame extends Phaser.Scene {
                     this.bulletJ2 += regalo.data.get('bullets'); // se le suman las balas al cargador
                     this.bulletTextJ2.setText(this.bulletJ2);
                 }
+                reload.play();
             }
             else if(regalo.data.get('power up') != undefined){ // si es un power-up
                 var tipo = regalo.data.get('power up');
