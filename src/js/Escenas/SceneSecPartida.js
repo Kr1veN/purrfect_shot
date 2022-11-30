@@ -27,6 +27,14 @@ class SceneSecPartida extends Phaser.Scene {
         this.load.image('BotJugar', 'assets/Menus/Pantalla3/pant3bot6.png');
         this.load.image('Logo', 'assets/Menus/Logo.png');
         this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
+        this.load.image('Sombrero1', 'assets/Personajes/Accesorios/Sombrero.png');
+        this.load.image('Sombrero2', 'assets/Personajes/Accesorios/SombreroMarron.png');
+        this.load.image('Sombrero3', 'assets/Personajes/Accesorios/SombreroVerde.png');
+        this.load.image('Sombrero4', 'assets/Personajes/Accesorios/SombreroNegro.png');
+        this.load.image('Panuelo1', 'assets/Personajes/Accesorios/PanueloAzul.png');
+        this.load.image('Panuelo2', 'assets/Personajes/Accesorios/PanueloLila.png');
+        this.load.image('Panuelo3', 'assets/Personajes/Accesorios/PanueloRojo.png');
+        this.load.image('Panuelo4', 'assets/Personajes/Accesorios/PanueloVerde.png');
         }
        
     
@@ -97,7 +105,8 @@ class SceneSecPartida extends Phaser.Scene {
             .on('pointerover', () => this.enterButtonHoverState8())
             .on('pointerout', () => this.enterButtonRestState8());
 
-        //Carga de imágenes
+        //Carga de imágenes//
+        //Gatos
         this.gato1 = this.add.image(425, 380, 'Gato1').setScale(0.25);
         this.gato12 = this.add.image(425, 380, 'Gato2').setScale(0.10);
         this.gato13 = this.add.image(425, 380, 'Gato3').setScale(0.25);
@@ -112,6 +121,41 @@ class SceneSecPartida extends Phaser.Scene {
         this.gato24.visible = false;
         this.gato23.visible = false;
         this.gato21.visible = false;
+        //Sombreros
+        this.sombrero1 = this.add.image(425, 381.5, 'Sombrero1').setScale(0.1);
+        this.sombrero2 = this.add.image(425, 381.5, 'Sombrero2').setScale(0.1);
+        this.sombrero3 = this.add.image(425, 381.5, 'Sombrero3').setScale(0.1);
+        this.sombrero4 = this.add.image(425, 381.5, 'Sombrero4').setScale(0.1);
+        this.sombrero21 = this.add.image(652, 381.5, 'Sombrero1').setScale(0.1);
+        this.sombrero22 = this.add.image(652, 381.5, 'Sombrero2').setScale(0.1);
+        this.sombrero23 = this.add.image(652, 381.5, 'Sombrero3').setScale(0.1);
+        this.sombrero24 = this.add.image(652, 381.5, 'Sombrero4').setScale(0.1);
+        this.sombrero1.visible = false;
+        this.sombrero2.visible = false;
+        this.sombrero3.visible = false;
+        this.sombrero4.visible = false;
+        this.sombrero21.visible = false;
+        this.sombrero22.visible = false;
+        this.sombrero23.visible = false;
+        this.sombrero24.visible = false;
+        //Pañuelos
+        this.panuelo1 = this.add.image(425, 380, 'Panuelo1').setScale(0.1);
+        this.panuelo2 = this.add.image(425, 380, 'Panuelo2').setScale(0.1);
+        this.panuelo3 = this.add.image(425, 380, 'Panuelo3').setScale(0.1);
+        this.panuelo4 = this.add.image(425, 380, 'Panuelo4').setScale(0.1);
+        this.panuelo12 = this.add.image(650, 380, 'Panuelo1').setScale(0.1);
+        this.panuelo22 = this.add.image(650, 380, 'Panuelo2').setScale(0.1);
+        this.panuelo32 = this.add.image(650, 380, 'Panuelo3').setScale(0.1);
+        this.panuelo42 = this.add.image(650, 380, 'Panuelo4').setScale(0.1);
+        this.panuelo1.visible = false;
+        this.panuelo2.visible = false;
+        this.panuelo3.visible = false;
+        this.panuelo4.visible = false;
+        this.panuelo12.visible = false;
+        this.panuelo22.visible = false;
+        this.panuelo32.visible = false;
+        this.panuelo42.visible = false;
+        //
         this.Granero = this.add.bitmapText(425, 573,'Letra', "Mapa: Granero",40,1);
         this.Pueblo = this.add.bitmapText(425, 573,'Letra', "Mapa: Pueblo",40,1);
         this.Desierto = this.add.bitmapText(425, 573,'Letra', "Mapa: Desierto",40,1);
@@ -128,6 +172,86 @@ class SceneSecPartida extends Phaser.Scene {
         this.config.data.set('Rondas', 1);
         //this.EscenarioActivo = 0;
 
+        //Gato Activo J1
+        if (this.Personalizacion.Gato1==1) {
+            this.gato1.visible = true;
+        } else if (this.Personalizacion.Gato1 == 2) {
+            this.gato12.visible = true;
+        } else if (this.Personalizacion.Gato1 == 3) {
+            this.gato13.visible = true;
+        } else if (this.Personalizacion.Gato1 == 4) {
+            this.gato14.visible = true;
+        }
+        //Gato Activo J2
+        if (this.Personalizacion.Gato2 == 1) {
+            this.gato21.visible = true;
+        } else if (this.Personalizacion.Gato2 == 2) {
+            this.gato2.visible = true;
+        } else if (this.Personalizacion.Gato2 == 3) {
+            this.gato23.visible = true;
+        } else if (this.Personalizacion.Gato2 == 4) {
+            this.gato24.visible = true;
+        }
+        //Sombrero Activo J1
+        if (this.Personalizacion.Sombrero1 == 1) {
+            this.sombrero1.visible = true;
+        } else if (this.Personalizacion.Sombrero1 == 2) {
+            this.sombrero2.visible = true;
+        } else if (this.Personalizacion.Sombrero1 == 3) {
+            this.sombrero3.visible = true;
+        } else if (this.Personalizacion.Sombrero1 == 4) {
+            this.sombrero4.visible = true;
+        } else if (this.Personalizacion.Sombrero1 == 0) {
+            this.sombrero1.visible = false;
+            this.sombrero2.visible = false;
+            this.sombrero3.visible = false;
+            this.sombrero4.visible = false;
+        }
+        //Sombrero Activo J2
+        if (this.Personalizacion.Sombrero2 == 1) {
+            this.sombrero21.visible = true;
+        } else if (this.Personalizacion.Sombrero2 == 2) {
+            this.sombrero22.visible = true;
+        } else if (this.Personalizacion.Sombrero2 == 3) {
+            this.sombrero23.visible = true;
+        } else if (this.Personalizacion.Sombrero2 == 4) {
+            this.sombrero24.visible = true;
+        } else if (this.Personalizacion.Sombrero2 == 0) {
+            this.sombrero21.visible = false;
+            this.sombrero22.visible = false;
+            this.sombrero23.visible = false;
+            this.sombrero24.visible = false;
+        }
+        //Pañuelo Activo J1
+        if (this.Personalizacion.Panuelo1 == 1) {
+            this.panuelo1.visible = true;
+        } else if (this.Personalizacion.Panuelo1 == 2) {
+            this.panuelo2.visible = true;
+        } else if (this.Personalizacion.Panuelo1 == 3) {
+            this.panuelo3.visible = true;
+        } else if (this.Personalizacion.Panuelo1 == 4) {
+            this.panuelo4.visible = true;
+        } else if (this.Personalizacion.Panuelo1 == 0) {
+            this.panuelo1.visible = false;
+            this.panuelo2.visible = false;
+            this.panuelo3.visible = false;
+            this.panuelo4.visible = false;
+        }
+       //Pañuelo Activo J2
+       if (this.Personalizacion.Panuelo2 == 1) {
+           this.panuelo12.visible = true;
+       } else if (this.Personalizacion.Panuelo2 == 2) {
+           this.panuelo22.visible = true;
+       } else if (this.Personalizacion.Panuelo2 == 3) {
+           this.panuelo32.visible = true;
+       } else if (this.Personalizacion.Panuelo2 == 4) {
+           this.panuelo42.visible = true;
+       } else if (this.Personalizacion.Panuelo2 == 0) {
+           this.panuelo12.visible = false;
+           this.panuelo22.visible = false;
+           this.panuelo32.visible = false;
+           this.panuelo42.visible = false;
+       }
     }
     //GATOS//
     updateCharacter1() {
@@ -140,6 +264,14 @@ class SceneSecPartida extends Phaser.Scene {
         this.gato12.setScale(0.12);
         this.gato13.setScale(0.3);
         this.gato14.setScale(0.3);
+        this.sombrero1.setScale(0.12);
+        this.sombrero2.setScale(0.12);
+        this.sombrero3.setScale(0.12);
+        this.sombrero4.setScale(0.12);
+        this.panuelo1.setScale(0.12);
+        this.panuelo2.setScale(0.12);
+        this.panuelo3.setScale(0.12);
+        this.panuelo4.setScale(0.12);
     }
 
     enterButtonRestState1() {
@@ -148,7 +280,14 @@ class SceneSecPartida extends Phaser.Scene {
         this.gato12.setScale(0.10);
         this.gato13.setScale(0.25);
         this.gato14.setScale(0.25);
-        
+        this.sombrero1.setScale(0.1);
+        this.sombrero2.setScale(0.1);
+        this.sombrero3.setScale(0.1);
+        this.sombrero4.setScale(0.1);
+        this.panuelo1.setScale(0.1);
+        this.panuelo2.setScale(0.1);
+        this.panuelo3.setScale(0.1);
+        this.panuelo4.setScale(0.1);
     }
 
     updateCharacter2() {
@@ -161,6 +300,14 @@ class SceneSecPartida extends Phaser.Scene {
         this.gato21.setScale(0.30);
         this.gato23.setScale(0.3);
         this.gato24.setScale(0.3);
+        this.sombrero21.setScale(0.12);
+        this.sombrero22.setScale(0.12);
+        this.sombrero23.setScale(0.12);
+        this.sombrero24.setScale(0.12);
+        this.panuelo12.setScale(0.12);
+        this.panuelo22.setScale(0.12);
+        this.panuelo32.setScale(0.12);
+        this.panuelo42.setScale(0.12);
     }
 
     enterButtonRestState2() {
@@ -169,6 +316,14 @@ class SceneSecPartida extends Phaser.Scene {
         this.gato21.setScale(0.25);
         this.gato23.setScale(0.25);
         this.gato24.setScale(0.25);
+        this.sombrero21.setScale(0.1);
+        this.sombrero22.setScale(0.1);
+        this.sombrero23.setScale(0.1);
+        this.sombrero24.setScale(0.1);
+        this.panuelo12.setScale(0.1);
+        this.panuelo22.setScale(0.1);
+        this.panuelo32.setScale(0.1);
+        this.panuelo42.setScale(0.1);
 
     }
     //MAPAS//
@@ -315,7 +470,7 @@ class SceneSecPartida extends Phaser.Scene {
     //ATRAS//
     atras() {
         //Cambio de escena
-        //this.scene.start('SceneInicio');
+        this.scene.start('PantallaInicio');
     }
     enterButtonHoverState7() {
         this.botonAtras.setScale(1.1);

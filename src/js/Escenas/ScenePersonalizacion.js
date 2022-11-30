@@ -2,7 +2,8 @@ class ScenePersonalizacion extends Phaser.Scene {
     constructor() {
         super({key:'ScenePersonalizacion'});
     }
-    
+
+
     preload() {
         this.load.image('Fondo1', 'assets/Menus/menuInicioDes.png');
         this.load.image('Fondo2', 'assets/Menus/personalizacion.png');
@@ -54,12 +55,14 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.gato21 = this.add.image(695, 380, 'Gato1').setScale(0.6);
         this.gato23 = this.add.image(695, 380, 'Gato3').setScale(0.6);
         this.gato24 = this.add.image(695, 380, 'Gato4').setScale(0.6);
+        //this.gato1.visible = false;
         this.gato14.visible = false;
         this.gato13.visible = false;
         this.gato12.visible = false;
         this.gato24.visible = false;
         this.gato23.visible = false;
         this.gato21.visible = false;
+        //this.gato2.visible=false;
         this.sombrero1 = this.add.image(345, 379, 'Sombrero1').setScale(0.23);
         this.sombrero2 = this.add.image(345, 379, 'Sombrero2').setScale(0.23);
         this.sombrero3 = this.add.image(345, 379, 'Sombrero3').setScale(0.23);
@@ -214,6 +217,90 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.config.data.set('Hat2', 0);
         this.config.data.set('Pan1', 0);
         this.config.data.set('Pan2', 0);
+        ////Gato Activo J1
+        //if (this.Personalizacion.Gato1 == 1) {
+        //    this.gato1.visible = true;
+        //    this.JNormal.data.set('Cat1',1)
+        //} else if (this.Personalizacion.Gato1 == 2) {
+        //    this.gato12.visible = true;
+        //    this.JNormal.data.set('Cat1', 2)
+        //} else if (this.Personalizacion.Gato1 == 3) {
+        //    this.gato13.visible = true;
+        //    this.JNormal.data.set('Cat1', 3)
+        //} else if (this.Personalizacion.Gato1 == 4) {
+        //    this.gato14.visible = true;
+        //    this.JNormal.data.set('Cat1', 4)
+        //}
+        ////Gato Activo J2
+        //if (this.Personalizacion.Gato2 == 1) {
+        //    this.gato21.visible = true;
+        //} else if (this.Personalizacion.Gato2 == 2) {
+        //    this.gato2.visible = true;
+        //} else if (this.Personalizacion.Gato2 == 3) {
+        //    this.gato23.visible = true;
+        //} else if (this.Personalizacion.Gato2 == 4) {
+        //    this.gato24.visible = true;
+        //}
+        ////Sombrero Activo J1
+        //if (this.Personalizacion.Sombrero1 == 1) {
+        //    this.sombrero1.visible = true;
+        //} else if (this.Personalizacion.Sombrero1 == 2) {
+        //    this.sombrero2.visible = true;
+        //} else if (this.Personalizacion.Sombrero1 == 3) {
+        //    this.sombrero3.visible = true;
+        //} else if (this.Personalizacion.Sombrero1 == 4) {
+        //    this.sombrero4.visible = true;
+        //} else if (this.Personalizacion.Sombrero1 == 0) {
+        //    this.sombrero1.visible = false;
+        //    this.sombrero2.visible = false;
+        //    this.sombrero3.visible = false;
+        //    this.sombrero4.visible = false;
+        //}
+        ////Sombrero Activo J2
+        //if (this.Personalizacion.Sombrero2 == 1) {
+        //    this.sombrero21.visible = true;
+        //} else if (this.Personalizacion.Sombrero2 == 2) {
+        //    this.sombrero22.visible = true;
+        //} else if (this.Personalizacion.Sombrero2 == 3) {
+        //    this.sombrero23.visible = true;
+        //} else if (this.Personalizacion.Sombrero2 == 4) {
+        //    this.sombrero24.visible = true;
+        //} else if (this.Personalizacion.Sombrero2 == 0) {
+        //    this.sombrero21.visible = false;
+        //    this.sombrero22.visible = false;
+        //    this.sombrero23.visible = false;
+        //    this.sombrero24.visible = false;
+        //}
+        ////Pañuelo Activo J1
+        //if (this.Personalizacion.Panuelo1 == 1) {
+        //    this.panuelo1.visible = true;
+        //} else if (this.Personalizacion.Panuelo1 == 2) {
+        //    this.panuelo2.visible = true;
+        //} else if (this.Personalizacion.Panuelo1 == 3) {
+        //    this.panuelo3.visible = true;
+        //} else if (this.Personalizacion.Panuelo1 == 4) {
+        //    this.panuelo4.visible = true;
+        //} else if (this.Personalizacion.Panuelo1 == 0) {
+        //    this.panuelo1.visible = false;
+        //    this.panuelo2.visible = false;
+        //    this.panuelo3.visible = false;
+        //    this.panuelo4.visible = false;
+        //}
+        ////Pañuelo Activo J2
+        //if (this.Personalizacion.Panuelo2 == 1) {
+        //    this.panuelo12.visible = true;
+        //} else if (this.Personalizacion.Panuelo2 == 2) {
+        //    this.panuelo22.visible = true;
+        //} else if (this.Personalizacion.Panuelo2 == 3) {
+        //    this.panuelo32.visible = true;
+        //} else if (this.Personalizacion.Panuelo2 == 4) {
+        //    this.panuelo42.visible = true;
+        //} else if (this.Personalizacion.Panuelo2 == 0) {
+        //    this.panuelo12.visible = false;
+        //    this.panuelo22.visible = false;
+        //    this.panuelo32.visible = false;
+        //    this.panuelo42.visible = false;
+        //}
     }
     //GATOS//
     //SOMBRERO//
@@ -535,7 +622,7 @@ class ScenePersonalizacion extends Phaser.Scene {
         if (this.gato2.visible) {
             this.gato2.visible = false;
             this.gato21.visible = true;
-            this.config.data.set('Cat2', 2);
+            this.config.data.set('Cat2', 1);
         }
         else if (this.gato21.visible) {
             this.gato21.visible = false;
@@ -549,7 +636,7 @@ class ScenePersonalizacion extends Phaser.Scene {
         } else if (this.gato24.visible) {
             this.gato24.visible = false
             this.gato2.visible = true;
-            this.config.data.set('Cat2', 1);
+            this.config.data.set('Cat2', 2);
         }
 
     }
