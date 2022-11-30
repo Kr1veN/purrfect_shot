@@ -13,3 +13,4 @@ Sonidos:
 bang: https://freesound.org/people/Bane_Sound/sounds/542549/
 empty: https://freesound.org/people/KlawyKogut/sounds/154934/
 reload: https://freesound.org/people/EminYILDIRIM/sounds/543927/
+ambiente: https://www.epidemicsound.com/track/SGjhimIgQZ/
