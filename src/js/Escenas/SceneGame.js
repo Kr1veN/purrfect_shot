@@ -1,6 +1,6 @@
 class SceneGame extends Phaser.Scene {
     constructor() {
-        super({key:"SceneConf)"});
+        super({key:"SceneGame"});
     }
     
     /*init ()
@@ -16,15 +16,23 @@ class SceneGame extends Phaser.Scene {
         
         sheet.insertRule(styles, 0);
     }*/
-    
+    init(data) {
+        this.config = data;
+        //this.config.setDataEnabled();
+        console.log(this.config);
+        //this.config.data.set('Escenario', data.Escenario);
+        //this.config.data.set('Rondas', data.Rondas);
+        //console.log(this.config.data.get('Escenario'));
+    }
 /************************************************************** P R E L O A D *****************************************************************/
     /*---------------------------------------------------------------------------------------------------------------------------------*/
    
     preload() {
-        this.load.image('Fondo1', 'assets/Fondos/granerodia.png');
-        this.load.image('Marco', 'assets/marco2.png');
-        this.load.image('Manecilla', 'assets/manecilla.png');
-        this.load.spritesheet('Diana', 'assets/Diana.png', {frameWidth: 175, frameHeight: 300});
+
+        this.load.image('FondoGraneroDia', 'assets/Fondos/granerodia.png');
+        this.load.image('Marco', 'assets/Menus/MenusJuego/inGame/marco2.png');
+        this.load.image('Manecilla', 'assets/Menus/MenusJuego/inGame/manecilla.png');
+        this.load.spritesheet('Diana', 'assets/Menus/MenusJuego/inGame/Diana.png', {frameWidth: 175, frameHeight: 300});
         
         this.load.image('Bueno1', 'assets/Personajes reescalados/Bueno1.png');
         this.load.image('Bueno1b', 'assets/Personajes reescalados/Bueno1b.png');
@@ -43,17 +51,27 @@ class SceneGame extends Phaser.Scene {
         this.load.image('Malo4b', 'assets/Personajes reescalados/Malo4b.png');
         
         this.load.image('Personaje1', 'assets/Personajes reescalados/BackGatoBlanco.png');
-        this.load.image('Personaje2', 'assets/Personajes reescalados/BackGatoNaranja.png');
+        this.load.image('Personaje2', 'assets/Personajes reescalados/BackGatoTricolor.png');
         this.load.image('Personaje3', 'assets/Personajes reescalados/BackGatoNegro.png');
-        this.load.image('Personaje4', 'assets/Personajes reescalados/BackGatoTricolor.png');
+        this.load.image('Personaje4', 'assets/Personajes reescalados/BackGatoNaranja.png');
         
-        this.load.image('Mirilla1', 'assets/MirillaJ1.png');
-        this.load.image('Mirilla2', 'assets/MirillaJ2.png');
-        this.load.image('Bala', 'assets/bala.png');
-        this.load.image('Power', 'assets/power.png');
-        this.load.image('PU1', 'assets/PU1.png');
-        this.load.image('PU2', 'assets/PU2.png');
-        this.load.image('PU3', 'assets/PU3.png');
+        this.load.image('Hat1', 'assets/Personajes reescalados/Gorro Marron atras.png');
+        this.load.image('Hat2', 'assets/Personajes reescalados/Gorro Beige atras.png');
+        this.load.image('Hat3', 'assets/Personajes reescalados/Gorro Verde atras.png');
+        this.load.image('Hat4', 'assets/Personajes reescalados/Gorro Gris atras.png');
+        
+        this.load.image('Scarf1', 'assets/Personajes reescalados/Panuelo Azul atras.png');
+        this.load.image('Scarf2', 'assets/Personajes reescalados/Panuelo Violeta atras.png');
+        this.load.image('Scarf3', 'assets/Personajes reescalados/Panuelo Rojo atras.png');
+        this.load.image('Scarf4', 'assets/Personajes reescalados/Panuelo Verde atras.png');
+        
+        this.load.image('Mirilla1', 'assets/Menus/MenusJuego/inGame/MirillaJ1.png');
+        this.load.image('Mirilla2', 'assets/Menus/MenusJuego/inGame/MirillaJ2.png');
+        this.load.image('Bala', 'assets/Menus/MenusJuego/balaDer.png');
+        this.load.image('Power', 'assets/Menus/MenusJuego/inGame/power.png');
+        this.load.image('PU1', 'assets/Menus/MenusJuego/inGame/PU1.png');
+        this.load.image('PU2', 'assets/Menus/MenusJuego/inGame/PU2.png');
+        this.load.image('PU3', 'assets/Menus/MenusJuego/inGame/PU3.png');
         
         //this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
         this.load.bitmapFont('Bonzer', 'assets/fonts/BonzerSanFrancisco.png', 'assets/fonts/BonzerSanFrancisco.xml');
@@ -62,18 +80,28 @@ class SceneGame extends Phaser.Scene {
         this.load.audio('Bang', ['assets/sounds/bang.ogg', 'assets/sounds/bang.mp3']);
         this.load.audio('Empty', ['assets/sounds/empty.ogg', 'assets/sounds/empty.mp3']);
         this.load.audio('Reload', ['assets/sounds/reload.ogg', 'assets/sounds/reload.mp3']);
+
     }
     
 /*************************************************************** C R E A T E ******************************************************************/
     /*---------------------------------------------------------------------------------------------------------------------------------*/
    
     create() {            
-            
-        this.fondo1 = this.add.image(540,375,'Fondo1');
+        
+        this.totalBulletsJ1 = 0;
+        this.totalBulletsJ2 = 0;
+        this.totalEnemiesJ1 = 0;
+        this.totalEnemiesJ2 = 0;
+        this.totalAlliesJ1 = 0;
+        this.totalAlliesJ2 = 0;
+        this.totalPowerJ1 = 0;
+        this.totalPowerJ2 = 0;
+
+        this.fondoGraneroDia = this.add.image(540,375,'FondoGraneroDia');
         this.marco = this.add.image(540,375,'Marco');
         this.manecilla = this.add.image(540,69,'Manecilla');
         
-        this.globalClock = this.time.addEvent({ delay: 90000, callback: this.endGame, callbackScope: this, paused: true }); // min y medio
+        this.globalClock = this.time.addEvent({ delay: 60000, callback: this.endGame, callbackScope: this, paused: true }); // min
         
         /*var add = this.add;
         WebFont.load({
@@ -137,12 +165,95 @@ class SceneGame extends Phaser.Scene {
     /*----------------------------------------------------------------------------------------------------------------------*/
         
         this.shooter1 = this.add.group();
-        var skin1 = 'Personaje1';
+        // skin jugador 1
+        var skin1;
+        if (this.config.Jugadores.Gato1 == 1) //Gato blanco
+            skin1 = 'Personaje1';
+        else if (this.config.Jugadores.Gato1 == 2) //Gato tricolor
+            skin1 = 'Personaje2';
+        else if (this.config.Jugadores.Gato1 == 3) //Gato tricolor
+            skin1 = 'Personaje3';
+        else if (this.config.Jugadores.Gato1 == 4)
+            skin1 = 'Personaje4';
+        else {
+            skin1 = 'Personaje1';
+        }
+        
         this.shooter1.add(this.add.image(260, 730, skin1).setFlipX(true));
         
+        // sombrero jugador 1
+        var hat1;
+        if(this.config.Jugadores.Sombrero1 == 1) //Gato blanco
+            hat1 = 'Hat1';
+        else if(this.config.Jugadores.Sombrero1 == 2) //Gato tricolor
+            hat1 = 'Hat2';
+        else if(this.config.Jugadores.Sombrero1 == 3) //Gato tricolor
+            hat1 = 'Hat3';
+        else if(this.config.Jugadores.Sombrero1 == 4)
+            hat1 = 'Hat4';
+        
+        if(this.config.Jugadores.Sombrero1 != 0) //Gato blanco
+            this.shooter1.add(this.add.image(260, 730, hat1).setFlipX(true));
+        
+        // pañuelo jugador 1
+        var scarf1;
+        if(this.config.Jugadores.Panuelo1 == 1) //Gato blanco
+            scarf1 = 'Scarf1';
+        else if(this.config.Jugadores.Panuelo1 == 2) //Gato tricolor
+            scarf1 = 'Scarf2';
+        else if(this.config.Jugadores.Panuelo1 == 3) //Gato tricolor
+            scarf1 = 'Scarf3';
+        else if(this.config.Jugadores.Panuelo1 == 4)
+            scarf1 = 'Scarf4';
+        
+        if(this.config.Jugadores.Panuelo1 != 0) //Gato blanco
+            this.shooter1.add(this.add.image(260, 730, scarf1).setFlipX(true));
+        
+        
+        
         this.shooter2 = this.add.group();
-        var skin2 = 'Personaje4';
+        // skin jugador 2
+        var skin2;
+        if (this.config.Jugadores.Gato2 == 1) //Gato blanco
+            skin2 = 'Personaje1';
+        else if (this.config.Jugadores.Gato2 == 2) //Gato tricolor
+            skin2 = 'Personaje2';
+        else if (this.config.Jugadores.Gato2 == 3) //Gato tricolor
+            skin2 = 'Personaje3';
+        else if (this.config.Jugadores.Gato2 == 4)
+            skin2 = 'Personaje4';
+        else
+            skin2 = 'Personaje2';
+
         this.shooter2.add(this.add.image(820, 730, skin2));
+        
+        // sombrero jugador 2
+        var hat2;
+        if(this.config.Jugadores.Sombrero2 == 1) //marron 
+            hat2 = 'Hat1';
+        else if(this.config.Jugadores.Sombrero2 == 2) //beige
+            hat2 = 'Hat2';
+        else if(this.config.Jugadores.Sombrero2 == 3) //verde
+            hat2 = 'Hat3';
+        else if(this.config.Jugadores.Sombrero2 == 4) //gris
+            hat2 = 'Hat4';
+        
+        if(this.config.Jugadores.Sombrero2 != 0) //sin sombrero
+            this.shooter2.add(this.add.image(820, 730, hat2));
+        
+         // pañuelo jugador 2
+        var scarf2;
+        if(this.config.Jugadores.Panuelo2 == 1) //azul
+            scarf2 = 'Scarf1';
+        else if(this.config.Jugadores.Panuelo2 == 2) //violeta
+            scarf2 = 'Scarf2';
+        else if(this.config.Jugadores.Panuelo2 == 3) //rojo
+            scarf2 = 'Scarf3';
+        else if(this.config.Jugadores.Panuelo2 == 4) // verde
+            scarf2 = 'Scarf4';
+        
+        if(this.config.Jugadores.Panuelo2 != 0) //sin pañuelo
+            this.shooter1.add(this.add.image(820, 730, scarf2));
         
     /*--------------------------------------------------------------------------------------------------------------------*/
         
@@ -197,8 +308,8 @@ class SceneGame extends Phaser.Scene {
         this.scoreTextJ2 = this.add.bitmapText(880, 60, 'YW', 'Pts: 0', 30);
         
         // Balas
-        this.bulletJ1 = 10;
-        this.bulletJ2 = 10;
+        this.bulletJ1 = 20;
+        this.bulletJ2 = 20;
         this.bulletTextJ1 = this.add.bitmapText(63, 690, 'YW', this.bulletJ1, 40, 1).setTint(0x000000);
         this.bulletTextJ2 = this.add.bitmapText(995, 690, 'YW', this.bulletJ2, 40, 1).setTint(0x000000);
         
@@ -220,9 +331,11 @@ class SceneGame extends Phaser.Scene {
                     this.bulletJ1 -=1 // dispares donde dispares se gasta una bala
                     this.bulletTextJ1.setText(this.bulletJ1);
                     bang.play();
+                    this.totalBulletsJ1++;
                 }
                 else if(this.mirilla1.data.get('infinite bullets') == true){
                     bang.play();
+                    this.totalBulletsJ1++;
                 }
                 else{
                     empty.play();
@@ -247,9 +360,11 @@ class SceneGame extends Phaser.Scene {
                     this.bulletJ2 -=1 // dispares donde dispares se gasta una bala
                     this.bulletTextJ2.setText(this.bulletJ2);
                     bang.play();
+                    this.totalBulletsJ2++;
                 }
                 else if(this.mirilla2.data.get('infinite bullets') == true){
                     bang.play();
+                    this.totalBulletsJ2++;
                 }
                 else{
                     empty.play();
@@ -260,7 +375,7 @@ class SceneGame extends Phaser.Scene {
             }
         }, this);
         
-        this.countDown = this.time.addEvent({ delay: 8000, callback: this.startGame, callbackScope: this });
+        this.countDown = this.time.addEvent({ delay: 5000, callback: this.removeText, callbackScope: this });
         this.info = this.add.bitmapText(540, 200, 'YW', '', 70, 1).setOrigin(0.5);
     }
     
@@ -269,11 +384,12 @@ class SceneGame extends Phaser.Scene {
     
     update(delta) {
         
-        if(this.countDown.getOverallProgress() < 0.3) {
+        if(this.countDown.getOverallProgress() < 0.5) {
             this.info.setText('Preparados');
         }
-        else if(this.countDown.getOverallProgress() < 0.6) {
+        else if(this.countDown.getOverallProgress() < 0.8) {
             this.info.setText('Listos');
+            this.startGame();
         }
         else if(this.countDown.getOverallProgress() < 1) {
             this.info.setText('¡¡YA!!');
@@ -603,17 +719,23 @@ class SceneGame extends Phaser.Scene {
             }
             if(jugador.data.get('justice') == true){ // si la justicia está activada
                 if(puntos > 0) // todos los puntos positivos
-                    puntos = Phaser.Math.CeilTo(puntos * 1.1); // se le suma el 10%
+                    puntos = Phaser.Math.CeilTo(puntos * 1.2); // se le suma el 20%
             }
         }
         
         if(jugador == this.mirilla1){ // si es el J1 el que dispara
             this.scoreJ1 += puntos; // se le suman sus puntos
             
-            if(puntos > 0) // color de la puntuación
+            if (puntos > 0) {
+                // color de la puntuación
                 this.points1 = this.add.bitmapText(130, 90, 'YW', '+' + puntos, 30, 1).setTint(0x95ff00);
-            else
+                this.totalEnemiesJ1++;
+            }
+            else {
                 this.points1 = this.add.bitmapText(130, 90, 'YW', puntos, 30, 1).setTint(0xff0000);
+                this.totalAlliesJ1++;
+            }
+                
             
             this.time.delayedCall(600, this.removePoints, [this.points1], this);
         }
@@ -621,10 +743,16 @@ class SceneGame extends Phaser.Scene {
         else if(jugador == this.mirilla2){ // si es el J2 el que dispara
             this.scoreJ2 += puntos;
             
-            if(puntos > 0)
+            if (puntos > 0) {
                 this.points2 = this.add.bitmapText(900, 90, 'YW', '+' + puntos, 30, 1).setTint(0x95ff00);
-            else
+                this.totalEnemiesJ2++;
+            }
+
+            else {
                 this.points2 = this.add.bitmapText(900, 90, 'YW', puntos, 30, 1).setTint(0xff0000);
+                this.totalAlliesJ2++;
+            }
+                
             
             this.time.delayedCall(600, this.removePoints, [this.points2], this);
         }
@@ -696,6 +824,11 @@ class SceneGame extends Phaser.Scene {
                         this.time.delayedCall(10000, this.powerDown, [jugador, 'justice', 'PU3'], this);
                     }
                 }
+                if (jugador == this.mirilla1) {
+                    this.totalPowerJ1++;
+                } else if (jugador == this.mirilla2) {
+                    this.totalPowerJ2++;
+                }
             }
             
             gato.data.get('gifts').destroy(); // se elimina el regalo
@@ -755,10 +888,13 @@ class SceneGame extends Phaser.Scene {
     startGame(){
         this.globalClock.paused = false;
         this.loopDianas.paused = false;
-        this.info.setText('');
-        this.countDown.remove(false);
+        //this.info.setText('');
+        //this.countDown.remove(false);
     }
-    
+
+    removeText() {
+        this.info.setText('');
+    }
 /************************************************************* E N D   G A M E ****************************************************************/
     /*--------------------------------------------------------------------------------------------------------------------------------*/
     
@@ -768,7 +904,10 @@ class SceneGame extends Phaser.Scene {
         
         //this.time.removeAllEvents();
         //console.log(this.time);
+
         this.loopDianas.remove(false);
+        
+        this.time.delayedCall(5000, this.pasarEscena, [], this);
         
         /*this.dianas.children.iterate(function(child){
             if(child.data.get('interactive') == true){
@@ -776,5 +915,21 @@ class SceneGame extends Phaser.Scene {
             }
         }, this);*/
         
+    }
+    pasarEscena() {
+        this.scene.start('PantallaVicDerr', {
+            Configuracion: this.config,
+            PuntosJ1: this.scoreJ1,
+            PuntosJ2: this.scoreJ2,
+            BJ1: this.totalBulletsJ1,
+            BJ2: this.totalBulletsJ2,
+            EnemiesJ1: this.totalEnemiesJ1,
+            EnemiesJ2: this.totalEnemiesJ2,
+            AlliesJ1: this.totalAlliesJ1,
+            AlliesJ2: this.totalAlliesJ2,
+            PUJ1: this.totalPowerJ1,
+            PUJ2: this.totalPowerJ2
+
+        });
     }
 }
