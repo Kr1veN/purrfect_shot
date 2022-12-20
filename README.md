@@ -323,10 +323,54 @@ __Descripción de la pantalla__: Es la pantalla en la que aparece el jugador gan
 __Estados del juego__: Es una pantalla de paso que solo muestra las estaditicas de la partida que se ha realizado. 
 
 ### 3.10. Interfaz de records
+Es una pantalla que se creó después durante el desarrollo del juego reutilizando material artítico y es por eso que no tiene ningún boceto. 
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/records.png" width = auto height = "300">
+</p>
 __Nombre de la pantalla__: Pantalla de records
 __Descripción de la pantalla__: Es una pantalla que aparece al comienzo en el título y que muestra los records del juego 
 __Estados del juego__: Es una pantalla de paso que informa al jugador únicamente. 
+
+### 3.11. Interfaz de residentes
+Es una pantalla que se creó después durante el desarrollo del juego reutilizando material artítico y es por eso que no tiene ningún boceto. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/residentes.png" width = auto height = "300">
+</p>
+__Nombre de la pantalla__: Pantalla de residentes
+__Descripción de la pantalla__: Es una pantalla en la que aprecen todos los personajes residentes que hay en el jueogo junto con la puntuación que descuntan si les disparas. 
+__Estados del juego__: Es una pantalla de paso que informa al jugador únicamente.
+
+### 3.11. Interfaz de enemigos
+Es una pantalla que se creó después durante el desarrollo del juego reutilizando material artítico y es por eso que no tiene ningún boceto. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/enemigos.png" width = auto height = "300">
+</p>
+__Nombre de la pantalla__: Pantalla de enemigos
+__Descripción de la pantalla__: Es una pantalla en la que aparecen todos los personajes enemigos que hay en el jueogo junto con la puntuación que descuntan si les disparas. 
+__Estados del juego__: Es una pantalla de paso que informa al jugador únicamente.
+
+### 3.11. Interfaz de potenciadores
+Es una pantalla que se creó después durante el desarrollo del juego reutilizando material artítico y es por eso que no tiene ningún boceto. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/potenciadores.png" width = auto height = "300">
+</p>
+__Nombre de la pantalla__: Pantalla de potenciadores
+__Descripción de la pantalla__: Es una pantalla en la que aparecen todos los potenciadores que se han incorporado en el jeugo y que aparecen junto con los residentes a lo largo de la partida. 
+__Estados del juego__: Es una pantalla de paso que informa al jugador únicamente.
+
+### 3.11. Interfaz de controles
+Es una pantalla que se creó después durante el desarrollo del juego reutilizando material artítico y es por eso que no tiene ningún boceto. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/potenciadores.png" width = auto height = "300">
+</p>
+__Nombre de la pantalla__: Pantalla de controles
+__Descripción de la pantalla__: Es una pantalla en la que aprecen los controles de ambos jugadores. Cómo odeben moverse y como deben disparar o recoger los potenciadores.
+__Estados del juego__: Es una pantalla de paso que informa al jugador únicamente.
 
 ## 4. ARTE
 ### 4.1. Concept Art 2D
