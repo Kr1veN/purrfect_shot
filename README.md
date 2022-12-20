@@ -584,6 +584,27 @@ Se ejcutará como aplicacion de Spring Boot.
 
 El servidor y los dos clientes (uno de los clientes puede ser el propio servidor) deben estar conectados en la mmisma subred, es decir, en el mismo router.
 
+A continuacón se montrarán las imágenes para que se pueda seguir facilmente los pasos:
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%201.png" width = auto height = "200">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%202.png" width = auto height = "200">
+</p>
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%203.png" width = auto height = "300">
+</p>  
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%204.png" width = auto height = "100">
+</p>  
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%205.png" width = auto height = "30">
+</p> <p align="center">
+
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%206.png" width = auto height = "70">
+</p> 
 
 ## 6. Equipo 
 Miembros del equipo
