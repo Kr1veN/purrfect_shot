@@ -311,6 +311,23 @@ __Nombre de la pantalla__: Personajes de los jugadores elegidos.
 __Descripción de la pantalla__: Es la pantalla que aparece una vez los usuarios han elegido con qué personajes quieren jugar.  
 __Estados del juego__: Es una pantalla de paso que solo muestra los personajes elegidos por los usuario. No es una pantalla con la que se pueda interactuar.
 
+### 3.10. Interfaz de victoria y derrota
+Es una pantalla que se creó después durante el desarrollo del juego reutilizando material artítico y es por eso que no tiene ningún boceto. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/pantala%20resultados.png" width = auto height = "300">
+</p>
+
+__Nombre de la pantalla__: Pantalla de victoria y derrota
+__Descripción de la pantalla__: Es la pantalla en la que aparece el jugador ganador y el jugador perdedor junto con todas sus estaditicas 
+__Estados del juego__: Es una pantalla de paso que solo muestra las estaditicas de la partida que se ha realizado. 
+
+### 3.10. Interfaz de records
+
+__Nombre de la pantalla__: Pantalla de records
+__Descripción de la pantalla__: Es una pantalla que aparece al comienzo en el título y que muestra los records del juego 
+__Estados del juego__: Es una pantalla de paso que informa al jugador únicamente. 
+
 ## 4. ARTE
 ### 4.1. Concept Art 2D
 
