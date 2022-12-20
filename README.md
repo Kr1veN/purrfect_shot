@@ -507,7 +507,22 @@ Selección de personaje:
 - Victoria/derrota: en el formato local sonará únicamente la victoria. En caso de ser formato en red, a cada jugador le aparecerá un sonido acorde a su logro.
 - Tiempo: durante el juego se establecerá un tiempo, este sonará de forma intensa cuando queden 10 segundos de partida con el objetivo de alertar a los jugadores.
 
-## 5. Equipo 
+## 5. API REST
+### 5.1. Navegación 
+Se volverán a introducir a continuación las capuras del juego de todas las panllas usando la apliación. 
+A contnuación se mostrara el diagrama del flujo de pnatallas que están incorporadas por el momento.
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/flujo%20de%20pantallas.jpeg" width = auto height = "100">
+</p>
+
+### 5.2. Diagrama de clases y API REST
+Se ha creado un diagrama de las clases en la que no se ha incluido ni atributos ni métodos. Se mostrarán las relaciones entre las clases (asociación agrgación/comosición o herencia) y se diferenciarán directamnte y claramente con un código de color. Además, se incluirán qué clases y se mostrará una distribución pautada por ellas. 
+
+### 5.3. Instrucciones precisas para ejecutar la aplicación 
+Es un apartado en el que se mostrará un resumen de l acompilación, com ose ejecuta el archivo .jar y que hace falta instalar para que pueda funcionar. 
+
+## 6. Equipo 
 Miembros del equipo
 - Daniel Borrego Cruz
 - Alicia Enríquez Martínez
@@ -519,7 +534,7 @@ Miembros del equipo
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/logo_empresa.png" width = auto height = "100">
 </p>
 
-## 6. Referencias
+## 7. Referencias
 - Generador de paleta de colores: https://coolors.co 
 - Imagen Wii Party:
 https://images-na.ssl-images-amazon.com/images/I/51J8VAE7ZQL.jpg
