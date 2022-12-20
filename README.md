@@ -570,14 +570,20 @@ Se volverán a introducir a continuación las capuras del juego de todas las pan
 A contnuación se mostrara el diagrama del flujo de pnatallas que están incorporadas por el momento.
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/flujo%20de%20pantallas.jpeg" width = auto height = "100">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/flujo%20de%20pantallas.jpeg" width = auto height = "500">
 </p>
 
 ### 5.2. Diagrama de clases y API REST
 Se ha creado un diagrama de las clases en la que no se ha incluido ni atributos ni métodos. Se mostrarán las relaciones entre las clases (asociación agrgación/comosición o herencia) y se diferenciarán directamnte y claramente con un código de color. Además, se incluirán qué clases y se mostrará una distribución pautada por ellas. 
 
 ### 5.3. Instrucciones precisas para ejecutar la aplicación 
-Es un apartado en el que se mostrará un resumen de l acompilación, com ose ejecuta el archivo .jar y que hace falta instalar para que pueda funcionar. 
+Es un apartado en el que se mostrará un resumen de la compilación, como se ejecuta el archivo .jar y que hace falta instalar para que pueda funcionar. 
+
+Para la maquina que sea servidor deberá tener instalado la herramienta para Eclipe, Spting Tool Suite. Se debe ejecutar el fichero Application.java que esta dentro de la carpeta src/main/java/purfectshot
+Se ejcutará como aplicacion de Spring Boot.
+
+El servidor y los dos clientes (uno de los clientes puede ser el propio servidor) deben estar conectados en la mmisma subred, es decir, en el mismo router.
+
 
 ## 6. Equipo 
 Miembros del equipo
