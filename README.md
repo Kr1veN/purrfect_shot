@@ -456,6 +456,19 @@ La paleta de colores aparecerá en la parte izquierda, mientras que el personaje
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Personajes/PersonajeGatoNaranja.png" width = auto height = "190">
 </p>
 
+- __Sin nombre__: veremos una base gris con rayas grises amarronadas un poco más oscuras. Sus ojos serán de color azul. Además habrá un coleccionable que podrán encontrar a lo largo del juego y con el que podrás jugar. 
+
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/Paleta_Kit.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/gato%20nuevo.png" width = auto height = "190">
+</p>
+
+Podemos observar los cambiso en el neuvo personaje a continuación:
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/gato.png" width = auto height = "150">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/gatomusica.png" width = auto height = "190">
+</p>
+
 Como hemos enseñado en el apartado “3.6 Interfaz de elección de personaje”, los colores de la elección de prendas de nuestro personaje seguirán la tonalidad del juego, los Bandidosy los Residentes.
 
 <p align="center">
