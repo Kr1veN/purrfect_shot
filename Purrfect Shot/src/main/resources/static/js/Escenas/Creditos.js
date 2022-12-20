@@ -4,56 +4,66 @@ class Creditos extends Phaser.Scene{
     }
 
     preload(){
-        this.load.image('FondoDesierto', 'assets/Fondos/desiertodia.png'),
             
-        this.load.image('FondoNombres', 'assets/Menus/MenusJuego/personalizacion.png'),
-            
-        this.load.image('botOpciones', 'assets/Menus/MenusJuego/inGame/botEstadisticas.png');
-            
-        this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
-        
+        this.load.image('creditos', 'assets/Menus/MenusJuego/creditos.png');
+        this.load.image('rickRoll', 'assets/Menus/MenusJuego/creditos.png');
+        this.load.image('easter', 'assets/Menus/MenusJuego/balaDer.png');
+        this.load.spritesheet('rick', 'assets/Menus/MenusJuego/rickRoll.png', {frameWidth: 270, frameHeight: 282});
+        this.load.audio('rickMusic', ['assets/sounds/rickMusic.ogg', 'assets/sounds/rickMusic.mp3']);
     
 }
     create(){
-        this.input.setDefaultCursor('src/assets/Puntero.cur, pointer');
-        
-        this.add.image(540, 375, 'FondoDesierto'),
+        this.add.image(540, 375, 'creditos'),
 
-            this.add.image(540, 375, 'FondoNombres'),
-
-            this.boton1 = this.add.image(550, 670, 'botOpciones')
-                .setInteractive()
-                .on('pointerdown', () => this.pasarEscena())
-                .on('pointerover', () => this.enterButtonHoverState())
-                .on('pointerout', () => this.enterButtonRestState()),
-
-            this.Creditos = this.add.bitmapText(540, 130, 'Letra', "CRÉDITOS", 70, 1).setOrigin(0.5);
+        this.boton1 = this.add.image(550, 670, 'botOpciones')
+            .setInteractive()
+            .on('pointerdown', () => this.pasarEscena())
+            .on('pointerover', () => this.enterButtonHoverState())
+            .on('pointerout', () => this.enterButtonRestState());
             
-        this.Daniel = this.add.bitmapText(540, 210, 'Letra', "Daniel Borrego Cruz", 40,1).setOrigin(0.5);
-     
-        this.Alicia = this.add.bitmapText(540, 290, 'Letra', "Alicia Enríquez Martínez", 40,1).setOrigin(0.5);
-     
-        this.Puri = this.add.bitmapText(540, 370, 'Letra', "Purificación Méndez Peñalver", 40,1).setOrigin(0.5);
+        this.boton2 = this.add.image(193, 627, 'easter')
+            .setInteractive()
+            .on('pointerover', () => this.enterButtonHoverState2())
+            .on('pointerout', () => this.enterButtonRestState2());
         
-        this.Andrea = this.add.bitmapText(540, 450, 'Letra', "Andrea Gallardo Lasso ", 40,1).setOrigin(0.5);
+        this.Atras = this.add.bitmapText(550, 670, 'Letra', "Atrás", 40,1).setOrigin(0.5);
         
-        this.Gema = this.add.bitmapText(540, 530, 'Letra', "Gema López-Pozuelo", 40, 1).setOrigin(0.5);
+        this.anims.create({
+            key: 'rickAnimation',
+            frames: this.anims.generateFrameNumbers('rick', { start: 0, end: 3 }),
+            frameRate: 6,
+            repeat: -1
+        });
         
-        this.Atras = this.add.bitmapText(540, 670, 'Letra', "Atrás", 40,1).setOrigin(0.5);
+        //this.miSprite = this.add.sprite(540, 340, 'rickRoll');
+        //this.miSprite.anims.play('rickAnimation');
 
-      
     
-}
+	}
     pasarEscena() {
         this.scene.start('PantallaInicio');
     }
-enterButtonHoverState(){
-this.boton1.setScale(1.1);
-}
     
-enterButtonRestState(){
-this.boton1.setScale(1);
-}
+    enterButtonHoverState(){
+        this.boton1.setScale(1.1);
+    }
+    
+    enterButtonRestState(){
+        this.boton1.setScale(1);
+    }
+    
+    
+    enterButtonHoverState2(){
+		this.rickMusic = this.sound.add('rickMusic', { volume: 1 });
+		this.rickMusic.play();
+		this.miSprite = this.add.sprite(540, 340, 'rickRoll');
+        this.miSprite.anims.play('rickAnimation');
+    }
+    
+    enterButtonRestState2(){
+		this.rickMusic.pause();
+        this.miSprite.visible=false;
+    }
  
     update(){
     

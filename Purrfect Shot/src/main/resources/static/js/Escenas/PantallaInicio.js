@@ -6,17 +6,24 @@ class PantallaInicio extends Phaser.Scene{
     preload(){
         this.load.image('PantallaInicio', 'assets/Menus/MenusJuego/Pantalla Titulo/pantallainicio.png');
 
-            this.load.image('Boton1', 'assets/Menus/MenusJuego/Pantalla Titulo/iniciobot1.png');
+        this.load.image('Boton1', 'assets/Menus/MenusJuego/Pantalla Titulo/iniciobot1.png');
         
         this.load.image('Boton2', 'assets/Menus/MenusJuego/Pantalla Titulo/iniciobot2.png');
     
         this.load.image('Boton3', 'assets/Menus/MenusJuego/Pantalla Titulo/iniciobot3.png');
+        
+        this.load.image('Boton4', 'assets/Menus/MenusJuego/salonFama/estrellaSheriff.png');
+        
+        this.load.image('Boton5', 'assets/Menus/MenusJuego/Pantalla Titulo/botonOpBorde.png');
+        
         this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
+        
         this.load.audio('Ambiente', ['assets/sounds/Ambiente.ogg', 'assets/sounds/Ambiente.mp3']);
+        
+        this.load.image('botOpciones', 'assets/Menus/MenusJuego/inGame/botEstadisticas.png');
 }
     create() {
-        this.ambiente = this.sound.add('Ambiente', { volume: 0.2 });
-        this.ambiente.stop();
+        this.ambiente = this.sound.add('Ambiente', { volume: 1 });
         this.ambiente.play();
         
         this.add.image(540, 375, 'PantallaInicio');
@@ -43,46 +50,88 @@ class PantallaInicio extends Phaser.Scene{
             .on('pointerout', () => this.enterButtonRestState3())
             .setScale(1.05);
         
+        this.boton4 = this.add.image(140, 630, 'Boton4')
+            .setInteractive()
+            .on('pointerdown', () => this.pasarEscena4())
+            .on('pointerover', () => this.enterButtonHoverState4())
+            .on('pointerout', () => this.enterButtonRestState4())
+            .setScale(1.05);
+        
+        this.boton5 = this.add.image(1030, 45, 'Boton5')
+            .setInteractive()
+            .on('pointerdown', () => this.pasarEscena5())
+            .on('pointerover', () => this.enterButtonHoverState5())
+            .on('pointerout', () => this.enterButtonRestState5());
         
         this.Aceptar = this.add.bitmapText(540, 445, 'Letra', "Jugar", 45,1).setOrigin(0.5);
      
         this.Atras = this.add.bitmapText(540, 520, 'Letra', "Controles", 35, 1).setOrigin(0.5);
      
         this.Resultados = this.add.bitmapText(540, 600, 'Letra', "Créditos", 35, 1).setOrigin(0.5);
+        
+        this.salon = this.add.bitmapText(140, 700, 'Letra', "Salón de la Fama", 25, 1).setOrigin(0.5);
+        
+        readRecord(); //Leemos los récords para cargar la variable global PhaserRecords
     
 }
+
     pasarEscena1() {
         this.scene.start('SceneSecPartida');
     }
     pasarEscena2() {
         this.scene.start('Tutorial');
-        this.ambiente.stop();
+        this.ambiente.pause();
     }
     pasarEscena3() {
+        this.ambiente.pause();
         this.scene.start('Creditos');
-        this.ambiente.stop();
     }
-enterButtonHoverState(){
-this.boton1.setScale(1.1);
-}
+    pasarEscena4() {
+        //this.ambiente.pause();
+        this.scene.start('salonFama');
+    }
+    pasarEscena5() {
+        //this.ambiente.pause();
+        this.scene.start('menuOpciones');
+    }
     
-enterButtonRestState(){
-this.boton1.setScale(1);
-}
-    enterButtonHoverState2(){
-this.boton2.setScale(1.1);
-}
+	enterButtonHoverState(){
+		this.boton1.setScale(1.1);
+	}
     
-enterButtonRestState2(){
-this.boton2.setScale(1);
-}
+	enterButtonRestState(){
+		this.boton1.setScale(1);
+	}
+	   enterButtonHoverState2(){
+		this.boton2.setScale(1.1);
+	}
+    
+	enterButtonRestState2(){
+		this.boton2.setScale(1);
+	}
     enterButtonHoverState3(){
-this.boton3.setScale(1.1);
-}
+		this.boton3.setScale(1.1);
+	}
     
     enterButtonRestState3(){
-    this.boton3.setScale(1);
+    	this.boton3.setScale(1);
     }
-    update(){
+    
+    enterButtonHoverState4(){
+		this.boton4.setScale(1.1);
+	}
+    
+    enterButtonRestState4(){
+   	 this.boton4.setScale(1);
     }
+    
+    enterButtonHoverState5(){
+		this.boton5.setScale(1.1);
+	}
+    
+    enterButtonRestState5(){
+   	 this.boton5.setScale(1);
+    }
+    
+    update(){}
 }

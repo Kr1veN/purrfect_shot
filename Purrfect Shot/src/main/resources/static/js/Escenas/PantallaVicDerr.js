@@ -67,6 +67,9 @@ preload(){
      this.Jugador2 = this.add.bitmapText(760, 500, 'Letra', 'Puntos: ' + this.stats.PuntosJ2 + '\nBalas Disparadas: ' + this.stats.BJ2 + '\nEnemigos Derrotados: '
          + this.stats.EnemiesJ2 + '\nAliados Heridos: ' + this.stats.AlliesJ2 + '\nPower UPs Recogidos: ' + this.stats.PUJ2, 25, 1).setOrigin(0.5).setTint(0x000000);
 
+     console.log('J1 record: ' + this.compararRecord(this.stats.PuntosJ1));
+     console.log('J2 record: ' + this.compararRecord(this.stats.PuntosJ2));
+     
      this.shooter1 = this.add.group();
      // skin jugador 1
      var skin1;
@@ -98,7 +101,7 @@ preload(){
      if (this.stats.Configuracion.Jugadores.Sombrero1 != 0) //Gato blanco
          this.shooter1.add(this.add.image(350, 330, hat1).setFlipX(true));
 
-     // pañuelo jugador 1
+     // paï¿½uelo jugador 1
      var scarf1;
      if (this.stats.Configuracion.Jugadores.Panuelo1 == 1) //Gato blanco
          scarf1 = 'Panu1';
@@ -144,7 +147,7 @@ preload(){
      if (this.stats.Configuracion.Jugadores.Sombrero2 != 0) //sin sombrero
          this.shooter2.add(this.add.image(760, 330, hat2));
 
-     // pañuelo jugador 2
+     // paï¿½uelo jugador 2
      var scarf2;
      if (this.stats.Configuracion.Jugadores.Panuelo2 == 1) //azul
          scarf2 = 'Panu1';
@@ -155,9 +158,42 @@ preload(){
      else if (this.stats.Configuracion.Jugadores.Panuelo2 == 4) // verde
          scarf2 = 'Panu4';
 
-     if (this.stats.Configuracion.Jugadores.Panuelo2 != 0) //sin pañuelo
+     if (this.stats.Configuracion.Jugadores.Panuelo2 != 0) //sin paï¿½uelo
          this.shooter1.add(this.add.image(760, 330, scarf2));
 }
+    compararRecord(puntos) {
+		if (puntos > PhaserRecords.third.points) { //Si es mayor que el tercer puesto
+			if (puntos > PhaserRecords.second.points) { //Si es mayor que el segundo puesto
+				// El segundo pasa a ser tercero
+				PhaserRecords.third.user = PhaserRecords.second.user;
+				PhaserRecords.third.points = PhaserRecords.second.points;
+
+				if (puntos > PhaserRecords.first.points) { //Si es mayor que el primer puesto
+					// El primero pasa a ser segundo
+					PhaserRecords.second.user = PhaserRecords.first.user;
+					PhaserRecords.second.points = PhaserRecords.first.points;
+
+					// El usuario pasa a ser primero
+					PhaserRecords.first.user = 'Tiger Tim';
+					PhaserRecords.first.points = puntos;
+
+				} else {
+					// El usuario pasa a ser segundo
+					PhaserRecords.second.user = 'Cat Love';
+					PhaserRecords.second.points = puntos;
+				}
+
+			} else {
+				// El usuario pasa a ser tercero
+				PhaserRecords.third.user = 'Kitty el Niï¿½o';
+				PhaserRecords.third.points = puntos;
+			}
+			writeRecord(PhaserRecords);
+			return true; // Devuelve true si ha superado algï¿½n record
+		}
+		return false; // Devuelve false en caso contrario
+	}
+    
     volver() {
         this.scene.start('SceneSecPartida');
     }

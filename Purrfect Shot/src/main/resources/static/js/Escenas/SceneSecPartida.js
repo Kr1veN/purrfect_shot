@@ -25,8 +25,8 @@ class SceneSecPartida extends Phaser.Scene {
         this.load.image('BotMapas', 'assets/Menus/Pantalla3/pant3bot4.png');
         this.load.image('BotAtras', 'assets/Menus/Pantalla3/pant3bot5.png');
         this.load.image('BotJugar', 'assets/Menus/Pantalla3/pant3bot6.png');
-        this.load.image('Logo', 'assets/Menus/Logo.png');
-        this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
+        //this.load.image('Logo', 'assets/Menus/Logo.png');
+        //this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
         this.load.image('Sombrero1', 'assets/Personajes/Accesorios/Sombrero.png');
         this.load.image('Sombrero2', 'assets/Personajes/Accesorios/SombreroMarron.png');
         this.load.image('Sombrero3', 'assets/Personajes/Accesorios/SombreroVerde.png');
@@ -39,7 +39,7 @@ class SceneSecPartida extends Phaser.Scene {
        
     
     create() {
-        this.config = this.add.image(0,0,'Logo');
+        this.config = this.add.image(0,0,'Fondo1');
         this.config.setDataEnabled();
 
         this.fondo1 = this.add.image(540, 375, 'Fondo1');
@@ -162,7 +162,7 @@ class SceneSecPartida extends Phaser.Scene {
         this.Ronda1 = this.add.bitmapText(460, 493,'Letra', "Rondas: 1",40,1);
         this.Ronda2 = this.add.bitmapText(460, 493,'Letra', "Rondas: 2",40,1);
         this.Ronda3 = this.add.bitmapText(460, 493,'Letra', "Rondas: 3",40,1);
-        this.Atras = this.add.bitmapText(400, 650,'Letra', "Atras",40,1);
+        this.Atras = this.add.bitmapText(400, 655, 'Letra',"Volver", 35,1);
         this.Jugar = this.add.bitmapText(570, 655,'Letra', "Jugar",40,1);
         this.Ronda2.visible = false;
         this.Ronda3.visible = false;
