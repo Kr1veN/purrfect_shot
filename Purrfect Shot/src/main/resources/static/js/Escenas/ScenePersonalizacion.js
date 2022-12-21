@@ -31,7 +31,8 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.load.image('BotJugar', 'assets/Menus/Pantalla3/pant3bot6.png');
         this.load.image('BotInfo', 'assets/Menus/botonInfo.png');
         this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
-
+		this.load.html('form', 'html/form.html');
+		this.load.html('form2', 'html/form2.html');
     }
        
     
@@ -40,12 +41,8 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.config.setDataEnabled();
         this.fondo1 = this.add.image(540, 375, 'Fondo1');
         this.fondo2 = this.add.image(540, 375, 'Fondo2');
-        this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-        this.key_A =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-        this.key_S =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
-        this.key_D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
-        //Carga de imágenes//
+        //Carga de imï¿½genes//
         
         this.gato1 = this.add.image(345, 380, 'Gato1').setScale(0.6);
         this.gato12 = this.add.image(345, 380, 'Gato2').setScale(0.233);
@@ -145,42 +142,42 @@ class ScenePersonalizacion extends Phaser.Scene {
             .on('pointerover', () => this.enterButtonHoverState8())
             .on('pointerout', () => this.enterButtonRestState8());
 
-        this.botonGato1 = this.add.image(360, 190, 'CambioGato1').setScale(0.5)
+        this.botonGato1 = this.add.image(320, 550, 'CambioGato1').setScale(0.5)
             .setInteractive()
             .on('pointerdown', () => this.updateCharacter1())
             .on('pointerover', () => this.enterButtonHoverState9())
             .on('pointerout', () => this.enterButtonRestState9());
 
-        this.botonGato2 = this.add.image(710, 190, 'CambioGato1').setScale(0.5)
+        this.botonGato2 = this.add.image(670, 550, 'CambioGato1').setScale(0.5)
             .setInteractive()
             .on('pointerdown', () => this.updateCharacter2())
             .on('pointerover', () => this.enterButtonHoverState10())
             .on('pointerout', () => this.enterButtonRestState10());
 
-        this.botonInf1 = this.add.image(360, 550, 'BotInfo').setScale(0.5)
+        this.botonInf1 = this.add.image(400, 550, 'BotInfo').setScale(0.5)
             .setInteractive()
             .on('pointerdown', () => this.info1())
             .on('pointerover', () => this.enterButtonHoverState11())
             .on('pointerout', () => this.enterButtonRestState11());
 
-        this.botonInf2 = this.add.image(710, 550, 'BotInfo').setScale(0.5)
+        this.botonInf2 = this.add.image(750, 550, 'BotInfo').setScale(0.5)
             .setInteractive()
             .on('pointerdown', () => this.info2())
             .on('pointerover', () => this.enterButtonHoverState12())
             .on('pointerout', () => this.enterButtonRestState12());
 
-        this.botonAceptar = this.add.image(540, 595, 'BotJugar')
+        this.botonAceptar = this.add.image(540, 620, 'BotJugar')
             .setInteractive()
             .on('pointerdown', () => this.jugar())
             .on('pointerover', () => this.enterButtonHoverState13())
             .on('pointerout', () => this.enterButtonRestState13());
         //
         
-        this.Aceptar = this.add.bitmapText(480, 570,'Letra', "Aceptar",40,1);
-        this.J1 = this.add.image(355, 120, 'BotJugar').setScale(1.2);
-        this.J2 = this.add.image(705, 120, 'BotJugar').setScale(1.2);
-        this.Jugador1 = this.add.bitmapText(280, 100,'Letra', "Jugador 1",40,1);
-        this.Jugador2 = this.add.bitmapText(630, 100,'Letra', "Jugador 2",40,1);
+        this.Aceptar = this.add.bitmapText(480, 600,'Letra', "Aceptar",40,1);
+        this.J1 = this.add.image(355, 123, 'BotJugar').setScale(1.2);
+        this.J2 = this.add.image(705, 123, 'BotJugar').setScale(1.2);
+        //this.Jugador1 = this.add.bitmapText(280, 100,'Letra', "Jugador 1",40,1);
+        //this.Jugador2 = this.add.bitmapText(630, 100,'Letra', "Jugador 2",40,1);
 
         //INFO GATOS//
         this.Desc1 = this.add.image(345, 350, 'Descrip1');
@@ -217,6 +214,48 @@ class ScenePersonalizacion extends Phaser.Scene {
         this.config.data.set('Hat2', 0);
         this.config.data.set('Pan1', 0);
         this.config.data.set('Pan2', 0);
+        
+        
+        var texto1=this.add.bitmapText(355,190,'Letra','Jugador 1',40,1).setOrigin(0.5);
+		var element=this.add.dom(355,125).createFromCache('form');
+		element.addListener('click');
+		element.on('click', function(event){
+			if(event.target.name=='nombrar1'){
+				var inputUsername=this.getChildByName("name");
+				
+				if(inputUsername.value !== ''){
+					//this.removeListener('click');
+					texto1.setText(inputUsername.value);
+					//this.setVisible(false);
+					//this.config.data.set('form',texto1);
+					NombreJ1=inputUsername.value;
+					inputUsername.value='';
+					console.log(NombreJ1);
+				}	
+			}
+			
+		});
+		
+		var texto2=this.add.bitmapText(705,190,'Letra','Jugador 2',40,1).setOrigin(0.5);
+		var element2=this.add.dom(705,125).createFromCache('form');
+		element2.addListener('click');
+		element2.on('click', function(event){
+			if(event.target.name=='nombrar1'){
+				var inputUsername2=this.getChildByName("name");
+				
+				if(inputUsername2.value !== ''){
+					//this.removeListener('click');
+					texto2.setText(inputUsername2.value);
+					//this.setVisible(false);
+					//this.config.data.set('form2',texto2);
+					NombreJ2=inputUsername2.value;
+					inputUsername2.value='';
+					console.log(NombreJ2);
+				}	
+			}
+			
+		});
+        
         ////Gato Activo J1
         //if (this.Personalizacion.Gato1 == 1) {
         //    this.gato1.visible = true;
@@ -271,7 +310,7 @@ class ScenePersonalizacion extends Phaser.Scene {
         //    this.sombrero23.visible = false;
         //    this.sombrero24.visible = false;
         //}
-        ////Pañuelo Activo J1
+        ////Paï¿½uelo Activo J1
         //if (this.Personalizacion.Panuelo1 == 1) {
         //    this.panuelo1.visible = true;
         //} else if (this.Personalizacion.Panuelo1 == 2) {
@@ -286,7 +325,7 @@ class ScenePersonalizacion extends Phaser.Scene {
         //    this.panuelo3.visible = false;
         //    this.panuelo4.visible = false;
         //}
-        ////Pañuelo Activo J2
+        ////Paï¿½uelo Activo J2
         //if (this.Personalizacion.Panuelo2 == 1) {
         //    this.panuelo12.visible = true;
         //} else if (this.Personalizacion.Panuelo2 == 2) {
@@ -445,7 +484,7 @@ class ScenePersonalizacion extends Phaser.Scene {
     }
 
     //
-    //PAÑUELOS//
+    //PAï¿½UELOS//
     cambioPanuelo1() {
         if (this.panuelo1.visible) {
             this.panuelo1.visible = false;

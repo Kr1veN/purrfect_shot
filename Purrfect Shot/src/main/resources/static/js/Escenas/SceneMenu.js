@@ -4,6 +4,7 @@ class SceneMenu extends Phaser.Scene {
     }
     
     preload() {
+		
         this.load.image('Fondo1', 'assets/Menus/menuInicio.png');
         this.load.image('BalaD1', 'assets/Menus/balader.png');
         this.load.image('BalaI1', 'assets/Menus/balaizq.png');
@@ -28,6 +29,7 @@ class SceneMenu extends Phaser.Scene {
        this.botSupD = this.add.image(650, 380, 'BotSupD');
        this.botRondas = this.add.image(540, 515, 'BotRondas');
        this.botMapas = this.add.image(540, 595, 'BotMapas');
+       
       
         this.key_W =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.key_A =  this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -110,6 +112,8 @@ class SceneMenu extends Phaser.Scene {
         //var Desierto = new Boolean();
         //var Pueblo = new Boolean();
         //this.gato2 = this.add.image(425, 380, 'Gato2').setScale(0.10);
+        
+        
     }
     //GATOS//
     updateCharacter1() {
