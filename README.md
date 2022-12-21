@@ -576,6 +576,10 @@ A contnuación se mostrara el diagrama del flujo de pnatallas que están incorpo
 ### 5.2. Diagrama de clases y API REST
 Se ha creado un diagrama de las clases en la que no se ha incluido ni atributos ni métodos. Se mostrarán las relaciones entre las clases (asociación agrgación/comosición o herencia) y se diferenciarán directamnte y claramente con un código de color. Además, se incluirán qué clases y se mostrará una distribución pautada por ellas. 
 
+<p align="center">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/uml" width = auto height = "300">
+</p>
+
 ### 5.3. Instrucciones precisas para ejecutar la aplicación 
 Es un apartado en el que se mostrará un resumen de la compilación, como se ejecuta el archivo .jar y que hace falta instalar para que pueda funcionar. 
 
