@@ -305,6 +305,7 @@ Tenemos una parte del menú dedicado a los controles para que el jugador pueda r
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/vs.png" width = auto height = "300">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/MenusJuego/inGame/vs.png" width = auto height = "300">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/ImagenVS.jpg" width = auto height = "300">
 </p>
 
 __Nombre de la pantalla__: Personajes de los jugadores elegidos.  
