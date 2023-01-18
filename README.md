@@ -611,9 +611,15 @@ A continuacón se montrarán las imágenes para que se pueda seguir facilmente l
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%206.png" width = auto height = "70">
 </p> 
 
-### 5.4. Documentación del protocolo utilizado sobre WebSockets
+## 6 WEBSOCKET
+### 6.1. Protovolo WebSocket
+WebSocket es una tecnología que proporciona un canal de comunicación bidireccional y full-duplex sobre un único socket TCP. Está diseñada para ser implementada en navegadores y servidores web, pero puede utilizarse por cualquier aplicación cliente/servidor
 
+### 6.2. Diagrama de clase WebSocket
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/2023-01-18%20(2).png" width = "auto" height = "150">
+</p>
 
+### 6.3. Video de Youtube
 
 ## 6. Equipo 
 Miembros del equipo
@@ -626,6 +632,10 @@ Miembros del equipo
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/logo_empresa.png" width = auto height = "100">
 </p>
+
+Se ha creado una pagina a modo de portfolio:
+https://gemalp7.wixsite.com/purrfectshot/about-5
+
 
 ## 7. Referencias
 - Generador de paleta de colores: https://coolors.co 
