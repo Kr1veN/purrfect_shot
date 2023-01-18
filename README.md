@@ -621,7 +621,7 @@ WebSocket es una tecnología que proporciona un canal de comunicación bidirecci
 
 ### 6.3. Video de Youtube
 
-## 6. Equipo 
+## 7. Equipo 
 Miembros del equipo
 - Daniel Borrego Cruz
 - Alicia Enríquez Martínez
@@ -637,7 +637,7 @@ Se ha creado una pagina a modo de portfolio:
 https://gemalp7.wixsite.com/purrfectshot/about-5
 
 
-## 7. Referencias
+## 8. Referencias
 - Generador de paleta de colores: https://coolors.co 
 - Imagen Wii Party:
 https://images-na.ssl-images-amazon.com/images/I/51J8VAE7ZQL.jpg
