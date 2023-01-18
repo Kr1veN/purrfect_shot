@@ -195,7 +195,7 @@ Todos los bocetos aparecerán a la izquierda y los escenarios acabados a la dere
 ### 3.1. Diagrama de Flujo 
 
 <p align="center">
-<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/diagrama_flujo.png" width = auto height = "650">
+<img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/Navegacion.png" width = auto height = "650">
 
 </p>
 
