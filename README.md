@@ -620,6 +620,7 @@ WebSocket es una tecnología que proporciona un canal de comunicación bidirecci
 </p>
 
 ### 6.3. Video de Youtube
+https://www.youtube.com/watch?v=JiWga9wuF18
 
 ## 7. Equipo 
 Miembros del equipo
