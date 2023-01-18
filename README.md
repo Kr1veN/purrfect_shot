@@ -1,3 +1,6 @@
+Video de Youtube
+https://www.youtube.com/watch?v=JiWga9wuF18
+
 # PURRFECT_SHOT 
 <p align="center">
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/JeRLogo2.png" width = "auto" height = "150">
@@ -619,7 +622,7 @@ WebSocket es una tecnología que proporciona un canal de comunicación bidirecci
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/2023-01-18%20(2).png" width = "auto" height = "450">
 </p>
 
-### 6.3. Video de Youtube
+
 
 ## 7. Equipo 
 Miembros del equipo
