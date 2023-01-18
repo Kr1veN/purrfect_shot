@@ -610,7 +610,15 @@ A continuacón se montrarán las imágenes para que se pueda seguir facilmente l
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%206.png" width = auto height = "70">
 </p> 
 
-## 6. Equipo 
+## 6. WEBSOCKET
+### 6.1. Protocolo WebSocket
+Se ha utilizado WebSocket que es un protocolo de envio de información didireccional y full-duplex sobre un unico socket TCP. Se han implmentado los diferentes metodos para el envio y recibo de mensajes en el servidor, mientras que en el cliente se ha hecho la parte de abrir el recibo de mensajes
+
+### 6.2. Diagrama de clases 
+
+### 6.3. Enalce de Youtube
+
+## 7. EQUIPO  
 Miembros del equipo
 - Daniel Borrego Cruz
 - Alicia Enríquez Martínez
@@ -622,7 +630,11 @@ Miembros del equipo
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/ImagenesGDD/logo_empresa.png" width = auto height = "100">
 </p>
 
-## 7. Referencias
+Se ha creado un porfolio del equipo en una paguna web utilizando el editor Wix:
+https://gemalp7.wixsite.com/purrfectshot
+
+
+## 8. REFERENCIAS
 - Generador de paleta de colores: https://coolors.co 
 - Imagen Wii Party:
 https://images-na.ssl-images-amazon.com/images/I/51J8VAE7ZQL.jpg
