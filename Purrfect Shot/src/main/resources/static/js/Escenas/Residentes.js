@@ -2,12 +2,14 @@ class Residentes extends Phaser.Scene{
     constructor(){
         super({key:'Residentes'})
     }
+	
+	init(data){
+		this.Config = data;
+	}
 
     preload(){
-            
-        this.load.image('FondoAliados', 'assets/Menus/MenusJuego/residentes.png');
-        
-}
+    }
+    
     create(){
         
         this.add.image(540, 375, 'FondoAliados');
@@ -22,17 +24,16 @@ class Residentes extends Phaser.Scene{
     
 }
     pasarEscena() {
-        this.scene.start('Potenciadores');
+        this.scene.start('Potenciadores', this.Config);
     }
-enterButtonHoverState(){
-this.boton1.setScale(1.1);
-}
-    
-enterButtonRestState(){
-this.boton1.setScale(1);
-}
+	enterButtonHoverState(){
+	this.boton1.setScale(1.1);
+	}
+	    
+	enterButtonRestState(){
+	this.boton1.setScale(1);
+	}
  
     update(){
-    
-}
+	}
 }

@@ -3,14 +3,13 @@ class Potenciadores extends Phaser.Scene{
         super({key:'Potenciadores'})
     }
 
+	init(data){
+		this.Config = data;
+	}
+	
     preload(){
-            
-        this.load.image('potenciadores', 'assets/Menus/MenusJuego/potenciadores.png');
-            
-        this.load.image('botOpciones', 'assets/Menus/MenusJuego/inGame/botEstadisticas.png');
-            
-        //this.load.bitmapFont('Letra', 'assets/fonts/YatsuranoWestern.png', 'assets/fonts/YatsuranoWestern.xml');
-}
+	}
+	
     create(){
         
         this.add.image(540, 375, 'potenciadores');
@@ -25,17 +24,16 @@ class Potenciadores extends Phaser.Scene{
     
 }
     pasarEscena() {
-        this.scene.start('PantallaInicio');
+        this.scene.start('PantallaInicio', this.Config);
     }
-enterButtonHoverState(){
-this.boton1.setScale(1.1);
-}
-    
-enterButtonRestState(){
-this.boton1.setScale(1);
-}
+	enterButtonHoverState(){
+	this.boton1.setScale(1.1);
+	}
+	    
+	enterButtonRestState(){
+	this.boton1.setScale(1);
+	}
  
     update(){
-    
-}
+	}
 }

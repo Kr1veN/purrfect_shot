@@ -2,11 +2,12 @@ class salonFama extends Phaser.Scene{
     constructor(){
         super({key:'salonFama'})
     }
+    
+    init(data){
+		this.Config = data;
+	}
 
     preload(){
-		this.load.image('FondoDesierto', 'assets/Fondos/desiertodia.png');
-        this.load.image('tablon', 'assets/Menus/MenusJuego/salonFama/records.png');
-        this.load.image('botAtras', 'assets/Menus/MenusJuego/Pantalla2/pant2bot3.png');
 	}
 	
 	create(){
@@ -34,7 +35,7 @@ class salonFama extends Phaser.Scene{
 	}
         
     pasarEscena() {
-        this.scene.start('PantallaInicio');
+        this.scene.start('PantallaInicio', this.Config);
     }
     enterButtonHoverState(){
         this.boton1.setScale(1.1);

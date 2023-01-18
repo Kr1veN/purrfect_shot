@@ -3,15 +3,13 @@ class Creditos extends Phaser.Scene{
         super({key:'Creditos'})
     }
 
-    preload(){
-            
-        this.load.image('creditos', 'assets/Menus/MenusJuego/creditos.png');
-        this.load.image('rickRoll', 'assets/Menus/MenusJuego/creditos.png');
-        this.load.image('easter', 'assets/Menus/MenusJuego/balaDer.png');
-        this.load.spritesheet('rick', 'assets/Menus/MenusJuego/rickRoll.png', {frameWidth: 270, frameHeight: 282});
-        this.load.audio('rickMusic', ['assets/sounds/rickMusic.ogg', 'assets/sounds/rickMusic.mp3']);
-    
-}
+	init(data){
+		this.Config = data;
+	}
+	
+    preload(){    
+	}
+	
     create(){
         this.add.image(540, 375, 'creditos'),
 
@@ -26,7 +24,7 @@ class Creditos extends Phaser.Scene{
             .on('pointerover', () => this.enterButtonHoverState2())
             .on('pointerout', () => this.enterButtonRestState2());
         
-        this.Atras = this.add.bitmapText(550, 670, 'Letra', "Atrás", 40,1).setOrigin(0.5);
+        this.Atras = this.add.bitmapText(550, 670, 'Letra', "Volver", 40,1).setOrigin(0.5);
         
         this.anims.create({
             key: 'rickAnimation',
@@ -34,14 +32,10 @@ class Creditos extends Phaser.Scene{
             frameRate: 6,
             repeat: -1
         });
-        
-        //this.miSprite = this.add.sprite(540, 340, 'rickRoll');
-        //this.miSprite.anims.play('rickAnimation');
-
-    
 	}
+	
     pasarEscena() {
-        this.scene.start('PantallaInicio');
+        this.scene.start('PantallaInicio', this.Config);
     }
     
     enterButtonHoverState(){

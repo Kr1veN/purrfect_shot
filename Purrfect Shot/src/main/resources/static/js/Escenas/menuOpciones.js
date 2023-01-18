@@ -4,7 +4,7 @@ class menuOpciones extends Phaser.Scene{
     }
 
     preload(){
-        this.load.image('menuOp', 'assets/Menus/MenusJuego/opciones.png');
+        this.load.image('menuOp', 'assets/ImagenesGame/Menus/Opciones/opciones.png');
 	}
     create(){
         this.add.image(540, 375, 'PantallaInicio');

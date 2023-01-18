@@ -2,12 +2,14 @@ class Tutorial extends Phaser.Scene{
     constructor(){
         super({key:'Tutorial'})
     }
-
+    
+	init(data){
+		this.Config = data;
+	}
+	
     preload(){
-            
-        this.load.image('FondoControles', 'assets/Menus/MenusJuego/controles.png');
-            
-}
+    }
+    
     create(){
         this.add.image(540, 375, 'FondoControles')
             .setScale(1.1);
@@ -22,7 +24,7 @@ class Tutorial extends Phaser.Scene{
     
 }
     pasarEscena() {
-        this.scene.start('Enemigos');
+        this.scene.start('Enemigos', this.Config);
     }
     enterButtonHoverState(){
         this.boton1.setScale(1.1);
@@ -33,6 +35,5 @@ class Tutorial extends Phaser.Scene{
     }
  
     update(){
-    
-}
+    }
 }
