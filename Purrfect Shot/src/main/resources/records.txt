@@ -1,1 +1,0 @@
-{"first":{"user":"Jugador 1","points":1285},"second":{"user":"puri","points":622},"third":{"user":"Jugador 1","points":604}}
