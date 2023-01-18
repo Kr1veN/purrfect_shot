@@ -565,9 +565,9 @@ Selección de personaje:
 - Victoria/derrota: en el formato local sonará únicamente la victoria. En caso de ser formato en red, a cada jugador le aparecerá un sonido acorde a su logro.
 - Tiempo: durante el juego se establecerá un tiempo, este sonará de forma intensa cuando queden 10 segundos de partida con el objetivo de alertar a los jugadores.
 
-## 5. API REST
+## 5. API REST Y WEBSOCKETS
 ### 5.1. Navegación 
-Se volverán a introducir a continuación las capuras del juego de todas las panllas usando la apliación. 
+Se volverán a introducir a continuación las capuras del juego de todas las pantallas usando la apliación. 
 A contnuación se mostrara el diagrama del flujo de pnatallas que están incorporadas por el momento.
 
 <p align="center">
@@ -610,6 +610,10 @@ A continuacón se montrarán las imágenes para que se pueda seguir facilmente l
 
 <img src = "https://github.com/KriiveN/purrfect_shot/blob/main/src/assets/Menus/menusGDD/codigo%206.png" width = auto height = "70">
 </p> 
+
+### 5.4. Documentación del protocolo utilizado sobre WebSockets
+
+
 
 ## 6. Equipo 
 Miembros del equipo
